@@ -261,7 +261,7 @@ const KO_DICT = [
 
   // ─── notices ───
   ['.seminars .kicker span:last-child', '공지'],
-  ['.seminars .section-head', '지금 열려 있는<br/><em>모임들.</em>'],
+  ['.seminars .section-head', '만나서 같이,<br/><em>에이전트팀 만들기.</em>'],
   ['.seminars .section-sub', '루트에서는 지금 신청 가능한 모임 두 가지만 짧게 보여줍니다. 자세한 안내와 등록은 Luma에서 이어집니다.'],
   ['.seminar.featured .sem-tag', '<span>법률 AI</span> <span class="sem-dot">·</span> <span>변호사 모임</span> <span class="sem-dot">·</span> <span class="sem-brand">Baryon Labs</span>'],
   ['.seminar.featured .sem-badge', '<span class="sem-pulse"></span><span class="sem-badge-l">2026년 6월 19일</span>'],
