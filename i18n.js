@@ -259,33 +259,33 @@ const KO_DICT = [
   ['.endcta-h', '모델을 쫓아다니지 마세요.<br/>이제 <em>조합</em>할 시간입니다.'],
   ['.endcta-row .btn-solid', 'miri.dev 써보기'],
 
-  // ─── seminars ───
-  ['.seminars .kicker span:last-child', '공개 세미나 · 진행 중'],
-  ['.seminars .section-head', '같이 한 방에서,<br/>한 대 <em>만들기.</em>'],
-  ['.seminars .section-sub', '작고 핸즈온 워크숍 — 처음부터 끝까지 에이전트 한 대를 함께 출시합니다. 자리는 제한적. 구경꾼은 없습니다.'],
-  ['.seminar.featured .sem-tag', '<span>법률 AI</span> <span class="sem-dot">·</span> <span>빌드 워크숍</span> <span class="sem-dot">·</span> <span class="sem-brand">Baryon Labs</span>'],
-  ['.seminar.featured .sem-badge', '<span class="sem-pulse"></span><span class="sem-badge-l">6월 19일 (금)</span>'],
-  ['.seminar.featured .sem-h', '변호사 비서 에이전트:<br/><em>리걸 AI 빌드</em>의 시작.'],
-  ['.seminar.featured .sem-body', '변호사 업무를 옆에서 거드는 AI 에이전트. 그 첫 한 대를 3시간 동안 직접 설계·구축합니다.'],
+  // ─── notices ───
+  ['.seminars .kicker span:last-child', '공지'],
+  ['.seminars .section-head', '지금 열려 있는<br/><em>모임들.</em>'],
+  ['.seminars .section-sub', '루트에서는 지금 신청 가능한 모임 두 가지만 짧게 보여줍니다. 자세한 안내와 등록은 Luma에서 이어집니다.'],
+  ['.seminar.featured .sem-tag', '<span>법률 AI</span> <span class="sem-dot">·</span> <span>변호사 모임</span> <span class="sem-dot">·</span> <span class="sem-brand">Baryon Labs</span>'],
+  ['.seminar.featured .sem-badge', '<span class="sem-pulse"></span><span class="sem-badge-l">2026년 6월 19일</span>'],
+  ['.seminar.featured .sem-h', '변호사 모임:<br/><em>첫 리걸 에이전트</em>를 만드는 자리.'],
+  ['.seminar.featured .sem-body', '리서치, 초안 작성, 내부 업무 흐름을 AI가 어떻게 거들 수 있는지 직접 보고 이야기하는 작은 실전 세션입니다.'],
   ['.seminar.featured .sem-row:nth-of-type(1) .sm-l', '정원'],
-  ['.seminar.featured .sem-row:nth-of-type(1) .sm-v', '선착순 6명'],
-  ['.seminar.featured .sem-row:nth-of-type(2) .sm-l', '일정'],
-  ['.seminar.featured .sem-row:nth-of-type(2) .sm-v', '6월 19일 (금) · 14시'],
-  ['.seminar.featured .sem-row:nth-of-type(3) .sm-l', '소요'],
-  ['.seminar.featured .sem-row:nth-of-type(3) .sm-v', '약 3시간'],
+  ['.seminar.featured .sem-row:nth-of-type(1) .sm-v', '6명'],
+  ['.seminar.featured .sem-row:nth-of-type(2) .sm-l', '일시'],
+  ['.seminar.featured .sem-row:nth-of-type(2) .sm-v', '2026년 6월 19일 · 오후 2시'],
+  ['.seminar.featured .sem-row:nth-of-type(3) .sm-l', '형식'],
+  ['.seminar.featured .sem-row:nth-of-type(3) .sm-v', '핸즈온 세션'],
   ['.seminar.featured .sem-cta', 'Luma에서 신청 <span aria-hidden="true">↗</span>'],
-  ['.seminar.recurring .sem-tag', '<span>정기</span> <span class="sem-dot">·</span> <span>매주 일요일 세션</span>'],
+  ['.seminar.recurring .sem-tag', '<span>정기</span> <span class="sem-dot">·</span> <span>주말 모임</span>'],
   ['.seminar.recurring .sem-badge', '<span class="sem-badge-l">매주 일요일</span>'],
-  ['.seminar.recurring .sem-h', '일요일 <em>빌드</em> 모임.'],
-  ['.seminar.recurring .sem-body', '매주 일요일, AI 빌더들이 모이는 정기 세션. 빌드 데모, 짧은 발표, 질문, 그리고 서로의 코드를 함께 봅니다.'],
+  ['.seminar.recurring .sem-h', '정기 주말<br/><em>당근 모임.</em>'],
+  ['.seminar.recurring .sem-body', 'AI를 실제 일에 붙여 쓰는 사람들을 위한 정기 모임입니다. 데모, 짧은 발표, 질문, 그리고 실제로 무엇이 나가고 있는지에 대한 대화를 나눕니다.'],
   ['.seminar.recurring .sem-row:nth-of-type(1) .sm-l', '주기'],
-  ['.seminar.recurring .sem-row:nth-of-type(1) .sm-v', '매주 일요일'],
-  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-l', '주최'],
-  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-v', 'Baryon Labs · 멤버스'],
-  ['.seminar.recurring .sem-row:nth-of-type(3) .sm-l', '참가'],
+  ['.seminar.recurring .sem-row:nth-of-type(1) .sm-v', '매주'],
+  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-l', '요일'],
+  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-v', '일요일'],
+  ['.seminar.recurring .sem-row:nth-of-type(3) .sm-l', '안내'],
   ['.seminar.recurring .sem-row:nth-of-type(3) .sm-v', 'Luma 캘린더'],
-  ['.seminar.recurring .sem-cta', '전체 일정 보기 <span aria-hidden="true">↗</span>'],
-  ['.seminars-foot .btn', 'Luma에서 전체 세션 보기 ↗'],
+  ['.seminar.recurring .sem-cta', '일정 보기 <span aria-hidden="true">↗</span>'],
+  ['.seminars-foot .btn', 'Luma에서 전체 모임 보기 ↗'],
 
   // ─── footer ───
   ['.foot-tag', '제1원리에서 시작하는 AI.<br/>서울 · 글로벌.'],
@@ -327,7 +327,10 @@ function setLang(lang) {
 
 function initI18n() {
   const saved = (() => { try { return localStorage.getItem('baryon-lang'); } catch (e) { return null; } })();
-  const initial = saved === 'ko' ? 'ko' : 'en';
+  const browserLang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
+  const initial = saved === 'ko' || saved === 'en'
+    ? saved
+    : (browserLang.startsWith('ko') ? 'ko' : 'en');
   setLang(initial);
 
   document.querySelectorAll('.lang').forEach((btn) => {
