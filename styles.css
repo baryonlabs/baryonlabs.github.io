@@ -938,6 +938,13 @@ button { font: inherit; cursor: pointer; }
 .iq-field textarea:focus { border-color: var(--accent); }
 .iq-field textarea { resize: vertical; min-height: 120px; }
 .iq-field select { appearance: none; }
+.iq-err {
+  color: #ff8585;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.iq-field.invalid input { border-color: #ff8585; }
+.iq-submit.loading { opacity: 0.7; pointer-events: none; }
 .iq-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .iq-fine { margin: 0; font-size: 13px; color: var(--text-mute); }
 .iq-success h4 { margin: 0 0 8px; font-size: 22px; }

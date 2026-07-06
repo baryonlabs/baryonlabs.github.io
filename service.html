@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -194,24 +194,30 @@
         <label class="iq-field">
           <span class="iq-label iq-l-email">Email</span>
           <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+          <small class="iq-err iq-err-email" hidden>Please enter a valid email address.</small>
         </label>
         <label class="iq-field">
           <span class="iq-label iq-l-phone">Phone <small>— leave a number if you prefer a call back</small></span>
           <input type="tel" name="phone" placeholder="010-0000-0000" autocomplete="tel" />
+          <small class="iq-err iq-err-phone" hidden>Please enter a valid phone number.</small>
         </label>
       </div>
-      <div class="iq-row">
+      <div class="iq-row two">
         <label class="iq-field">
           <span class="iq-label iq-l-topic">Topic</span>
           <select name="topic">
-            <option value="procure">Procurement</option>
-            <option value="manage" selected>Deployment &amp; operations</option>
-            <option value="train">Training</option>
-            <option value="support">Technical support</option>
-            <option value="consult">Consulting</option>
-            <option value="partnership">Partnership (vendor / training company)</option>
-            <option value="other">Other</option>
+            <option value="구매 대행">Procurement</option>
+            <option value="구축·운영" selected>Deployment &amp; operations</option>
+            <option value="교육">Training</option>
+            <option value="기술지원">Technical support</option>
+            <option value="컨설팅">Consulting</option>
+            <option value="제휴">Partnership (vendor / training company)</option>
+            <option value="기타">Other</option>
           </select>
+        </label>
+        <label class="iq-field">
+          <span class="iq-label iq-l-subject">Subject</span>
+          <input type="text" name="subject" required />
         </label>
       </div>
       <div class="iq-row">
@@ -306,42 +312,72 @@
   </div>
 </footer>
 
-<script src="i18n.js"></script>
+<script src="i18n.js?v=3"></script>
 <script>
-// inquiry form → FormSubmit.co (same endpoint pattern as waitlist.js)
+// inquiry form → Form2AI2Email worker
 (() => {
+  const ENDPOINT = 'https://form2ai2email-worker.kilos-network.workers.dev/api/submit';
+  const FORM_ID = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+
   const form = document.getElementById('inquiry-form');
   if (!form) return;
   const successBox = form.querySelector('.iq-success');
   const errorBox = form.querySelector('.iq-error');
   const submitBtn = form.querySelector('.iq-submit');
+  const emailIn = form.querySelector('[name=email]');
+  const phoneIn = form.querySelector('[name=phone]');
+  const emailErr = form.querySelector('.iq-err-email');
+  const phoneErr = form.querySelector('.iq-err-phone');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  // digits with optional +, spaces, hyphens, parens; 9–16 significant chars
+  const PHONE_RE = /^\+?[0-9][0-9\-\s()]{7,15}$/;
+
+  function mark(input, errEl, ok) {
+    errEl.hidden = ok;
+    input.closest('.iq-field').classList.toggle('invalid', !ok);
+    return ok;
+  }
+  emailIn.addEventListener('input', () => mark(emailIn, emailErr, emailIn.value.trim() === '' || EMAIL_RE.test(emailIn.value.trim())));
+  phoneIn.addEventListener('input', () => mark(phoneIn, phoneErr, phoneIn.value.trim() === '' || PHONE_RE.test(phoneIn.value.trim())));
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fd = new FormData(form);
-    const payload = {
-      company: (fd.get('company') || '').toString().trim(),
-      name: (fd.get('name') || '').toString().trim(),
-      email: (fd.get('email') || '').toString().trim(),
-      phone: (fd.get('phone') || '').toString().trim(),
-      topic: (fd.get('topic') || '').toString(),
-      message: (fd.get('message') || '').toString().trim(),
-      source: 'baryon.ai/service',
-      lang: document.documentElement.lang || 'en',
-      _subject: `[Baryon service inquiry] ${(fd.get('topic') || 'general')} — ${(fd.get('company') || '')}`
-    };
-    if (!payload.email || !payload.message) return;
+    const email = (fd.get('email') || '').toString().trim();
+    const phone = (fd.get('phone') || '').toString().trim();
 
+    const emailOk = mark(emailIn, emailErr, EMAIL_RE.test(email));
+    const phoneOk = mark(phoneIn, phoneErr, phone === '' || PHONE_RE.test(phone));
+    if (!emailOk || !phoneOk) return;
+
+    const isKo = (document.documentElement.lang || 'en') === 'ko';
     const origLabel = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = '…';
+    submitBtn.classList.add('loading');
+    submitBtn.textContent = isKo ? '전송 중…' : 'Sending…';
+
     try {
-      const res = await fetch('https://formsubmit.co/ajax/hello@baryon.ai', {
+      const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form_id: FORM_ID,
+          data: {
+            company: (fd.get('company') || '').toString().trim(),
+            name: (fd.get('name') || '').toString().trim(),
+            email,
+            phone,
+            topic: (fd.get('topic') || '').toString(),
+            subject: (fd.get('subject') || '').toString().trim(),
+            message: (fd.get('message') || '').toString().trim(),
+            source: 'baryon.ai/service',
+            lang: isKo ? 'ko' : 'en'
+          }
+        })
       });
-      if (!res.ok) throw new Error('http ' + res.status);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.success === false) throw new Error('http ' + res.status);
       form.querySelectorAll('.iq-row, .iq-actions').forEach(el => el.hidden = true);
       successBox.hidden = false;
       errorBox.hidden = true;
@@ -350,6 +386,7 @@
       errorBox.hidden = false;
     } finally {
       submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
       submitBtn.textContent = origLabel;
     }
   });
