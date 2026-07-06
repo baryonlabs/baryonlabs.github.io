@@ -17,7 +17,7 @@ const KO_DICT = [
 
   // ─── hero ───
   ['.hero-eyebrow span:last-child', '서울에서 빌드 · 어디서든 리서치'],
-  ['.hero-head', '우리 회사에서 돌아가는 AI,<br/>도입부터 운영까지 <em>책임집니다.</em>'],
+  ['.hero-head', '우리 회사만을 위한 AI,<br/>도입부터 운영까지 <em>책임집니다.</em>'],
   ['.hero-sub',  'Baryon Labs는 귀사의 장비 위에 AI 업무 환경을 만들어 드립니다. 장비 구매부터 구축·운영, 교육, 기술지원까지 — 저희가 매일 직접 쓰는 도구로 시작합니다.'],
   ['.hero-ctas .btn-solid', '서비스 보기 →'],
   ['.hero-ctas .btn-ghost', '제품 둘러보기'],
