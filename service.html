@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Baryon Labs — On-prem AI Service</title>
+<meta name="description" content="Baryon Labs on-premise AI service: procurement, deployment and operations, training, technical support, and consulting for DGX Spark and local GPU machines." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ════════════════ AMBIENT BACKDROP ════════════════ -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"></div>
+
+<!-- ════════════════ NAV ════════════════ -->
+<header class="nav">
+  <a class="nav-logo" href="index.html">
+    <span class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
+        <circle cx="21" cy="12" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="12" r="1.5" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="logo-word">Baryon<span class="logo-dim">labs</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="products.html">Products</a>
+    <a href="index.html#company">Company</a>
+    <a href="service.html">Service</a>
+    <a href="index.html#proof">How it works</a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+  <div class="nav-cta">
+    <button class="lang" data-lang="en" aria-label="Toggle language">
+      <span class="lang-opt" data-set="ko">🇰🇷<span class="lang-code">KO</span></span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-set="en">🇺🇸<span class="lang-code">EN</span></span>
+    </button>
+    <a class="btn btn-ghost" href="https://github.com/baryonlabs" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      github.com/baryonlabs
+    </a>
+    <a class="btn btn-solid" href="#inquiry">Get in touch</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ════════════════ SERVICE DETAIL ════════════════ -->
+<section class="onprem page" id="svc" data-screen-label="01 Service">
+  <div class="onprem-head">
+    <div class="kicker"><span class="num">01</span><span>Service</span></div>
+    <h2 class="section-head">
+      We run your DGX Spark<br/>
+      so it actually gets <em>used.</em>
+    </h2>
+    <p class="section-sub">
+      Baryon Labs runs a full service around on-premise AI hardware — from a single DGX Spark to a full rack.
+      Five parts, one accountable partner: procurement, managed operations, training, technical support, and consulting.
+    </p>
+  </div>
+
+  <div class="onprem-grid detail">
+    <article class="onprem-card">
+      <div class="onprem-k">Procure</div>
+      <h3>Buying is the start, not the end.</h3>
+      <p>We help you choose and buy the right hardware for the job, so the machine that arrives is the one your work actually needs.</p>
+      <ul class="proof-list">
+        <li>Requirements review and hardware recommendation</li>
+        <li>Spec and configuration checks, vendor quote coordination</li>
+        <li>Delivery and installation scheduling</li>
+      </ul>
+    </article>
+    <article class="onprem-card">
+      <div class="onprem-k">Manage</div>
+      <h3>Deployment and day-to-day operations.</h3>
+      <p>We set up the full local stack on your hardware, then keep it running as a managed service.</p>
+      <ul class="proof-list">
+        <li>Models, serving, team chat, and developer tooling set up</li>
+        <li>Monitoring, updates, and model upgrades</li>
+        <li>Incident response and regular operations reports</li>
+      </ul>
+    </article>
+    <article class="onprem-card">
+      <div class="onprem-k">Train</div>
+      <h3>Training for the teams who use it.</h3>
+      <p>Onboarding and hands-on training so local AI becomes part of daily work.</p>
+      <ul class="proof-list">
+        <li>Employee onboarding sessions</li>
+        <li>Role-specific workflow training on your actual business</li>
+        <li>Access to our regular online training program</li>
+      </ul>
+    </article>
+    <article class="onprem-card">
+      <div class="onprem-k">Support</div>
+      <h3>Technical support that stays.</h3>
+      <p>On-site and remote support after the deployment, for as long as the machines are working.</p>
+      <ul class="proof-list">
+        <li>On-site and remote support channels</li>
+        <li>Questions answered, problems fixed</li>
+        <li>Environment kept in step as models and tools move fast</li>
+      </ul>
+    </article>
+    <article class="onprem-card">
+      <div class="onprem-k">Consult</div>
+      <h3>Custom skills and pipelines, built for you.</h3>
+      <p>A separate engagement for teams that need more than operations.</p>
+      <ul class="proof-list">
+        <li>Bespoke agent skills designed and built</li>
+        <li>Data pipelines on your local AI stack</li>
+        <li>Workflow automation for your actual processes</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="onprem-proof">
+    <div class="onprem-proof-main">
+      <div class="onprem-k">We run what we ship</div>
+      <h3>The same practice powers our own paid products.</h3>
+      <p>Every service below runs on local GPUs we operate ourselves. The operations capability is not a promise — it is how Baryon works every day.</p>
+    </div>
+    <div class="onprem-services">
+      <a class="onprem-svc" href="https://chat.baryon.ai" target="_blank" rel="noopener">
+        <img class="svc-shot" src="assets/screens/chat-baryon-ai.jpg" alt="chat.baryon.ai — team LLM chat landing page" loading="lazy" />
+        <span class="svc-meta">
+          <span class="svc-route">chat.baryon.ai</span>
+          <span class="svc-desc">Team LLM chat · in paid production</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </span>
+      </a>
+      <a class="onprem-svc" href="https://cli.baryon.ai" target="_blank" rel="noopener">
+        <img class="svc-shot" src="assets/screens/cli-baryon-ai.jpg" alt="cli.baryon.ai — Baryon CLI documentation page" loading="lazy" />
+        <span class="svc-meta">
+          <span class="svc-route">cli.baryon.ai</span>
+          <span class="svc-desc">Terminal-native AI tooling</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </span>
+      </a>
+      <a class="onprem-svc" href="https://desktop.baryon.ai" target="_blank" rel="noopener">
+        <img class="svc-shot" src="assets/screens/desktop-baryon-ai.jpg" alt="desktop.baryon.ai — Baryon Desktop landing page" loading="lazy" />
+        <span class="svc-meta">
+          <span class="svc-route">desktop.baryon.ai</span>
+          <span class="svc-desc">Embedded AI desktop</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="onprem-partner">
+    <div class="onprem-partner-rows">
+      <p><strong>Hardware vendors &amp; distributors</strong> — we work as the deployment-and-operations backend behind your sales. You keep distribution, sales, and training; we take setup and operations. Complementary, not competing.</p>
+      <p><strong>AI &amp; AX training companies · in-house L&amp;D teams</strong> — we build and operate the hands-on environment behind your programs: local AI machines set up for practice, kept running after the course, with technical support for learners.</p>
+    </div>
+    <a class="btn btn-ghost" href="#inquiry">Ask about partnership →</a>
+  </div>
+</section>
+
+<!-- ════════════════ INQUIRY ════════════════ -->
+<section class="inquiry" id="inquiry" data-screen-label="02 Inquiry">
+  <div class="inquiry-head">
+    <div class="kicker"><span class="num">02</span><span>Inquiry</span></div>
+    <h2 class="section-head">
+      Tell us about<br/>
+      your <em>setup.</em>
+    </h2>
+    <p class="section-sub">
+      A few lines about your machines and what you want them to do.
+      We reply within one business day — by email, or by phone if you leave a number.
+    </p>
+  </div>
+
+  <div class="inquiry-grid">
+    <form class="inquiry-form" id="inquiry-form">
+      <div class="iq-row two">
+        <label class="iq-field">
+          <span class="iq-label iq-l-company">Company</span>
+          <input type="text" name="company" required autocomplete="organization" />
+        </label>
+        <label class="iq-field">
+          <span class="iq-label iq-l-name">Name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+      </div>
+      <div class="iq-row two">
+        <label class="iq-field">
+          <span class="iq-label iq-l-email">Email</span>
+          <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+        </label>
+        <label class="iq-field">
+          <span class="iq-label iq-l-phone">Phone <small>— leave a number if you prefer a call back</small></span>
+          <input type="tel" name="phone" placeholder="010-0000-0000" autocomplete="tel" />
+        </label>
+      </div>
+      <div class="iq-row">
+        <label class="iq-field">
+          <span class="iq-label iq-l-topic">Topic</span>
+          <select name="topic">
+            <option value="procure">Procurement</option>
+            <option value="manage" selected>Deployment &amp; operations</option>
+            <option value="train">Training</option>
+            <option value="support">Technical support</option>
+            <option value="consult">Consulting</option>
+            <option value="partnership">Partnership (vendor / training company)</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </div>
+      <div class="iq-row">
+        <label class="iq-field">
+          <span class="iq-label iq-l-message">Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+      </div>
+      <div class="iq-actions">
+        <button type="submit" class="btn btn-solid btn-lg iq-submit">Send inquiry →</button>
+        <p class="iq-fine">Goes straight to the Baryon team. No marketing, no third parties.</p>
+      </div>
+      <div class="iq-success" hidden>
+        <h4>Inquiry received.</h4>
+        <p>We will get back to you within one business day. If you left a phone number, we will call.</p>
+      </div>
+      <div class="iq-error" hidden>
+        <p>Something went wrong. Please email <a href="mailto:hello@baryon.ai">hello@baryon.ai</a> directly.</p>
+      </div>
+    </form>
+
+    <aside class="inquiry-side">
+      <div class="iq-side-block">
+        <div class="onprem-k">Prefer to talk?</div>
+        <h3>Phone consultations, on request.</h3>
+        <p>Leave your number in the form and pick a topic — we will call you back within one business day.</p>
+      </div>
+      <div class="iq-side-block">
+        <div class="onprem-k">Email</div>
+        <a class="iq-side-link" href="mailto:hello@baryon.ai">hello@baryon.ai</a>
+      </div>
+      <div class="iq-side-block">
+        <div class="onprem-k">Response time</div>
+        <p>Within one business day.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="nav-logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
+            <circle cx="21" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="3" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-word">Baryon<span class="logo-dim">labs</span></span>
+      </div>
+      <p class="foot-tag">AI from first principles.<br/>Seoul · global.</p>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Products</div>
+      <a href="https://chat.baryon.ai" target="_blank" rel="noopener">chat.baryon.ai</a>
+      <a href="https://cli.baryon.ai" target="_blank" rel="noopener">cli.baryon.ai</a>
+      <a href="https://desktop.baryon.ai" target="_blank" rel="noopener">desktop.baryon.ai</a>
+      <a href="https://www.miri.dev/" target="_blank" rel="noopener">miri.dev</a>
+      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">miridev-cli</a>
+      <a href="https://talkmode.baryon.ai/" target="_blank" rel="noopener">talkmode.baryon.ai</a>
+      <a href="http://vibecamp.us/" target="_blank" rel="noopener">vibecamp.us</a>
+      <a href="https://ai-native.vibecamp.us/" target="_blank" rel="noopener">ai-native.vibecamp.us</a>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Open</div>
+      <a href="https://github.com/baryonlabs" target="_blank" rel="noopener">github.com/baryonlabs</a>
+      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">npm</a>
+      <a href="https://huggingface.co/baryonlabs" target="_blank" rel="noopener">Hugging Face</a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=Baryon+Labs" target="_blank" rel="noopener">arXiv</a>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Talk</div>
+      <a href="https://discord.gg/baryonlabs" target="_blank" rel="noopener">Discord</a>
+      <a href="mailto:hello@baryon.ai">hello@baryon.ai</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+  </div>
+
+  <div class="foot-bot">
+    <span>© 2026 Baryon Labs, Inc.</span>
+    <span class="foot-mark">⌬</span>
+    <span>AI Innovation from the Ground Up.</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+// inquiry form → FormSubmit.co (same endpoint pattern as waitlist.js)
+(() => {
+  const form = document.getElementById('inquiry-form');
+  if (!form) return;
+  const successBox = form.querySelector('.iq-success');
+  const errorBox = form.querySelector('.iq-error');
+  const submitBtn = form.querySelector('.iq-submit');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const payload = {
+      company: (fd.get('company') || '').toString().trim(),
+      name: (fd.get('name') || '').toString().trim(),
+      email: (fd.get('email') || '').toString().trim(),
+      phone: (fd.get('phone') || '').toString().trim(),
+      topic: (fd.get('topic') || '').toString(),
+      message: (fd.get('message') || '').toString().trim(),
+      source: 'baryon.ai/service',
+      lang: document.documentElement.lang || 'en',
+      _subject: `[Baryon service inquiry] ${(fd.get('topic') || 'general')} — ${(fd.get('company') || '')}`
+    };
+    if (!payload.email || !payload.message) return;
+
+    const origLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '…';
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/hello@baryon.ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('http ' + res.status);
+      form.querySelectorAll('.iq-row, .iq-actions').forEach(el => el.hidden = true);
+      successBox.hidden = false;
+      errorBox.hidden = true;
+    } catch (err) {
+      console.warn('inquiry submission failed', err);
+      errorBox.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = origLabel;
+    }
+  });
+})();
+</script>
+</body>
+</html>
