@@ -3,11 +3,12 @@
 // Persisted in localStorage. Hooked to the .lang button in the nav.
 
 const KO_DICT = [
-  // ─── nav ───
-  ['.nav-dropdown > a[href="#paths"]', '경로'],
-  ['.nav-links a[href="#company"]',  '회사'],
-  ['.nav-links a[href="#proof"]',    '작동 방식'],
-  ['.nav-links a[href="#faq"]',      'FAQ'],
+  // ─── nav ─── ($= suffix match so the same dict works on index.html and products.html)
+  ['.nav-dropdown > a[href$="products.html"]', '제품'],
+  ['.nav-links a[href$="#company"]',  '회사'],
+  ['.nav-links a[href$="#onprem"]',   '서비스'],
+  ['.nav-links a[href$="#proof"]',    '작동 방식'],
+  ['.nav-links a[href$="#faq"]',      'FAQ'],
   ['.nav-submenu a:nth-child(1) .nav-path-desc', 'AI 팀을 운영하고 학습시키는 운영체제'],
   ['.nav-submenu a:nth-child(2) .nav-path-desc', 'AI가 하는 일을 실시간으로 보기'],
   ['.nav-submenu a:nth-child(3) .nav-path-desc', '진지한 코드베이스를 위한 AI 동료'],
@@ -16,14 +17,16 @@ const KO_DICT = [
 
   // ─── hero ───
   ['.hero-eyebrow span:last-child', '서울에서 빌드 · 어디서든 리서치'],
-  ['.hero-head', '먼저 시작하는<br/><em>AI Agent OS.</em>'],
-  ['.hero-sub',  '에이전트를 위한 운영체제 <strong>Nautilus</strong>, 에이전트가 뭘 하는지 보여주는 <strong>ROH</strong>, 그리고 그 위에서 동작하는 도구들 — 초 단위 과금, 견적도 SKU도 없습니다.'],
-  ['.hero-ctas .btn-solid', '경로 둘러보기 →'],
-  ['.hero-ctas .btn-ghost', '작동 방식 보기'],
+  ['.hero-head', '우리 회사에서 돌아가는 AI,<br/>도입부터 운영까지 <em>책임집니다.</em>'],
+  ['.hero-sub',  'Baryon Labs는 귀사의 장비 위에 AI 업무 환경을 만들어 드립니다. 장비 구매부터 구축·운영, 교육, 기술지원까지 — 저희가 매일 직접 쓰는 도구로 시작합니다.'],
+  ['.hero-ctas .btn-solid', '서비스 보기 →'],
+  ['.hero-ctas .btn-ghost', '제품 둘러보기'],
   ['.trust-label', '찾기'],
 
-  // ─── paths ───
-  ['.paths .kicker span:last-child', '경로'],
+  // ─── paths (/products page) ───
+  ['.paths .kicker span:last-child', '제품'],
+  ['.paths-foot .btn', '← 홈으로'],
+  ['.path-shot.placeholder small', '얼리 액세스'],
   ['.paths .section-head', '이미 만들어진 것 중<br/><em>맞는 것을 고르세요.</em>'],
   ['.paths .section-sub', '각 경로는 지금 바로 살펴볼 수 있는 제품으로 이어집니다. AI 팀을 운영하는 곳, 움직임을 보는 곳, 함께 일하는 곳, 말로 쓰는 곳 중 지금 하는 일에 맞는 것을 고르면 됩니다.'],
   ['.path-card:nth-child(1) .path-desc', 'AI 팀이 한 번 실행하고 끝나는 것이 아니라, 역할과 기억과 개선을 다음 사이클까지 이어가도록 돕습니다.'],
@@ -50,6 +53,35 @@ const KO_DICT = [
   ['.company-card:nth-child(3) .company-k', '어떻게 보면 좋은가'],
   ['.company-card:nth-child(3) h3', '당신의 역할에 맞는 경로부터.'],
   ['.company-card:nth-child(3) p', '루트는 짧게 두고, 제품 페이지에 스크린샷, 설치, 구현 세부를 담습니다. 필요한 만큼만 깊게 들어가면 됩니다.'],
+
+  // ─── service (on-prem) ───
+  ['.onprem .kicker span:last-child', '서비스'],
+  ['.onprem .section-head', 'DGX Spark가 계속 <em>일하도록</em><br/>운용을 책임집니다.'],
+  ['.onprem .section-sub', 'Baryon Labs는 온프레미스 AI 장비의 운용 서비스를 제공합니다. DGX Spark 한 대부터 랙 단위까지 — 장비 구매를 대행하고, AI 환경을 구축·운영으로 관리하고, 쓰는 사람을 교육하고, 기술지원과 컨설팅을 이어갑니다.'],
+  ['.onprem-grid .onprem-card:nth-child(1) .onprem-k', '구매 대행'],
+  ['.onprem-grid .onprem-card:nth-child(1) h3', '사면 끝이 아니라, 사기 전부터.'],
+  ['.onprem-grid .onprem-card:nth-child(1) p', '업무에 맞는 장비 선정부터 스펙 검토, 벤더 조율, 입고까지 구매 과정을 대행합니다. 도착하는 장비가 실제 일에 맞는 장비가 되게 합니다.'],
+  ['.onprem-grid .onprem-card:nth-child(2) .onprem-k', '운용 관리'],
+  ['.onprem-grid .onprem-card:nth-child(2) h3', '구축부터 일상 운영까지.'],
+  ['.onprem-grid .onprem-card:nth-child(2) p', '도입하신 장비 위에 모델, 서빙, 팀 챗, 개발 도구까지 로컬 스택 전체를 세팅하고 — 모니터링, 업데이트, 모델 교체, 장애 대응까지 매달 책임지고 운영합니다.'],
+  ['.onprem-grid .onprem-card:nth-child(3) .onprem-k', '교육'],
+  ['.onprem-grid .onprem-card:nth-child(3) h3', '쓰는 사람을 위한 교육.'],
+  ['.onprem-grid .onprem-card:nth-child(3) p', '온보딩과 실무 중심 교육으로 로컬 AI를 일상 업무의 일부로 만듭니다. 도구 사용법부터 실제 업무에 맞춘 팀 워크플로우까지.'],
+  ['.onprem-grid .onprem-card:nth-child(4) .onprem-k', '기술지원'],
+  ['.onprem-grid .onprem-card:nth-child(4) h3', '설치 이후에도 계속되는 기술지원.'],
+  ['.onprem-grid .onprem-card:nth-child(4) p', '현장·원격 기술지원으로 문제를 빠르게 풀고 현업의 질문에 답합니다. 모델과 도구가 빠르게 바뀌어도 환경이 따라가게 유지합니다.'],
+  ['.onprem-grid .onprem-card:nth-child(5) .onprem-k', '컨설팅'],
+  ['.onprem-grid .onprem-card:nth-child(5) h3', '전용 스킬·파이프라인 구축.'],
+  ['.onprem-grid .onprem-card:nth-child(5) p', '운영을 넘어서는 요구를 위한 별도 프로그램입니다. 귀사의 로컬 AI 스택 위에 전용 에이전트 스킬, 데이터 파이프라인, 업무 자동화를 설계·구축합니다.'],
+  ['.onprem-proof-main .onprem-k', '만든 것을 직접 씁니다'],
+  ['.onprem-proof-main h3', '같은 운영 역량으로 자사 유료 제품을 돌립니다.'],
+  ['.onprem-proof-main p', '아래 서비스는 모두 저희가 직접 운영하는 로컬 GPU 위에서 돌아갑니다. 운영 역량은 약속이 아니라, Baryon이 매일 일하는 방식입니다.'],
+  ['.onprem-services .onprem-svc:nth-child(1) .svc-desc', '팀용 LLM 챗 · 유상 운영 중'],
+  ['.onprem-services .onprem-svc:nth-child(2) .svc-desc', '터미널 내재화 AI 도구'],
+  ['.onprem-services .onprem-svc:nth-child(3) .svc-desc', '임베드 AI 데스크톱'],
+  ['.onprem-partner-rows p:nth-child(1)', '<strong>하드웨어 벤더·유통사</strong> — 판매 이후의 구축·운영을 백엔드에서 맡습니다. 유통·판매·교육은 귀사가, 구축·운영은 저희가. 사업 영역이 겹치지 않는 보완 구조입니다.'],
+  ['.onprem-partner-rows p:nth-child(2)', '<strong>AI·AX 교육 업체 · 사내 교육 담당자</strong> — 교육 뒤에 남는 실습 환경을 만들고 운영합니다. 로컬 AI 장비 위 실습 환경 구축부터 과정 이후의 운영, 수강생 기술지원까지 함께합니다.'],
+  ['.onprem-partner .btn', '제휴 문의하기 →'],
 
   // ─── products intro ───
   ['.products-intro .kicker span:last-child', '우리가 만드는 것'],
@@ -278,10 +310,11 @@ const KO_DICT = [
 
   // ─── footer ───
   ['.foot-tag', '제1원리에서 시작하는 AI.<br/>서울 · 글로벌.'],
-  ['.foot-top .foot-col:nth-of-type(1) .foot-h', '제품'],
-  ['.foot-top .foot-col:nth-of-type(2) .foot-h', '오픈'],
-  ['.foot-top .foot-col:nth-of-type(3) .foot-h', '소통'],
-  ['.foot-top .foot-col:nth-of-type(3) a[href="#faq"]', 'FAQ'],
+  // .foot-brand is also a div, so .foot-col columns are nth-of-type 2..4
+  ['.foot-top .foot-col:nth-of-type(2) .foot-h', '제품'],
+  ['.foot-top .foot-col:nth-of-type(3) .foot-h', '오픈'],
+  ['.foot-top .foot-col:nth-of-type(4) .foot-h', '소통'],
+  ['.foot-top .foot-col:nth-of-type(4) a[href$="#faq"]', 'FAQ'],
   ['.foot-bot span:last-child', '제1원리에서 시작하는 AI 혁신.'],
 
   // ─── waitlist modal ───

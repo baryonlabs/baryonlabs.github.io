@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Baryon Labs — Products</title>
+<meta name="description" content="Baryon Labs products: Nautilus OS, ROH, miri.dev, miridev-cli, and TalkMode — tools for running, watching, and working with AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ════════════════ AMBIENT BACKDROP ════════════════ -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"></div>
+
+<!-- ════════════════ NAV ════════════════ -->
+<header class="nav">
+  <a class="nav-logo" href="index.html">
+    <span class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
+        <circle cx="21" cy="12" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="12" r="1.5" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="logo-word">Baryon<span class="logo-dim">labs</span></span>
+  </a>
+  <nav class="nav-links">
+    <div class="nav-item nav-dropdown">
+      <a href="products.html">Products</a>
+      <div class="nav-submenu">
+        <a href="https://nautilus-os.baryon.ai/" target="_blank" rel="noopener">
+          <span class="nav-path">/nautilus</span>
+          <span class="nav-path-desc">a workspace for running AI teams</span>
+        </a>
+        <a href="#" data-waitlist="ROH">
+          <span class="nav-path">/roh</span>
+          <span class="nav-path-desc">see what your AI is doing live</span>
+        </a>
+        <a href="https://www.miri.dev/" target="_blank" rel="noopener">
+          <span class="nav-path">/miri</span>
+          <span class="nav-path-desc">an AI colleague for serious codebases</span>
+        </a>
+        <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">
+          <span class="nav-path">/miridev</span>
+          <span class="nav-path-desc">bring the same assistant into your workflow</span>
+        </a>
+        <a href="https://talkmode.baryon.ai/" target="_blank" rel="noopener">
+          <span class="nav-path">/talkmode</span>
+          <span class="nav-path-desc">a voice assistant that lives on your Mac</span>
+        </a>
+      </div>
+    </div>
+    <a href="index.html#company">Company</a>
+    <a href="index.html#onprem">Service</a>
+    <a href="index.html#proof">How it works</a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+  <div class="nav-cta">
+    <button class="lang" data-lang="en" aria-label="Toggle language">
+      <span class="lang-opt" data-set="ko">🇰🇷<span class="lang-code">KO</span></span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-set="en">🇺🇸<span class="lang-code">EN</span></span>
+    </button>
+    <a class="btn btn-ghost" href="https://github.com/baryonlabs" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      github.com/baryonlabs
+    </a>
+    <a class="btn btn-solid" href="mailto:hello@baryon.ai">Get in touch</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ════════════════ PATHS ════════════════ -->
+<section class="paths page" id="paths" data-screen-label="01 Products">
+  <div class="paths-head">
+    <div class="kicker"><span class="num">01</span><span>Products</span></div>
+    <h2 class="section-head">
+      Start with what is<br/>
+      already <em>built.</em>
+    </h2>
+    <p class="section-sub">
+      Each path leads to a product you can explore now: one to run AI teams, one to watch them,
+      one to work beside them, and one to speak to them. Start with the one that fits your work.
+    </p>
+  </div>
+
+  <div class="path-grid">
+    <a class="path-card" href="https://nautilus-os.baryon.ai/" target="_blank" rel="noopener">
+      <img class="path-shot" src="assets/screens/nautilus-os.jpg" alt="Nautilus Agent OS landing page" loading="lazy" />
+      <div class="path-icon">◌</div>
+      <div class="path-route">/nautilus</div>
+      <div class="path-name">Nautilus OS</div>
+      <p class="path-desc">Run an AI team that does not just execute tasks, but keeps memory, roles, and improvement from one cycle to the next.</p>
+      <span class="path-link">Open product ↗</span>
+    </a>
+
+    <a class="path-card" href="#" data-waitlist="ROH">
+      <span class="path-shot placeholder" aria-hidden="true">◎<small>Early access</small></span>
+      <div class="path-icon">◎</div>
+      <div class="path-route">/roh</div>
+      <div class="path-name">ROH</div>
+      <p class="path-desc">Watch your AI's decisions unfold live, so delays, mistakes, and handoffs are visible before they become problems.</p>
+      <span class="path-link">See how it works ↗</span>
+    </a>
+
+    <a class="path-card" href="https://www.miri.dev/" target="_blank" rel="noopener">
+      <img class="path-shot" src="assets/screens/miri-dev.jpg" alt="miri.dev landing page" loading="lazy" />
+      <div class="path-icon">M</div>
+      <div class="path-route">/miri</div>
+      <div class="path-name">miri.dev</div>
+      <p class="path-desc">An AI collaborator for real software teams that can understand a codebase and help move work forward responsibly.</p>
+      <span class="path-link">Open product ↗</span>
+    </a>
+
+    <a class="path-card" href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">
+      <img class="path-shot" src="assets/screens/miridev-cli.jpg" alt="Baryon Labs GitHub organization page" loading="lazy" />
+      <div class="path-icon">&gt;_</div>
+      <div class="path-route">/miridev</div>
+      <div class="path-name">miridev-cli</div>
+      <p class="path-desc">Take the same assistant into day-to-day delivery work, from local tasks to automated pipelines and team operations.</p>
+      <span class="path-link">Install from npm ↗</span>
+    </a>
+
+    <a class="path-card" href="https://talkmode.baryon.ai/" target="_blank" rel="noopener">
+      <img class="path-shot" src="assets/screens/talkmode.jpg" alt="TalkMode landing page" loading="lazy" />
+      <div class="path-icon">✦</div>
+      <div class="path-route">/talkmode</div>
+      <div class="path-name">TalkMode</div>
+      <p class="path-desc">A voice assistant for Mac that feels immediate, private, and natural enough to use in the middle of real work.</p>
+      <span class="path-link">Open TalkMode ↗</span>
+    </a>
+  </div>
+
+  <div class="paths-foot">
+    <a class="btn btn-ghost" href="index.html">← Back to home</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="nav-logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
+            <circle cx="21" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="3" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-word">Baryon<span class="logo-dim">labs</span></span>
+      </div>
+      <p class="foot-tag">AI from first principles.<br/>Seoul · global.</p>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Products</div>
+      <a href="https://chat.baryon.ai" target="_blank" rel="noopener">chat.baryon.ai</a>
+      <a href="https://cli.baryon.ai" target="_blank" rel="noopener">cli.baryon.ai</a>
+      <a href="https://desktop.baryon.ai" target="_blank" rel="noopener">desktop.baryon.ai</a>
+      <a href="https://www.miri.dev/" target="_blank" rel="noopener">miri.dev</a>
+      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">miridev-cli</a>
+      <a href="https://talkmode.baryon.ai/" target="_blank" rel="noopener">talkmode.baryon.ai</a>
+      <a href="http://vibecamp.us/" target="_blank" rel="noopener">vibecamp.us</a>
+      <a href="https://ai-native.vibecamp.us/" target="_blank" rel="noopener">ai-native.vibecamp.us</a>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Open</div>
+      <a href="https://github.com/baryonlabs" target="_blank" rel="noopener">github.com/baryonlabs</a>
+      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">npm</a>
+      <a href="https://huggingface.co/baryonlabs" target="_blank" rel="noopener">Hugging Face</a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=Baryon+Labs" target="_blank" rel="noopener">arXiv</a>
+    </div>
+
+    <div class="foot-col">
+      <div class="foot-h">Talk</div>
+      <a href="https://discord.gg/baryonlabs" target="_blank" rel="noopener">Discord</a>
+      <a href="mailto:hello@baryon.ai">hello@baryon.ai</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+  </div>
+
+  <div class="foot-bot">
+    <span>© 2026 Baryon Labs, Inc.</span>
+    <span class="foot-mark">⌬</span>
+    <span>AI Innovation from the Ground Up.</span>
+  </div>
+</footer>
+
+<!-- Waitlist modal -->
+<div id="waitlist-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="waitlist-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal-body">
+      <div class="modal-eyebrow">
+        <span class="modal-pulse"></span>
+        <span class="modal-product">Nautilus OS</span><span class="modal-eyebrow-sep"> · </span><span class="modal-eyebrow-label">Early access</span>
+      </div>
+      <h3 class="modal-h" id="waitlist-title">Join the <em>waitlist.</em></h3>
+      <p class="modal-sub">We'll email you when <span class="modal-product">this product</span> opens. No marketing. No third parties.</p>
+      <form class="modal-form" id="waitlist-form">
+        <div class="modal-input-row">
+          <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+          <button type="submit" class="modal-submit">
+            <span class="modal-submit-label">Get on the list</span>
+            <span aria-hidden="true"> →</span>
+          </button>
+        </div>
+        <input type="hidden" name="product" value="" />
+        <input type="hidden" name="source" value="baryon.ai/products" />
+        <p class="modal-fine">By submitting you agree we may email you about <span class="modal-product">this product</span>. We won't share it.</p>
+      </form>
+      <div class="modal-success" hidden>
+        <div class="ms-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5 11-11"/></svg>
+        </div>
+        <h4 class="modal-success-h">You're on the list.</h4>
+        <p class="modal-success-p">We'll email <strong class="ms-email">you</strong> when <span class="modal-product">this product</span> is ready.</p>
+        <button type="button" class="modal-success-btn" data-close>Close</button>
+      </div>
+      <div class="modal-error" hidden>
+        <p>Something went wrong. Try again or email <a href="mailto:hello@baryon.ai">hello@baryon.ai</a> directly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="waitlist.js"></script>
+</body>
+</html>
