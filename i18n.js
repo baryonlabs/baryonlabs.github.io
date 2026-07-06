@@ -293,20 +293,9 @@ const KO_DICT = [
 
   // ─── notices ───
   ['.seminars .kicker span:last-child', '공지'],
-  ['.seminars .section-head', '만나서 같이,<br/><em>에이전트팀 만들기.</em>'],
-  ['.seminars .section-sub', '루트에서는 지금 열려 있는 정기 주말 모임만 짧게 보여줍니다. 자세한 안내와 등록은 Luma에서 이어집니다.'],
-  ['.seminar.recurring .sem-tag', '<span>정기</span> <span class="sem-dot">·</span> <span>주말 모임</span>'],
-  ['.seminar.recurring .sem-badge', '<span class="sem-badge-l">매주 일요일</span>'],
-  ['.seminar.recurring .sem-h', '정기 주말<br/><em>당근 모임.</em>'],
-  ['.seminar.recurring .sem-body', 'AI를 실제 일에 붙여 쓰는 사람들을 위한 정기 모임입니다. 데모, 짧은 발표, 질문, 그리고 실제로 무엇이 나가고 있는지에 대한 대화를 나눕니다.'],
-  ['.seminar.recurring .sem-row:nth-of-type(1) .sm-l', '주기'],
-  ['.seminar.recurring .sem-row:nth-of-type(1) .sm-v', '매주'],
-  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-l', '요일'],
-  ['.seminar.recurring .sem-row:nth-of-type(2) .sm-v', '일요일'],
-  ['.seminar.recurring .sem-row:nth-of-type(3) .sm-l', '안내'],
-  ['.seminar.recurring .sem-row:nth-of-type(3) .sm-v', 'Luma 캘린더'],
-  ['.seminar.recurring .sem-cta', '일정 보기 <span aria-hidden="true">↗</span>'],
-  ['.seminars-foot .btn', 'Luma에서 전체 모임 보기 ↗'],
+  ['.seminars .section-head', '정기 <em>온라인 교육.</em>'],
+  ['.seminars .section-sub', 'AI 에이전트를 만들고 함께 일하는 법을 다루는 정기 온라인 교육을 운영합니다. 일정과 등록은 Luma에서 확인하세요.'],
+  ['.seminars-foot .btn', 'Luma에서 일정 보기 ↗'],
 
   // ─── footer ───
   ['.foot-tag', '제1원리에서 시작하는 AI.<br/>서울 · 글로벌.'],
