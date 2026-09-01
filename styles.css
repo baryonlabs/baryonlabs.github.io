@@ -1,24 +1,26 @@
 /* ════════════════ BARYON LABS — styles ════════════════ */
 
 :root {
-  /* match baryon.ai brand — #0A0E27 cool deep navy */
-  --bg:        oklch(0.135 0.045 270);
-  --bg-2:      oklch(0.18 0.045 268);
-  --surface:   oklch(0.21 0.045 268);
-  --surface-2: oklch(0.26 0.04 268);
-  --line:      oklch(0.38 0.03 268 / 0.55);
-  --line-2:    oklch(0.46 0.03 268 / 0.40);
-  --text:      oklch(0.97 0.005 240);
-  --text-dim:  oklch(0.76 0.01 240);
-  --text-mute: oklch(0.56 0.015 240);
-  --accent:    oklch(0.78 0.14 235);   /* cool electric blue — matches cosmic/baryon theme */
-  --accent-2:  oklch(0.72 0.16 245);
-  --accent-warm: oklch(0.82 0.13 75);  /* warm amber retained for select highlights */
-  --danger:    oklch(0.68 0.18 25);
-  --ok:        oklch(0.78 0.14 155);
+  /* 계측 오렌지 · 인더스트리얼 — light instrument-panel theme */
+  --bg:        #F4F4F2;   /* light grey ground */
+  --bg-2:      #FFFFFF;
+  --surface:   #FFFFFF;   /* cards/panels */
+  --surface-2: #ECECEA;
+  --line:      #D8D8D4;
+  --line-2:    #C6C6C2;
+  --text:      #1A1C1E;   /* ink */
+  --text-dim:  #4A4E52;
+  --text-mute: #6B6F73;
+  --accent:    #FF4F00;   /* safety orange — CTA, emphasis */
+  --accent-2:  #E24700;
+  --accent-warm: #FF4F00;
+  --danger:    #D6402A;
+  --ok:        #1E7A46;
+  --ink-bar:   #1A1C1E;   /* the single dark region (nav / closing block) */
+  --hazard:    repeating-linear-gradient(45deg, #FF4F00 0 6px, #1A1C1E 6px 12px);
 
-  --display: 'Instrument Serif', 'Times New Roman', serif;
-  --sans:    'Geist', 'Pretendard Variable', Pretendard, ui-sans-serif, system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --display: 'Gothic A1', 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', sans-serif;
+  --sans:    'Pretendard Variable', Pretendard, ui-sans-serif, system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif;
   --mono:    'Geist Mono', ui-monospace, 'JetBrains Mono', monospace;
 
   --maxw: 1280px;
@@ -45,8 +47,8 @@ body {
      · line-height +0.15–0.25 to keep 종성-heavy lines breathable
    We apply this via :root[lang="ko"] overrides on font-size and line-height per role. */
 :root[lang="ko"] {
-  --display: 'Nanum Myeongjo', 'Instrument Serif', 'Times New Roman', serif;
-  --sans: 'Pretendard Variable', Pretendard, 'Geist', ui-sans-serif, system-ui, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --display: 'Gothic A1', 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', sans-serif;
+  --sans: 'Pretendard Variable', Pretendard, ui-sans-serif, system-ui, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 }
 :root[lang="ko"] body {
   font-size: 15px;          /* down ~1pt from 16px */
@@ -2806,3 +2808,192 @@ html { overflow-x: clip; }
   .lang { padding: 3px; }
   .nav-cta .btn-solid { padding: 7px 10px; font-size: 12.5px; }
 }
+
+/* ════════════════ INDUSTRIAL RETHEME — 계측 오렌지 ════════════════
+   Light instrument-panel look: #F4F4F2 ground, white cards, safety-orange
+   accent, squared 2px corners, hazard-stripe details. Overrides the legacy
+   dark-theme rules above; tokens live in :root. */
+
+/* ── ambient: kill dark decorations, keep a faint graph-paper grid ── */
+.bg-aurora, .bg-orbit, .bg-particles { display: none; }
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(26, 28, 30, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 28, 30, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: none;
+  -webkit-mask-image: none;
+  opacity: 1;
+}
+.hero::before, .hero::after { display: none; }
+.endcta::before { display: none; }
+
+/* ── typography: Gothic A1 800 headlines, no italics anywhere ── */
+.hero-head, .section-head, .endcta-h, .modal-h, .sem-h, .camp-h, .ai-h,
+.prod-line, .modal-success-h {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.faq-list summary { font-style: normal; font-weight: 800; letter-spacing: -0.02em; }
+.foot-tag, .num-n, .cs-n, .m-name, .meter-amt, .vs-divider, .tm-brand, .t-t { font-style: normal; }
+.hero-head em, .section-head em, .endcta-h em, .modal-h em, .sem-h em,
+.camp-h em, .ai-h em, .prod-line em, .foot-tag em {
+  font-style: normal;
+  font-weight: 800;
+}
+:root[lang="ko"] .num-n, :root[lang="ko"] .cs-n { font-family: var(--display); font-style: normal; }
+:root[lang="ko"] .sm-v { font-family: var(--display); font-style: normal; }
+.nav-logo { font-family: var(--display); font-style: normal; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+.logo-word, .logo-dim { font-style: normal; }
+
+/* ── squared instrument corners ── */
+.btn, .hero-eyebrow, .trust-chip, .pipe-chip, .lang, .lang-opt,
+.onprem-card, .company-card, .path-card, .repo, .seminar,
+.onprem-proof, .onprem-partner, .onprem-svc, .svc-shot, .path-shot, .path-icon,
+.hv-card, .hv-chat, .hv-row, .hv-bubble, .hv-ic, .hv-bar, .onprem-ic,
+.iq-field input, .iq-field select, .iq-field textarea, .inquiry-form, .iq-side-block,
+.modal-card, .modal-close, .modal-eyebrow, .modal-input-row, .modal-submit,
+.modal-success-btn, .modal-error, .ms-icon,
+.prod-tag, .proof-chip, .sem-badge, .vs-step, .repo-tag,
+.nav-submenu, .nav-submenu a, .faq-list summary::after {
+  border-radius: 2px;
+}
+
+/* ── nav: the black bar (single dark region besides the closing block) ── */
+.nav {
+  --bg: #1A1C1E;
+  --bg-2: #232527;
+  --surface: #2E3033;
+  --surface-2: #3A3C3F;
+  --text: #F4F4F2;
+  --text-dim: #C9CBCE;
+  --text-mute: #8E9296;
+  --line: rgba(244, 244, 242, 0.22);
+  --line-2: rgba(244, 244, 242, 0.34);
+  background: var(--ink-bar);
+  color: var(--text);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(244, 244, 242, 0.12);
+}
+.nav-submenu {
+  background: #232527;
+  box-shadow: 0 8px 24px rgba(26, 28, 30, 0.35);
+}
+
+/* ── buttons: orange solid, ink outline ── */
+.btn-solid {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-solid:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+.btn-ghost {
+  border: 1.5px solid var(--text);
+  color: var(--text);
+  background: transparent;
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── cards: flat white, hairline border, minimal shadow ── */
+.onprem-card, .company-card, .path-card, .repo, .seminar,
+.onprem-proof, .onprem-svc, .inquiry-form, .iq-side-block {
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(26, 28, 30, 0.05);
+}
+.onprem-partner { background: var(--surface); }
+.trust-chip, .pipe-chip, .hero-eyebrow { background: var(--surface); }
+.trust-chip:hover { background: var(--surface); color: var(--text); }
+.onprem-ic, .path-icon { background: var(--bg); }
+
+/* ── hero visual panel: white card + hazard-stripe rows ── */
+.hv-card {
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(26, 28, 30, 0.08);
+}
+.hv-chat { background: var(--bg); }
+.hv-bubble { background: var(--surface); border-color: var(--line); }
+.hv-bubble::after { background: var(--surface); border-color: var(--line); }
+.hv-bar { background: #E8E8E4; }
+.hv-row {
+  position: relative;
+  background: var(--surface);
+  padding-left: 27px;
+}
+.hv-row::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 5px;
+  background: var(--hazard);
+}
+.hv-ic { background: rgba(255, 79, 0, 0.08); }
+
+/* ── kicker: hazard tab + ink label ── */
+.kicker {
+  position: relative;
+  padding-left: 30px;
+  color: var(--text-dim);
+}
+.kicker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 10px;
+  background: var(--hazard);
+}
+
+/* ── pipeline: measure card (5th) in full safety orange ── */
+#onprem .onprem-grid .onprem-card:nth-child(5) {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+#onprem .onprem-grid .onprem-card:nth-child(5) .onprem-k,
+#onprem .onprem-grid .onprem-card:nth-child(5) h3 { color: #fff; }
+#onprem .onprem-grid .onprem-card:nth-child(5) .onprem-ic {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ── closing block: endcta + footer as the dark bookend ── */
+.endcta, .foot {
+  --bg: #1A1C1E;
+  --bg-2: #232527;
+  --surface: #2E3033;
+  --text: #F4F4F2;
+  --text-dim: #C9CBCE;
+  --text-mute: #8E9296;
+  --line: rgba(244, 244, 242, 0.2);
+  background: var(--ink-bar);
+  color: var(--text);
+}
+.endcta { border-top: none; }
+.foot { border-top: 1px solid rgba(244, 244, 242, 0.12); }
+
+/* ── modal: white card on light backdrop ── */
+.modal-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 40px rgba(26, 28, 30, 0.18);
+}
+.modal-backdrop { background: rgba(26, 28, 30, 0.35); }
+.modal-submit { color: #fff; }
+.modal-submit:hover:not(:disabled) { background: var(--text); color: var(--bg); }
+.modal-input-row { background: var(--bg); }
+
+/* ── contrast/finish touches ── */
+.faq-list summary::after { color: var(--accent); border-color: var(--line-2); }
+.svc-shot { border-bottom-color: var(--line); }
+.iq-field input, .iq-field select, .iq-field textarea { background: var(--bg); }
+.proof-card { box-shadow: 0 2px 8px rgba(26, 28, 30, 0.05); background: var(--surface); }
