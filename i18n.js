@@ -22,6 +22,9 @@ const KO_DICT = [
   ['.hero-ctas .btn-solid', '30초 체험 →'],
   ['.hero-ctas .btn-ghost', '도입 상담'],
   ['.trust-label', '찾기'],
+  ['.hero-visual .hv-row:nth-child(1) .hv-label', '실행 기록'],
+  ['.hero-visual .hv-row:nth-child(2) .hv-label', '근거 인용'],
+  ['.hero-visual .hv-row:nth-child(3) .hv-label', '산출물 저장'],
 
   // ─── paths (/products page) ───
   ['.paths .kicker span:last-child', '제품'],
@@ -77,6 +80,10 @@ const KO_DICT = [
   ['#onprem .onprem-grid .onprem-card:nth-child(6) .onprem-k', '6 · 전환'],
   ['#onprem .onprem-grid .onprem-card:nth-child(6) h3', '반복되는 성공이 파이프라인이 됩니다.'],
   ['#onprem .onprem-grid .onprem-card:nth-child(6) p', '반복되는 실행을 조직의 업무 파이프라인과 정책으로 고정합니다 — 운영 전후를 동일 지표로 비교합니다.'],
+  ['#onprem .pipe-chips .pipe-chip:nth-child(1) .pc-t', '실행 기록 · 자동'],
+  ['#onprem .pipe-chips .pipe-chip:nth-child(2) .pc-t', '근거 인용 · 추적'],
+  ['#onprem .pipe-chips .pipe-chip:nth-child(3) .pc-t', '비용 집계 · 프로젝트별'],
+  ['#onprem .pipe-chips .pipe-chip:nth-child(4) .pc-t', '산출물 이력 · 보관'],
   ['#onprem .onprem-proof-main .onprem-k', '유상 운영 중'],
   ['#onprem .onprem-proof-main h3', '숫자는 우리가 주장하지 않습니다. 귀사의 실행이 기록합니다.'],
   ['#onprem .onprem-proof-main p', '한화에어로스페이스·한화시스템, 아라, 신영, 한중엔시에스가 실제 업무를 돌리고 있으며 — 아라는 단기 온보딩에서 API 연동 기반 상시 운영으로 전환했습니다. 모든 실행은 기록·근거 인용·비용·산출물을 자동으로 남깁니다.'],
