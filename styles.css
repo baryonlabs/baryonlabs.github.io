@@ -2785,3 +2785,24 @@ button { font: inherit; cursor: pointer; }
 }
 :root[lang="ko"] .hv-label { letter-spacing: -0.02em; }
 :root[lang="ko"] .pipe-chip { font-size: 13px; letter-spacing: -0.01em; }
+
+/* ──────── mobile: no horizontal overflow ──────── */
+/* clip stray layout overflow at the root (body already hides overflow-x) */
+html { overflow-x: clip; }
+/* nav is the main offender at phone widths: logo + lang toggle + CTA don't fit.
+   Compact each piece instead of letting the row overflow. */
+@media (max-width: 640px) {
+  .nav { gap: 12px; }
+  .nav-logo { font-size: 19px; gap: 8px; }
+  .nav-logo .logo-mark { width: 22px; height: 22px; }
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn-solid { padding: 8px 12px; font-size: 13px; }
+  .lang-code { display: none; }
+  .lang-opt { padding: 3px 7px; }
+}
+@media (max-width: 430px) {
+  .logo-dim { display: none; }
+  .lang-sep { display: none; }
+  .lang { padding: 3px; }
+  .nav-cta .btn-solid { padding: 7px 10px; font-size: 12.5px; }
+}
