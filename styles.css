@@ -3304,3 +3304,87 @@ html { overflow-x: clip; }
   border-color: rgba(244, 244, 242, 0.25);
   box-shadow: none;
 }
+
+/* ── build-first sprint (service page, PoC-first model) ── */
+.method-k {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 38px 0 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.method-k.mk-1 { margin-top: 0; }
+.method-k::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+.sprint {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(26, 28, 30, 0.05);
+  margin-bottom: 22px;
+}
+.sprint > h3 {
+  margin: 0 0 20px;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.sprint-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.sp-step {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--bg);
+}
+.sp-num {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.sp-t { margin: 0 0 6px; font-weight: 700; font-size: 15.5px; color: var(--text); }
+.sp-d { margin: 0; color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+.sprint-cond { margin-bottom: 18px; max-width: 560px; }
+.sc-l {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.sprint-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.sprint-safe { display: flex; flex-wrap: wrap; gap: 10px; }
+.onprem-partner-rows a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 880px) {
+  .sprint-steps { grid-template-columns: 1fr; }
+}
+:root[lang="ko"] .sp-d { font-size: 13.5px; line-height: 1.65; word-break: keep-all; }
