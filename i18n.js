@@ -137,7 +137,6 @@ const KO_DICT = [
   ['.inquiry .kicker span:last-child', '문의'],
   ['.inquiry .section-head', '어떤 업무부터 시작할지<br/><em>들려주세요.</em>'],
   ['.inquiry .section-sub', '조직 규모와 측정하고 싶은 업무를 몇 줄이면 충분합니다. 1영업일 안에 회신드리고, 전화번호를 남기시면 전화로 연락드립니다.'],
-  ['.iq-l-company', '회사명'],
   ['.iq-l-name', '성함'],
   ['.iq-l-email', '이메일'],
   ['.iq-l-phone', '전화번호 <small>— 전화 상담을 원하시면 남겨 주세요</small>'],
