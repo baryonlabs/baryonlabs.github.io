@@ -16,8 +16,8 @@ const KO_DICT = [
   ['.nav-submenu a:nth-child(5) .nav-path-desc', 'Mac 안에 사는 음성 비서'],
 
   // ─── hero ───
-  ['.hero-eyebrow span:last-child', '서울에서 빌드 · 어디서든 리서치'],
-  ['.hero-head', 'AX 도입 효과,<br/>업무 실행 데이터로 <em>증명합니다.</em>'],
+  ['.hero-eyebrow span:last-child', 'AI 도입 효과 측정 서비스'],
+  ['.hero-head', 'AI 도입 효과,<br/>업무 실행 데이터로 <em>증명합니다.</em>'],
   ['.hero-sub',  '바리온 AI 업무 파이프라인은 AI 도입이 실제로 무엇을 바꿨는지, 운영 전후 동일 지표로 측정합니다.'],
   ['.hero-ctas .btn-solid', '30초 체험 →'],
   ['.hero-ctas .btn-ghost', '도입 상담'],
@@ -46,12 +46,12 @@ const KO_DICT = [
   // ─── company ───
   ['.company .kicker span:last-child', '회사'],
   ['.company .section-head', '왜 측정인가 —<br/>그리고 왜 <em>우리인가.</em>'],
-  ['.company .section-sub', '국내 대표 상장사들의 2년간 AI 도입 활동을 분석했습니다. 공백은 교육이 아니라, 실행 이후의 측정이었습니다.'],
+  ['.company .section-sub', '국내 대표 상장사들의 2년간 AI 도입 활동을 분석했습니다. 비어 있던 곳은 실행 이후의 측정이었습니다.'],
   ['.company-card:nth-child(1) .company-k', '우리가 발견한 공백'],
   ['.company-card:nth-child(1) h3', '모두가 업무를 재설계하지만, 측정하는 곳은 없었습니다.'],
   ['.company-card:nth-child(1) p', '업무 재설계는 기록 어디에나 있었지만, 효과·ROI 측정만 유일하게 비어 있었습니다 (바리온랩스 연구 BL-IA-2026-03).'],
   ['.company-card:nth-child(2) .company-k', '이미 신뢰하는 조직'],
-  ['.company-card:nth-child(2) h3', '데모가 아니라 실납품입니다.'],
+  ['.company-card:nth-child(2) h3', '실제 조직에 납품한 제품입니다.'],
   ['.company-card:nth-child(2) p', '한화에어로스페이스, 아라, 연세대, 알파코, 멋쟁이사자처럼, 당근 — 같은 제품 위에서 교육과 운영을 납품했습니다.'],
   ['.company-card:nth-child(3) .company-k', '만든 것을 직접 씁니다'],
   ['.company-card:nth-child(3) h3', '우리 사업 자체가 이 파이프라인 위에서 돌아갑니다.'],
@@ -60,7 +60,7 @@ const KO_DICT = [
   // ─── product (index #onprem) ───
   ['#onprem .kicker span:last-child', '제품'],
   ['#onprem .section-head', '실행에서 증명까지,<br/><em>하나의 파이프라인.</em>'],
-  ['#onprem .section-sub', 'AI 도입이 무엇을 바꿨는지 설명할 수 있는 조직은 드뭅니다. 실행과 측정을 하나의 흐름으로 연결해, 일하는 과정 자체가 성과의 근거가 됩니다.'],
+  ['#onprem .section-sub', 'AI 도입이 무엇을 바꿨는지 설명할 수 있는 조직은 드뭅니다. 저희는 실행과 측정을 한 흐름으로 묶습니다. 일한 과정이 그대로 성과의 근거로 남습니다.'],
   ['#onprem .onprem-cta .btn', 'chat.baryon.ai 열기 →'],
   ['#onprem .onprem-grid .onprem-card:nth-child(1) .onprem-k', '1 · 업무 투입'],
   ['#onprem .onprem-grid .onprem-card:nth-child(1) h3', '실제 업무를 그대로 가져옵니다.'],
@@ -69,7 +69,7 @@ const KO_DICT = [
   ['#onprem .onprem-grid .onprem-card:nth-child(3) .onprem-k', '3 · 산출물'],
   ['#onprem .onprem-grid .onprem-card:nth-child(3) h3', '결과가 편집 가능한 산출물이 됩니다.'],
   ['#onprem .onprem-grid .onprem-card:nth-child(4) .onprem-k', '4 · 검증'],
-  ['#onprem .onprem-grid .onprem-card:nth-child(4) h3', '모든 답변이 근거를 보여줍니다.'],
+  ['#onprem .onprem-grid .onprem-card:nth-child(4) h3', '모든 답변에 근거가 붙습니다.'],
   ['#onprem .onprem-grid .onprem-card:nth-child(5) .onprem-k', '5 · 측정'],
   ['#onprem .onprem-grid .onprem-card:nth-child(5) h3', '실행이 성과 데이터를 남깁니다.'],
   ['#onprem .onprem-grid .onprem-card:nth-child(6) .onprem-k', '6 · 전환'],
@@ -93,7 +93,7 @@ const KO_DICT = [
   ['#svc .section-head', 'DGX Spark가 계속 <em>일하도록</em><br/>운용을 책임집니다.'],
   ['#svc .onprem-proof-main .onprem-k', '만든 것을 직접 씁니다'],
   ['#svc .onprem-proof-main h3', '같은 운영 역량으로 자사 유료 제품을 돌립니다.'],
-  ['#svc .onprem-proof-main p', '아래 서비스는 모두 저희가 직접 운영하는 로컬 GPU 위에서 돌아갑니다. 운영 역량은 약속이 아니라, Baryon이 매일 일하는 방식입니다.'],
+  ['#svc .onprem-proof-main p', '아래 서비스는 모두 저희가 직접 운영하는 로컬 GPU 위에서 돌아갑니다. 운영 역량은 Baryon이 매일 일하는 방식입니다.'],
   ['#svc .onprem-services .onprem-svc:nth-child(1) .svc-desc', '팀용 LLM 챗 · 유상 운영 중'],
   ['#svc .onprem-services .onprem-svc:nth-child(2) .svc-desc', '터미널 내재화 AI 도구'],
   ['#svc .onprem-services .onprem-svc:nth-child(3) .svc-desc', '임베드 AI 데스크톱'],
@@ -335,13 +335,13 @@ const KO_DICT = [
     '교훈은 국경을 넘지만 네트워크는 로컬이기 때문입니다. 한국에는 세계 수준의 엔지니어가 있지만, AI 네이티브 빌딩을 위한 동료 코호트가 거의 없습니다.'],
 
   // ─── end CTA ───
-  ['.endcta-h', '도입 보고는 그만.<br/>이제 효과를 <em>증명</em>할 시간입니다.'],
+  ['.endcta-h', '도입 효과,<br/>실행 데이터로 <em>증명하세요.</em>'],
   ['.endcta-row .btn-solid', '30초 체험하기'],
 
   // ─── notices ───
   ['.seminars .kicker span:last-child', '교육'],
-  ['.seminars .section-head', '교육은 <em>입구</em>입니다,<br/>상품이 아니라.'],
-  ['.seminars .section-sub', 'Vibecamp와 정기 온라인 교육에서 배우고, 실습은 chat.baryon.ai에서 이어집니다 — 모든 실행이 측정 가능한 AX 데이터가 됩니다.'],
+  ['.seminars .section-head', '교육은 <em>입구</em>입니다.'],
+  ['.seminars .section-sub', 'Vibecamp와 정기 온라인 교육에서 배우고, 실습은 chat.baryon.ai에서 이어집니다 — 모든 실행이 도입 효과 데이터로 쌓입니다.'],
   ['.seminars-foot .btn-solid', 'Vibecamp 둘러보기 ↗'],
   ['.seminars-foot .btn-ghost', 'Luma에서 일정 보기 ↗'],
 
