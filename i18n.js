@@ -6,7 +6,6 @@ const KO_DICT = [
   // ─── nav ─── ($= suffix match so the same dict works on index.html and products.html)
   ['.nav-dropdown > a[href$="products.html"]', '제품'],
   ['.nav-links > a[href$="products.html"]', '제품'],
-  ['.nav-links a[href$="#company"]',  '회사'],
   ['.nav-links a[href$="service.html"]', '도입 안내'],
   ['.nav-links a[href$="#faq"]',      'FAQ'],
   ['.nav-submenu a:nth-child(1) .nav-path-desc', 'AI 팀을 운영하고 학습시키는 운영체제'],
@@ -17,8 +16,8 @@ const KO_DICT = [
 
   // ─── hero ───
   ['.hero-eyebrow span:last-child', 'AI 도입 효과 측정 서비스'],
-  ['.hero-head', '기업에 AI 활용을 도와주고<br/><em>성과를 측정합니다.</em>'],
-  ['.hero-sub',  '도입 효과를 감으로 보고하지 않아도 됩니다. 도입 전후를 같은 지표로 비교해, 보고서에 그대로 쓸 근거를 만듭니다.'],
+  ['.hero-head', '불필요한 AI 사용을 줄여,<br/><em>비용을 절감합니다.</em>'],
+  ['.hero-sub',  '어떤 업무에서 AI가 효과를 내는지 실행 데이터로 가려내면 — 효과 없는 사용은 줄이고, 되는 업무에 집중할 수 있습니다.'],
   ['.hero-ctas .btn-solid', '30초 체험 →'],
   ['.hero-ctas .btn-ghost', '도입 상담'],
   ['.trust-label', '찾기'],
@@ -46,27 +45,16 @@ const KO_DICT = [
 
   // ─── problem ───
   ['.problem .kicker span:last-child', '문제'],
-  ['.problem .section-head', '"AI 도입, 뭐가 달라졌어?"<br/>답하지 못하는 <em>질문들.</em>'],
-  ['.problem .q-list li:nth-child(1)', '그래서 AI가 어느 업무에서 실제로 돌았는가'],
-  ['.problem .q-list li:nth-child(2)', '결과물은 무엇이고, 사람이 검증했는가'],
-  ['.problem .q-list li:nth-child(3)', '비용·처리시간·성공률은 어떻게 달라졌는가'],
-  ['.problem .q-list li:nth-child(4)', '반복 가능한 방식이 조직 자산으로 남았는가'],
+  ['.problem .section-head', '다들 쓰고는 있는데,<br/>아무도 <em>답하지 못합니다.</em>'],
+  ['.problem .q-list li:nth-child(1)', 'AI 쓰는 직원은 늘었습니다. 그런데 얼마나 일을 완수했는지는 알 수 없습니다.'],
+  ['.problem .q-list li:nth-child(2)', '사내 정책에 맞춰 에이전트를 만들어 정기적으로 쓰고 있습니다. 그런데 처리시간이 오래 걸립니다.'],
+  ['.problem .q-list li:nth-child(3)', 'ROI·KPI와 연결되지 않아, 어떤 에이전트가 효과적인지 알 수 없습니다.'],
   ['.problem .q-punch', '계정 수로는 답이 되지 않습니다. 국내 대표 상장사 2년 공개 기록에서도 효과 측정만 비어 있었습니다 (바리온랩스 연구 BL-IA-2026-03, 요약본은 도입 상담 시 제공).'],
-
-  // ─── company ───
-  ['.company .kicker span:last-child', '회사'],
-  ['.company .section-head', '이미 실제 조직에서<br/><em>돌아갑니다.</em>'],
-  ['.company-card:nth-child(1) .company-k', '이미 신뢰하는 조직'],
-  ['.company-card:nth-child(1) h3', '실제 조직에 납품한 제품입니다.'],
-  ['.company-card:nth-child(1) p', '한화에어로스페이스, 아라, 연세대, 알파코, 멋쟁이사자처럼, 당근 — 같은 제품 위에서 교육과 운영을 납품했습니다.'],
-  ['.company-card:nth-child(2) .company-k', '만든 것을 직접 씁니다'],
-  ['.company-card:nth-child(2) h3', '우리 사업 자체가 이 파이프라인 위에서 돌아갑니다.'],
-  ['.company-card:nth-child(2) p', '판매하는 것과 같은 스택으로 자사 사업을 직접 운영합니다 — 그 개선 속도가 진짜 장벽입니다.'],
 
   // ─── product (index #onprem) ───
   ['#onprem .kicker span:last-child', '제품'],
-  ['#onprem .section-head', '일하면,<br/><em>증거가 남습니다.</em>'],
-  ['#onprem .section-sub', 'AI 도입이 무엇을 바꿨는지 설명할 수 있는 조직은 드뭅니다. 저희는 실행과 측정을 한 흐름으로 묶습니다. 일한 과정이 그대로 성과의 근거로 남습니다.'],
+  ['#onprem .section-head', '측정하면,<br/><em>줄일 곳이 보입니다.</em>'],
+  ['#onprem .section-sub', '일하는 과정이 그대로 기록되고, 업무·에이전트별로 비용과 성과가 드러납니다. 효과 없는 사용은 줄이고, 되는 곳에 집중합니다.'],
   ['#onprem .onprem-cta .btn', 'chat.baryon.ai 열기 →'],
   ['#onprem .onprem-grid .onprem-card:nth-child(1) .onprem-k', '1 · 업무 투입'],
   ['#onprem .onprem-grid .onprem-card:nth-child(1) h3', '실제 업무를 그대로 가져옵니다.'],
@@ -93,13 +81,11 @@ const KO_DICT = [
   ['#onprem .tools .tool-card:nth-child(3) .tool-d', '로그인 좌석 키로 웹과 사용량이 통합됩니다.'],
   ['#onprem .onprem-proof-main .onprem-k', '유상 운영 중'],
   ['#onprem .onprem-proof-main h3', '숫자는 우리가 주장하지 않습니다. 귀사의 실행이 기록합니다.'],
-  ['#onprem .onprem-proof-main p', '한화에어로스페이스·한화시스템, 아라, 신영, 한중엔시에스가 바리온 AI 업무 파이프라인 위에서 실제 업무를 돌리고 있습니다 — 모든 실행이 기록을 자동으로 남깁니다.'],
+  ['#onprem .onprem-proof-main p', '한화에어로스페이스·한화시스템, 아라, 신영, 한중엔시에스가 바리온 AI 업무 파이프라인 위에서 실제 업무를 돌리고 있습니다 — 모든 실행이 기록을 자동으로 남깁니다. 교육까지 넓히면 연세대, 알파코, 멋쟁이사자처럼, 당근도 같은 제품을 씁니다. 저희 사업도 그 위에서 돌아갑니다 — 그 개선 속도가 진짜 장벽입니다.'],
   ['#onprem .onprem-services .onprem-svc:nth-child(1) .svc-desc', '웹 · 파이프라인 본체'],
   ['#onprem .onprem-services .onprem-svc:nth-child(2) .svc-desc', '터미널 · 같은 좌석, 같은 지표'],
   ['#onprem .onprem-services .onprem-svc:nth-child(3) .svc-desc', '데스크톱 · 같은 좌석, 같은 지표'],
-  ['#onprem .onprem-partner-rows p:nth-child(1)', '<strong>1단계 · 단기 온보딩</strong> — 설치·세팅 없이 당일 시작합니다.'],
-  ['#onprem .onprem-partner-rows p:nth-child(2)', '<strong>2단계 · 연간 구독</strong> — 상시 운영으로 전환합니다. 도입 효과 리포트(AX 리포트)가 포함되며, 견적은 도입 상담에서 안내합니다.'],
-  ['#onprem .onprem-partner-rows p:nth-child(3)', '<strong>다른 시작 방법</strong> — 저희가 먼저 만들어 돌리고, 굴러가는 것을 보고 계약하는 <a href="service.html#svc">선개발 스프린트</a>도 있습니다.'],
+  ['#onprem .onprem-partner-rows p:nth-child(1)', '<strong>도입 방식</strong> — 좌석 온보딩은 당일 시작하고, 저희가 먼저 만들어 돌리는 <a href="service.html#svc">선개발 스프린트</a>도 있습니다. 자세한 안내는 <a href="service.html">도입 안내</a>에서.'],
   ['#onprem .onprem-partner .btn', '도입 상담하기 →'],
 
   // ─── get started (service.html #svc) ───
@@ -352,16 +338,12 @@ const KO_DICT = [
     '조용히, 항상. 프로덕션에 에이전트를 쉬핑해 봤다면 링크 한 줄과 함께 메일 주세요 — 아래에 이메일이 있습니다.'],
 
   // ─── end CTA ───
-  ['.endcta-h', '도입 효과,<br/>실행 데이터로 <em>증명하세요.</em>'],
+  ['.endcta-h', '어느 업무부터 줄일 수 있는지,<br/><em>같이 보시죠.</em>'],
+  ['.foot-col a[href*="luma.com"]', '루마 일정'],
+  ['.foot-col a[href*="drive.google"]', '커리큘럼 PDF'],
   ['.endcta-row .btn-solid', '30초 체험하기'],
 
   // ─── notices ───
-  ['.seminars .kicker span:last-child', '교육'],
-  ['.seminars .section-head', '교육은 <em>입구</em>입니다.'],
-  ['.seminars .section-sub', 'Vibecamp와 정기 온라인 교육으로 시작합니다. 실습은 chat.baryon.ai에서 이어집니다.'],
-  ['.seminars-foot .btn-solid', 'Vibecamp 둘러보기 ↗'],
-  ['.seminars-foot a[href*="luma.com"]', 'Luma에서 일정 보기 ↗'],
-  ['.seminars-foot a[href*="drive.google"]', '커리큘럼 PDF ↗'],
 
   // ─── footer ───
   ['.foot-tag', '제1원리에서 시작하는 AI.<br/>서울 · 글로벌.'],
