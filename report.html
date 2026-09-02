@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta name="description" content="도입 후 받게 될 비용절감 보고서(AX 성과측정 리포트)의 실물 미리 보기. 지표의 틀과 계산 방식을 먼저 보여드립니다 — 숫자는 귀사의 실행이 채웁니다.">
+  <title>바리온랩스 — 비용절감 보고서 미리 보기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f3f1ec;--deep:#e9e6df;--card:#fbfaf7;--ink:#17191b;--muted:#62625e;--quiet:#8c8b85;--orange:#f04b17;--orange2:#d93b0b;--soft:#fff0e9;--line:#cfccc4;--dark:#191b1d;--max:1180px;--pad:clamp(20px,4vw,60px);--sans:"Gothic A1","Apple SD Gothic Neo",sans-serif;--mono:"IBM Plex Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,25,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}a{color:inherit;text-decoration:none}img{max-width:100%}::selection{background:var(--orange);color:#fff}:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
+    .nav{position:sticky;top:0;z-index:50;min-height:70px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em}.mark{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative}.mark:before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:var(--orange);border-radius:50%}.mark:after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:var(--ink);border-radius:50%}.links{display:flex;gap:25px;color:var(--muted);font-size:12px;font-weight:700}.links a:hover{color:var(--orange)}.actions{display:flex;gap:7px}
+    .btn{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:12px;font-weight:800;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.fill{background:var(--orange);border-color:var(--orange);color:#fff}.btn.fill:hover{background:var(--orange2)}
+    .wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin:auto}.label{display:inline-flex;align-items:center;margin-bottom:23px;color:var(--muted);font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.head{margin:0 0 0;font-size:clamp(28px,3.4vw,46px);font-weight:900;line-height:1.2;letter-spacing:-.06em}.orange{color:var(--orange)}.lead{max-width:680px;margin:19px 0 0;color:var(--muted);font-size:clamp(14px,1.4vw,16px);line-height:1.85}.micro{margin:12px 0 0;color:var(--quiet);font-size:11px}
+    .report{padding:clamp(56px,7vw,92px) 0 clamp(72px,8vw,110px)}
+    .doc{margin-top:34px;padding:clamp(22px,3vw,38px);background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange)}
+    .doc-head{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line)}
+    .doc-head b{font-size:15px}.doc-head small{display:block;margin-top:3px;color:var(--quiet);font:9px var(--mono);letter-spacing:.06em}
+    .slot{padding:9px 13px;border:1.5px dashed #aaa79f;color:var(--quiet);font-size:11px;background:#fbfaf788}
+    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:24px}
+    .metric{min-height:230px;padding:20px;display:flex;flex-direction:column;background:#fbfaf788;border:1.5px dashed #aaa79f}
+    .metric small{display:flex;justify-content:space-between;color:var(--quiet);font:8px var(--mono)}
+    .chart{margin-top:auto}
+    .bars{height:55px;display:flex;align-items:end;gap:5px;overflow:hidden}.bars i{flex:1;height:var(--h);border:1px dashed #aaa79f;background:linear-gradient(180deg,rgba(240,75,23,.24),rgba(240,75,23,.03))}
+    .compare{height:55px;display:flex;align-items:stretch;gap:16px;padding:0 6px}.cmp{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px}.cmp-bar{display:block;width:100%;height:var(--h);border:1.5px dashed #aaa79f;background:linear-gradient(180deg,rgba(23,25,27,.10),rgba(23,25,27,.02))}.cmp-bar.tobe{border-color:var(--orange);background:linear-gradient(180deg,rgba(240,75,23,.30),rgba(240,75,23,.05))}.cmp span{color:var(--quiet);font:7px var(--mono);letter-spacing:.08em}
+    .spark{height:55px;width:100%;display:block}.spark polyline{fill:none;stroke:var(--orange);stroke-width:2;stroke-dasharray:5 3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+    .metric b{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+    .calc{margin:8px 0 0;color:var(--muted);font-size:11px;line-height:1.7}
+    .pipe-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pipe-chips span{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-size:11px;font-weight:700}.pipe-chips svg{width:15px;height:15px;flex-shrink:0;color:var(--orange)}
+    .cta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
+    .footer{padding:28px var(--pad);background:#111315;color:#818382;font-size:9px}.footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:16px;font-family:var(--mono)}
+    @media(max-width:980px){.links{display:none}.metric-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){:root{--pad:20px}.nav{min-height:62px}.doc-head{flex-direction:column}}
+    @media(max-width:480px){.metric-grid{grid-template-columns:1fr}.pipe-chips{display:grid;grid-template-columns:1fr 1fr}.cta-row .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html?ref=report-brand"><span class="mark" aria-hidden="true"></span>BARYON LABS</a>
+    <nav class="links" aria-label="주요 메뉴"><a href="index.html?ref=report-nav">← 홈</a><a href="service.html?ref=report-nav">도입 안내</a></nav>
+    <div class="actions"><a class="btn fill" href="service.html?ref=report-nav#inquiry">도입 상담</a></div>
+  </header>
+
+  <main>
+    <section class="report">
+      <div class="wrap">
+        <div class="label">REPORT · PREVIEW</div>
+        <h1 class="head">AX 성과측정 리포트 <span class="orange">— 미리 보기</span></h1>
+        <p class="lead">도입 후 받게 될 비용절감 보고서의 실물 틀입니다. 지표의 모양과 계산 방식을 먼저 보여드립니다 — 숫자는 귀사의 실행이 채웁니다.</p>
+
+        <div class="doc">
+          <div class="doc-head">
+            <div><b>도입 효과 보고서</b><small>ADOPTION IMPACT REPORT</small></div>
+            <div class="slot">여기에 귀사 이름이 들어갑니다</div>
+            <div class="slot">측정 기간 — 계약 시 함께 정한 기간이 표시됩니다</div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric">
+              <small><span>METRIC 01</span><span>—</span></small>
+              <div class="chart compare" aria-hidden="true"><div class="cmp"><i class="cmp-bar asis" style="--h:34%"></i><span>AS-IS</span></div><div class="cmp"><i class="cmp-bar tobe" style="--h:84%"></i><span>TO-BE</span></div></div>
+              <b>도입 전/후 ROI 비교</b>
+              <p class="calc">같은 기간을 놓고, 절감된 비용과 시간을 AI 운영에 쓴 비용으로 나눠 도입 전과 후를 비교합니다.</p>
+            </article>
+            <article class="metric">
+              <small><span>METRIC 02</span><span>—</span></small>
+              <svg class="chart spark" viewBox="0 0 100 55" preserveAspectRatio="none" aria-hidden="true"><polyline points="2,50 20,45 40,36 60,27 80,15 98,5"/></svg>
+              <b>절감 비용</b>
+              <p class="calc">실행할 때마다 실제 쓰인 비용을 기록하고, 기준보다 내려간 만큼만 누적합니다. 겹쳐 세어 부풀리지 않습니다.</p>
+            </article>
+            <article class="metric">
+              <small><span>METRIC 03</span><span>—</span></small>
+              <div class="chart bars" aria-hidden="true"><i style="--h:27%"></i><i style="--h:46%"></i><i style="--h:64%"></i><i style="--h:83%"></i></div>
+              <b>절감 시간</b>
+              <p class="calc">완료된 업무만 셉니다 — 실패한 실행의 속도는 절감으로 치지 않습니다.</p>
+            </article>
+            <article class="metric">
+              <small><span>METRIC 04</span><span>—</span></small>
+              <svg class="chart spark" viewBox="0 0 100 55" preserveAspectRatio="none" aria-hidden="true"><polyline points="2,12 20,10 40,13 60,9 80,12 98,10"/></svg>
+              <b>안정적 업무 완료율</b>
+              <p class="calc">결과물이 검증을 통과하고, 과정 근거가 남고, 사람 손을 다시 타지 않은 업무만 완료로 셉니다. 우연히 맞은 결과는 세지 않습니다.</p>
+            </article>
+          </div>
+
+          <div class="pipe-chips" aria-label="이 칸을 채우는 기록">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="1"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>실행 기록 · 자동</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><circle cx="11" cy="13" r="2.5"/><path d="M13 15l2.2 2.2"/></svg>근거 인용 · 추적</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-6M11 20V8M17 20v-9"/><path d="M3 20h18"/></svg>비용 집계 · 프로젝트별</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="5" rx="1"/><path d="M4 9v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/><path d="M9 13h6"/></svg>산출물 이력 · 보관</span>
+          </div>
+          <p class="micro">이 페이지의 모든 칸은 의도적으로 비어 있습니다. 계산 방식의 상세와 기준선 합의는 도입 상담에서 안내합니다.</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn fill" href="service.html?ref=report-cta#inquiry">도입 상담 →</a>
+          <a class="btn" href="service.html?ref=report-guide">도입 안내 보기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="index.html?ref=report-footer">baryon.ai</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
+</body>
+</html>
