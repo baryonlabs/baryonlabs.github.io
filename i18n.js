@@ -133,6 +133,20 @@ const KO_DICT = [
   ['#svc .rm-rate .rm-l', '성공률'],
   ['#svc .rm-hint', '첫 실행부터 기록됩니다'],
 
+  // ─── corporate training hero (service.html #training) ───
+  ['.edu-hero .kicker span:last-child', '기업교육'],
+  ['.edu-hero .section-head', '교육에서 측정까지,<br/><em>팀 단위로.</em>'],
+  ['.edu-ribbon .er-step:nth-child(1) small', '1단계'],
+  ['.edu-ribbon .er-step:nth-child(1) b', '교육'],
+  ['.edu-ribbon .er-step:nth-child(2) small', '2단계'],
+  ['.edu-ribbon .er-step:nth-child(2) b', '실습'],
+  ['.edu-ribbon .er-step:nth-child(3) small', '3단계'],
+  ['.edu-ribbon .er-step:nth-child(3) b', '측정'],
+  ['.edu-sub', '팀 좌석은 귀사의 실제 업무로 진행하는 교육 과정에서 시작해, 파이프라인이 남기는 기록과 지표로 끝납니다. 교육이 무엇을 바꿨는지, 짐작이 아니라 기록으로 읽습니다.'],
+  ['.edu-plan-k', '팀 구독 플랜'],
+  ['.edu-chip', '고용보험 환급 안내 · 자세한 내용은 상담에서'],
+  ['.edu-cta .btn', '기업교육 상담받기 →'],
+
   // ─── inquiry (service page form) ───
   ['.inquiry .kicker span:last-child', '문의'],
   ['.inquiry .section-head', '어떤 업무부터 시작할지<br/><em>들려주세요.</em>'],
