@@ -360,7 +360,8 @@ const KO_DICT = [
   ['.seminars .section-head', '교육은 <em>입구</em>입니다.'],
   ['.seminars .section-sub', 'Vibecamp와 정기 온라인 교육으로 시작합니다. 실습은 chat.baryon.ai에서 이어집니다.'],
   ['.seminars-foot .btn-solid', 'Vibecamp 둘러보기 ↗'],
-  ['.seminars-foot .btn-ghost', 'Luma에서 일정 보기 ↗'],
+  ['.seminars-foot a[href*="luma.com"]', 'Luma에서 일정 보기 ↗'],
+  ['.seminars-foot a[href*="drive.google"]', '커리큘럼 PDF ↗'],
 
   // ─── footer ───
   ['.foot-tag', '제1원리에서 시작하는 AI.<br/>서울 · 글로벌.'],
