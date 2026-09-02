@@ -270,19 +270,19 @@
 
     <div class="foot-col">
       <div class="foot-h">Products</div>
-      <a href="https://chat.baryon.ai" target="_blank" rel="noopener">chat.baryon.ai</a>
-      <a href="https://cli.baryon.ai" target="_blank" rel="noopener">cli.baryon.ai</a>
-      <a href="https://desktop.baryon.ai" target="_blank" rel="noopener">desktop.baryon.ai</a>
-      <a href="https://www.miri.dev/" target="_blank" rel="noopener">miri.dev</a>
+      <a href="https://chat.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-chat" target="_blank" rel="noopener">chat.baryon.ai</a>
+      <a href="https://cli.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-cli" target="_blank" rel="noopener">cli.baryon.ai</a>
+      <a href="https://desktop.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-desktop" target="_blank" rel="noopener">desktop.baryon.ai</a>
+      <a href="https://www.miri.dev/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-miri" target="_blank" rel="noopener">miri.dev</a>
       <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">miridev-cli</a>
-      <a href="https://talkmode.baryon.ai/" target="_blank" rel="noopener">talkmode.baryon.ai</a>
-      <a href="http://vibecamp.us/" target="_blank" rel="noopener">vibecamp.us</a>
-      <a href="https://ai-native.vibecamp.us/" target="_blank" rel="noopener">ai-native.vibecamp.us</a>
+      <a href="https://talkmode.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-talkmode" target="_blank" rel="noopener">talkmode.baryon.ai</a>
+      <a href="https://vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-vibecamp" target="_blank" rel="noopener">vibecamp.us</a>
+      <a href="https://ai-native.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-ai-native" target="_blank" rel="noopener">ai-native.vibecamp.us</a>
     </div>
 
     <div class="foot-col">
       <div class="foot-h">Open</div>
-      <a href="https://github.com/baryonlabs" target="_blank" rel="noopener">github.com/baryonlabs</a>
+      <a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-github" target="_blank" rel="noopener">github.com/baryonlabs</a>
       <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">npm</a>
       <a href="https://huggingface.co/baryonlabs" target="_blank" rel="noopener">Hugging Face</a>
       <a href="https://arxiv.org/search/?searchtype=author&query=Baryon+Labs" target="_blank" rel="noopener">arXiv</a>
@@ -335,6 +335,11 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fd = new FormData(form);
+    const q = new URLSearchParams(location.search);
+    const track = {};
+    if (q.get('ref')) track.ref = q.get('ref');
+    if (q.get('utm_content')) track.utm_content = q.get('utm_content');
+    if (document.referrer) track.referrer = document.referrer;
     const email = (fd.get('email') || '').toString().trim();
     const phone = (fd.get('phone') || '').toString().trim();
 
@@ -369,6 +374,7 @@
             subject: (fd.get('subject') || '').toString().trim(),
             message: (fd.get('message') || '').toString().trim(),
             source: 'baryon.ai/service',
+            ...track,
             lang: isKo ? 'ko' : 'en'
           }
         })
