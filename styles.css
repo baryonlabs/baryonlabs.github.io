@@ -3388,3 +3388,56 @@ html { overflow-x: clip; }
   .sprint-steps { grid-template-columns: 1fr; }
 }
 :root[lang="ko"] .sp-d { font-size: 13.5px; line-height: 1.65; word-break: keep-all; }
+
+/* ── hero v9: image-led 3:7 layout ── */
+.hero {
+  padding-top: clamp(36px, 6vh, 64px);
+  padding-bottom: clamp(40px, 6vh, 72px);
+}
+.hero-inner {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+}
+.hero-inner .hero-head {
+  font-size: clamp(27px, 2.5vw, 38px);
+  line-height: 1.22;
+  margin: 22px 0 16px;
+}
+:root[lang="ko"] .hero-inner .hero-head {
+  font-size: clamp(25px, 2.4vw, 36px);
+  line-height: 1.32;
+}
+.hero-sub { margin-bottom: 26px; font-size: 15.5px; line-height: 1.6; }
+:root[lang="ko"] .hero-inner + * {}
+.hero-ctas { margin-bottom: 0; }
+.hv-stage {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(26, 28, 30, 0.08);
+}
+.hv-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+.hero-visual .hv-rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.hero-trust { margin-top: clamp(28px, 4vh, 44px); }
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; max-width: none; }
+  .hero-inner .hero-head { font-size: clamp(28px, 6.4vw, 40px); }
+  :root[lang="ko"] .hero-inner .hero-head { font-size: clamp(26px, 6vw, 38px); }
+}
+@media (max-width: 640px) {
+  .hero-visual .hv-rows { grid-template-columns: 1fr; }
+}

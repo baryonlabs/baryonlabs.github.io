@@ -17,7 +17,7 @@ const KO_DICT = [
 
   // ─── hero ───
   ['.hero-eyebrow span:last-child', 'AI 도입 효과 측정 서비스'],
-  ['.hero-head', '"AI 도입, 뭐가 달라졌어?"<br/>다음 보고, <em>실행 데이터로 답하세요.</em>'],
+  ['.hero-head', '기업에 AI 활용을 도와주고<br/><em>성과를 측정합니다.</em>'],
   ['.hero-sub',  '도입 효과를 감으로 보고하지 않아도 됩니다. 도입 전후를 같은 지표로 비교해, 보고서에 그대로 쓸 근거를 만듭니다.'],
   ['.hero-ctas .btn-solid', '30초 체험 →'],
   ['.hero-ctas .btn-ghost', '도입 상담'],
@@ -46,7 +46,7 @@ const KO_DICT = [
 
   // ─── problem ───
   ['.problem .kicker span:last-child', '문제'],
-  ['.problem .section-head', '보고서가 답하지 못하는<br/><em>질문들.</em>'],
+  ['.problem .section-head', '"AI 도입, 뭐가 달라졌어?"<br/>답하지 못하는 <em>질문들.</em>'],
   ['.problem .q-list li:nth-child(1)', '그래서 AI가 어느 업무에서 실제로 돌았는가'],
   ['.problem .q-list li:nth-child(2)', '결과물은 무엇이고, 사람이 검증했는가'],
   ['.problem .q-list li:nth-child(3)', '비용·처리시간·성공률은 어떻게 달라졌는가'],
