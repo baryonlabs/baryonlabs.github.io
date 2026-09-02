@@ -46,7 +46,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=Geist+Mono:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 
 <link rel="stylesheet" href="styles.css?v=19" />
@@ -68,8 +68,12 @@
 .nav-doc .actions .btn.dark{background:#17191b;color:#fff}
 @media(max-width:980px){.nav-doc .links{display:none}}
 @media(max-width:720px){.nav.nav-doc{min-height:62px}.nav-doc .actions .btn:first-child{display:none}}
-/* footer 소형 언어 토글 (구식 nav 토글 이관 — 본문 EN 베이스+KO 딕셔너리 유지용) */
-.foot-bot .lang-foot{margin-left:auto}
+/* v13 footer — index footer 원값 복제 (styles.css에 .footer 계열 없음 — 충돌 없이 그대로) */
+.footer{padding:28px var(--pad);background:#111315;color:#818382;font-size:9px;font-family:'Gothic A1','Apple SD Gothic Neo',sans-serif;letter-spacing:-0.288px;line-height:1.72}
+.footer-inner{width:min(1180px,100%);margin:auto;display:flex;justify-content:space-between;gap:20px}
+.footer-links{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace}
+.footer a{color:inherit;text-decoration:none}
+@media(max-width:720px){.footer-inner{flex-direction:column}}
 </style>
 
 <!-- PostHog (chat 프로젝트 키 재사용, 대표 확정) -->
@@ -361,63 +365,8 @@
 
 </main>
 
-<!-- ════════════════ FOOTER ════════════════ -->
-<footer class="foot">
-  <div class="foot-top">
-    <div class="foot-brand">
-      <div class="nav-logo">
-        <span class="logo-mark">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="3" fill="currentColor"/>
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.7"/>
-            <circle cx="21" cy="12" r="1.5" fill="currentColor"/>
-            <circle cx="3" cy="12" r="1.5" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="logo-word">Baryon<span class="logo-dim">labs</span></span>
-      </div>
-      <p class="foot-tag">AI from first principles.<br/>Seoul · global.</p>
-    </div>
-
-    <div class="foot-col">
-      <div class="foot-h">Products</div>
-      <a href="https://chat.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-chat" target="_blank" rel="noopener">chat.baryon.ai</a>
-      <a href="https://cli.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-cli" target="_blank" rel="noopener">cli.baryon.ai</a>
-      <a href="https://desktop.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-desktop" target="_blank" rel="noopener">desktop.baryon.ai</a>
-      <a href="https://www.miri.dev/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-miri" target="_blank" rel="noopener">miri.dev</a>
-      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">miridev-cli</a>
-      <a href="https://talkmode.baryon.ai/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-talkmode" target="_blank" rel="noopener">talkmode.baryon.ai</a>
-      <a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-vibecamp" target="_blank" rel="noopener">vibecamp.us</a>
-      <a href="https://ai-native.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-ai-native" target="_blank" rel="noopener">ai-native.vibecamp.us</a>
-    </div>
-
-    <div class="foot-col">
-      <div class="foot-h">Open</div>
-      <a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-github" target="_blank" rel="noopener">github.com/baryonlabs</a>
-      <a href="https://www.npmjs.com/package/miridev-cli" target="_blank" rel="noopener">npm</a>
-      <a href="https://huggingface.co/baryonlabs" target="_blank" rel="noopener">Hugging Face</a>
-      <a href="https://arxiv.org/search/?searchtype=author&query=Baryon+Labs" target="_blank" rel="noopener">arXiv</a>
-    </div>
-
-    <div class="foot-col">
-      <div class="foot-h">Talk</div>
-      <a href="https://discord.gg/baryonlabs" target="_blank" rel="noopener">Discord</a>
-      <a href="mailto:hello@baryon.ai">hello@baryon.ai</a>
-      <a href="index.html#faq">FAQ</a>
-    </div>
-  </div>
-
-  <div class="foot-bot">
-    <span>© 2026 Baryon Labs, Inc.</span>
-    <span class="foot-mark">⌬</span>
-    <span>AI Innovation from the Ground Up.</span>
-    <button class="lang lang-foot" data-lang="ko" aria-label="Toggle language">
-      <span class="lang-opt" data-set="ko">KO</span>
-      <span class="lang-sep">/</span>
-      <span class="lang-opt" data-set="en">EN</span>
-    </button>
-  </div>
-</footer>
+<!-- ════════════════ FOOTER (index footer와 동일 구성 — 내부 슬롯만 홈으로) ════════════════ -->
+<footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="index.html?ref=service-footer">홈</a><a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-github" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-vibecamp" target="_blank" rel="noopener">Vibecamp ↗</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
 
 <script src="i18n.js?v=20"></script>
 <script>
