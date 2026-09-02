@@ -17,8 +17,8 @@ const KO_DICT = [
 
   // ─── hero ───
   ['.hero-eyebrow span:last-child', 'AI 도입 효과 측정 서비스'],
-  ['.hero-head', 'AI 도입 효과,<br/>업무 실행 데이터로 <em>증명합니다.</em>'],
-  ['.hero-sub',  '바리온 AI 업무 파이프라인은 AI 도입이 실제로 무엇을 바꿨는지, 운영 전후 동일 지표로 측정합니다.'],
+  ['.hero-head', '"AI 도입, 뭐가 달라졌어?"<br/>다음 보고, <em>실행 데이터로 답하세요.</em>'],
+  ['.hero-sub',  '도입 효과를 감으로 보고하지 않아도 됩니다. 바리온 AI 업무 파이프라인이 운영 전후를 같은 지표로 비교합니다.'],
   ['.hero-ctas .btn-solid', '30초 체험 →'],
   ['.hero-ctas .btn-ghost', '도입 상담'],
   ['.trust-label', '찾기'],
@@ -43,19 +43,24 @@ const KO_DICT = [
   ['.path-card:nth-child(5) .path-desc', '업무 중간에도 자연스럽게 쓸 수 있을 만큼 빠르고, 프라이빗하고, 즉각적인 Mac용 음성 비서입니다.'],
   ['.path-card:nth-child(5) .path-link', 'TalkMode 열기 ↗'],
 
+  // ─── problem ───
+  ['.problem .kicker span:last-child', '문제'],
+  ['.problem .section-head', '보고서가 답하지 못하는<br/><em>질문들.</em>'],
+  ['.problem .q-list li:nth-child(1)', '그래서 AI가 어느 업무에서 실제로 돌았는가'],
+  ['.problem .q-list li:nth-child(2)', '결과물은 무엇이고, 사람이 검증했는가'],
+  ['.problem .q-list li:nth-child(3)', '비용·처리시간·성공률은 어떻게 달라졌는가'],
+  ['.problem .q-list li:nth-child(4)', '반복 가능한 방식이 조직 자산으로 남았는가'],
+  ['.problem .q-punch', '계정 수로는 답이 되지 않습니다. 국내 대표 상장사 2년 공개 기록에서도 효과 측정만 비어 있었습니다 (바리온랩스 연구 BL-IA-2026-03).'],
+
   // ─── company ───
   ['.company .kicker span:last-child', '회사'],
-  ['.company .section-head', '왜 측정인가 —<br/>그리고 왜 <em>우리인가.</em>'],
-  ['.company .section-sub', '국내 대표 상장사들의 2년간 AI 도입 활동을 분석했습니다. 비어 있던 곳은 실행 이후의 측정이었습니다.'],
-  ['.company-card:nth-child(1) .company-k', '우리가 발견한 공백'],
-  ['.company-card:nth-child(1) h3', '모두가 업무를 재설계하지만, 측정하는 곳은 없었습니다.'],
-  ['.company-card:nth-child(1) p', '업무 재설계는 기록 어디에나 있었지만, 효과·ROI 측정만 유일하게 비어 있었습니다 (바리온랩스 연구 BL-IA-2026-03).'],
-  ['.company-card:nth-child(2) .company-k', '이미 신뢰하는 조직'],
-  ['.company-card:nth-child(2) h3', '실제 조직에 납품한 제품입니다.'],
-  ['.company-card:nth-child(2) p', '한화에어로스페이스, 아라, 연세대, 알파코, 멋쟁이사자처럼, 당근 — 같은 제품 위에서 교육과 운영을 납품했습니다.'],
-  ['.company-card:nth-child(3) .company-k', '만든 것을 직접 씁니다'],
-  ['.company-card:nth-child(3) h3', '우리 사업 자체가 이 파이프라인 위에서 돌아갑니다.'],
-  ['.company-card:nth-child(3) p', '판매하는 것과 같은 스택으로 자사 사업을 직접 운영합니다 — 그 개선 속도가 진짜 장벽입니다.'],
+  ['.company .section-head', '이미 실제 조직에서<br/><em>돌아갑니다.</em>'],
+  ['.company-card:nth-child(1) .company-k', '이미 신뢰하는 조직'],
+  ['.company-card:nth-child(1) h3', '실제 조직에 납품한 제품입니다.'],
+  ['.company-card:nth-child(1) p', '한화에어로스페이스, 아라, 연세대, 알파코, 멋쟁이사자처럼, 당근 — 같은 제품 위에서 교육과 운영을 납품했습니다.'],
+  ['.company-card:nth-child(2) .company-k', '만든 것을 직접 씁니다'],
+  ['.company-card:nth-child(2) h3', '우리 사업 자체가 이 파이프라인 위에서 돌아갑니다.'],
+  ['.company-card:nth-child(2) p', '판매하는 것과 같은 스택으로 자사 사업을 직접 운영합니다 — 그 개선 속도가 진짜 장벽입니다.'],
 
   // ─── product (index #onprem) ───
   ['#onprem .kicker span:last-child', '제품'],
@@ -73,7 +78,7 @@ const KO_DICT = [
   ['#onprem .onprem-grid .onprem-card:nth-child(5) .onprem-k', '5 · 측정'],
   ['#onprem .onprem-grid .onprem-card:nth-child(5) h3', '실행이 성과 데이터를 남깁니다.'],
   ['#onprem .onprem-grid .onprem-card:nth-child(6) .onprem-k', '6 · 전환'],
-  ['#onprem .onprem-grid .onprem-card:nth-child(6) h3', '반복되는 성공이 파이프라인이 됩니다.'],
+  ['#onprem .onprem-grid .onprem-card:nth-child(6) h3', '반복되는 성공이 조직 자산으로 남습니다.'],
   ['#onprem .pipe-chips .pipe-chip:nth-child(1) .pc-t', '실행 기록 · 자동'],
   ['#onprem .pipe-chips .pipe-chip:nth-child(2) .pc-t', '근거 인용 · 추적'],
   ['#onprem .pipe-chips .pipe-chip:nth-child(3) .pc-t', '비용 집계 · 프로젝트별'],
@@ -84,7 +89,7 @@ const KO_DICT = [
   ['#onprem .onprem-services .onprem-svc:nth-child(1) .svc-desc', '웹 · 파이프라인 본체'],
   ['#onprem .onprem-services .onprem-svc:nth-child(2) .svc-desc', '터미널 · 같은 좌석, 같은 지표'],
   ['#onprem .onprem-services .onprem-svc:nth-child(3) .svc-desc', '데스크톱 · 같은 좌석, 같은 지표'],
-  ['#onprem .onprem-partner-rows p:nth-child(1)', '<strong>1단계 · 단기 온보딩</strong> — 좌석 단위, 당일 시작. 첫 실행부터 측정이 시작됩니다.'],
+  ['#onprem .onprem-partner-rows p:nth-child(1)', '<strong>1단계 · 단기 온보딩</strong> — 설치·세팅 없이 당일 시작. 첫 실행부터 측정이 시작됩니다.'],
   ['#onprem .onprem-partner-rows p:nth-child(2)', '<strong>2단계 · 연간 구독</strong> — AX 성과측정 리포트가 포함된 상시 운영. 견적은 도입 상담으로 안내합니다.'],
   ['#onprem .onprem-partner .btn', '도입 상담하기 →'],
 
