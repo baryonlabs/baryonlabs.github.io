@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta name="description" content="바리온랩스는 AI로 돌아가는 사업을 직접 운영하며 증명하는 회사입니다. 상장사 공시 전수 분석에서 발견한 측정 공백이 우리의 제품이 되었습니다.">
+  <title>바리온랩스 소개 — 왜 측정인가</title>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="al ol ll init Il Rl Tl Ml Ol za El Dl Sl capture getExtension Pl nl Hl calculateEventProperties Bl register register_once register_for_session unregister unregister_for_session Vl Cl zl getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Gl identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset Zl shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Ul ql createPersonProfile setInternalOrTestUser Wl ul hl opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $l debug Ua Jn getPageViewId captureTraceFeedback captureTraceMetric bl".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_pN6hid3SodJHxSFNqUURpvKefnsKaBXmUnRG3AI4kR2', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9X57DJVD7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V9X57DJVD7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ══ tokens: keep in sync with index.html ══ */
+    :root{--paper:#f3f1ec;--deep:#e9e6df;--card:#fbfaf7;--ink:#17191b;--muted:#62625e;--quiet:#8c8b85;--orange:#f04b17;--orange2:#d93b0b;--soft:#fff0e9;--line:#cfccc4;--dark:#191b1d;--max:1180px;--pad:clamp(20px,4vw,60px);--sans:"Gothic A1","Apple SD Gothic Neo",sans-serif;--mono:"IBM Plex Mono",monospace}
+    /* ══ base ══ */
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,25,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}a{color:inherit;text-decoration:none}img{max-width:100%}::selection{background:var(--orange);color:#fff}:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
+    .skip{position:fixed;top:-70px;left:16px;z-index:100;background:#111;color:#fff;padding:10px 14px}.skip:focus{top:16px}
+    /* ══ nav · doc ══ */
+    .nav{position:sticky;top:0;z-index:50;min-height:70px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em}.mark{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative}.mark:before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:var(--orange);border-radius:50%}.mark:after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:var(--ink);border-radius:50%}.links{display:flex;gap:25px;color:var(--muted);font-size:12px;font-weight:700}.links a:hover{color:var(--orange)}.actions{display:flex;gap:7px}
+    .btn{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:12px;font-weight:800;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.fill{background:var(--orange);border-color:var(--orange);color:#fff}.btn.fill:hover{background:var(--orange2)}.btn.dark{background:var(--ink);color:#fff}
+    .wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin:auto}.label{display:inline-flex;align-items:center;margin-bottom:23px;color:var(--muted);font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.head{margin:0;font-size:clamp(28px,3.4vw,46px);font-weight:900;line-height:1.2;letter-spacing:-.06em}.orange{color:var(--orange)}.lead{max-width:680px;margin:19px 0 0;color:var(--muted);font-size:clamp(14px,1.4vw,16px);line-height:1.85}.micro{margin:12px 0 0;color:var(--quiet);font-size:11px}
+    .report{padding:clamp(56px,7vw,92px) 0 clamp(72px,8vw,110px)}
+    .doc{margin-top:30px;padding:clamp(22px,3vw,38px);background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange)}
+    .doc-head{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:18px}
+    .doc-head b{font-size:15px}.doc-head small{display:block;margin-top:3px;color:var(--quiet);font:9px var(--mono);letter-spacing:.06em}
+    .slot{padding:9px 13px;border:1.5px dashed #aaa79f;color:var(--muted);font-size:11px;background:#fbfaf788}
+    .demo-band{margin-top:18px;padding:11px 15px;background:var(--soft);border:1px dashed var(--orange);color:var(--ink);font-size:11px;line-height:1.7}
+    .demo-band b{color:var(--orange);font:600 10px var(--mono);letter-spacing:.06em;margin-right:8px}
+    .badge-demo{display:inline-block;margin-right:7px;padding:2px 6px;border:1px dashed var(--orange);color:var(--orange);font:600 8px var(--mono);letter-spacing:.08em;vertical-align:1px}
+    /* ══ primitives: existing ══ */
+    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+    .metric{padding:20px;display:flex;flex-direction:column;background:#fbfaf788;border:1.5px dashed #aaa79f}
+    .metric small{display:flex;justify-content:space-between;color:var(--quiet);font:8px var(--mono)}
+    .chart{margin-top:auto}
+    .metric .chart{margin-top:14px}
+    .bars{height:55px;display:flex;align-items:end;gap:5px;overflow:hidden}.bars i{flex:1;height:var(--h);border:1px dashed #aaa79f;background:linear-gradient(180deg,rgba(240,75,23,.24),rgba(240,75,23,.03))}
+    .compare{height:55px;display:flex;align-items:stretch;gap:16px;padding:0 6px}.cmp{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px}.cmp-bar{display:block;width:100%;height:var(--h);border:1.5px dashed #aaa79f;background:linear-gradient(180deg,rgba(23,25,27,.10),rgba(23,25,27,.02))}.cmp-bar.tobe{border-color:var(--orange);background:linear-gradient(180deg,rgba(240,75,23,.30),rgba(240,75,23,.05))}.cmp span{color:var(--quiet);font:7px var(--mono);letter-spacing:.08em}
+    .spark{height:55px;width:100%;display:block}.spark polyline{fill:none;stroke:var(--orange);stroke-width:2;stroke-dasharray:5 3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+    .m-val{margin-top:12px;font:800 23px var(--sans);letter-spacing:-.05em}
+    .metric b.m-lab{margin-top:8px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+    .calc{margin:8px 0 0;color:var(--muted);font-size:11px;line-height:1.7}
+    .m-cap{margin:8px 0 0;color:var(--quiet);font-size:10px;line-height:1.65}
+    .pipe-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pipe-chips span{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-size:11px;font-weight:700}.pipe-chips svg{width:15px;height:15px;flex-shrink:0;color:var(--orange)}
+    .cta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
+    /* ══ primitives: new ══ */
+    .heatmap{display:grid;grid-template-columns:30px 1fr;gap:4px 8px;align-items:center;max-width:560px;margin-inline:auto}
+    .hm-lab{color:var(--quiet);font:600 9px var(--mono)}
+    .hm-row{display:grid;grid-template-columns:repeat(var(--cols,5),1fr);gap:3px}
+    .hm-row i{aspect-ratio:1/.72;border:1px dashed #aaa79f;background:color-mix(in srgb,var(--orange) calc(var(--v,0)*100%),var(--card))}
+    .hm-axis{display:flex;justify-content:space-between;color:var(--quiet);font:600 8px var(--mono)}
+    .hm-legend{grid-column:1/-1;display:flex;align-items:center;gap:5px;margin-top:6px;color:var(--quiet);font:600 8px var(--mono)}
+    .hm-legend i{width:16px;height:10px;border:1px dashed #aaa79f;background:color-mix(in srgb,var(--orange) calc(var(--v)*100%),var(--card))}
+    .rank{display:grid;gap:7px}
+    .rank-row{display:grid;grid-template-columns:minmax(72px,150px) 1fr 110px;gap:10px;align-items:center}
+    .rank-lab{font-size:11px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rank-track{position:relative;height:16px;border-left:1.5px solid var(--ink);background:#fbfaf788}
+    .rank-bar{position:absolute;inset:2px auto 2px 0;width:var(--w);border:1px dashed #aaa79f;background:linear-gradient(90deg,rgba(240,75,23,.30),rgba(240,75,23,.05))}
+    .rank-row:first-child .rank-bar{border-color:var(--orange)}
+    .rank-val{color:var(--muted);font:600 9px var(--mono);text-align:right}
+    .groups{height:110px;display:flex;align-items:stretch;gap:clamp(10px,3vw,28px);padding:0 6px}
+    .grp{flex:1;display:flex;flex-direction:column;min-width:0}
+    .grp-bars{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:4px;border-bottom:1.5px solid var(--ink)}
+    .grp-bars i{width:min(22px,26%);height:var(--h);border:1px dashed #aaa79f}
+    .grp-lab{padding:5px 0 0;text-align:center;color:var(--quiet);font:600 9px var(--mono)}
+    .groups .s1,.grp-legend .s1{border-color:var(--orange);background:linear-gradient(180deg,rgba(240,75,23,.34),rgba(240,75,23,.06))}
+    .groups .s2,.grp-legend .s2{background:linear-gradient(180deg,rgba(23,25,27,.22),rgba(23,25,27,.04))}
+    .grp-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;color:var(--muted);font:600 9px var(--mono)}
+    .grp-legend span{display:inline-flex;align-items:center;gap:6px}
+    .grp-legend i{width:12px;height:12px;border:1px dashed #aaa79f}
+    .plot{display:grid;grid-template-columns:18px 1fr;gap:4px}
+    .plot-area{position:relative;height:190px;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:linear-gradient(rgba(23,25,27,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.05) 1px,transparent 1px);background-size:25% 25%}
+    .dot{position:absolute;left:var(--x);bottom:var(--y);width:11px;height:11px;transform:translate(-50%,50%);border:1.5px dashed var(--orange);border-radius:50%;background:var(--soft)}
+    .dot.hot{background:var(--orange);border-style:solid}
+    .dot b{position:absolute;left:14px;top:-3px;color:var(--muted);font:600 8px var(--mono);white-space:nowrap}
+    .dot.flip b{left:auto;right:14px}
+    .plot-y{writing-mode:vertical-rl;transform:rotate(180deg);align-self:center;color:var(--quiet);font:600 8px var(--mono)}
+    .plot-x{grid-column:2;text-align:right;color:var(--quiet);font:600 8px var(--mono)}
+    .plot.strip .plot-area{height:64px;border-left:0;background:linear-gradient(90deg,rgba(23,25,27,.05) 1px,transparent 1px);background-size:25% 100%}
+    .plot.strip{grid-template-columns:1fr}
+    .plot.strip .plot-x{grid-column:1}
+    .band{position:absolute;top:0;bottom:0;left:var(--x);width:var(--w);background:var(--soft);opacity:.55}
+    .guide{position:absolute;left:0;top:0;width:32%;height:52%;border:1.5px dashed #aaa79f;border-left:0;border-top:0}
+    .guide b{position:absolute;right:6px;bottom:4px;color:var(--quiet);font:600 7px var(--mono);letter-spacing:.06em}
+    .donut{position:relative;width:100px;margin:6px auto 0}
+    .donut svg{display:block;width:100%;transform:rotate(-90deg)}
+    .donut circle{fill:none;stroke-width:10}
+    .d-track{stroke:var(--line);stroke-dasharray:1.5 2}
+    .d-val{stroke:var(--orange);stroke-linecap:butt;stroke-dasharray:var(--p) 100}
+    .d-center{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+    .d-center b{font:800 18px var(--sans);letter-spacing:-.05em}
+    .d-center span{color:var(--quiet);font:600 8px var(--mono);letter-spacing:.08em}
+    .dual{position:relative}
+    .dual .bars{height:110px}
+    .dual .spark{position:absolute;inset:0;height:110px}
+    .spark-axis{display:flex;justify-content:space-between;margin-top:5px;color:var(--quiet);font:600 8px var(--mono)}
+    /* ══ sections ══ */
+    .rpt-sec{padding:clamp(30px,4vw,48px) 0;border-top:1px solid var(--line);scroll-margin-top:86px}
+    .rpt-sec:first-of-type{border-top:0}
+    .sec-head{display:flex;align-items:baseline;gap:12px}
+    .sec-no{color:var(--orange);font:600 10px var(--mono);letter-spacing:.08em}
+    .sec-head h2{margin:0;font-size:clamp(17px,2vw,22px);font-weight:900;letter-spacing:-.045em}
+    .sec-top{margin-left:auto;color:var(--quiet);font:12px var(--mono)}
+    .sec-lead{max-width:620px;margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+    .fig{margin:22px 0 0;padding:clamp(16px,2.5vw,26px);background:#fbfaf788;border:1.5px dashed #aaa79f}
+    .fig-cap{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.7}
+    .toc{margin-top:26px}
+    .toc ol{list-style:none;margin:0;padding:0;columns:2;column-gap:36px}
+    .toc li{break-inside:avoid}
+    .toc a{display:flex;align-items:baseline;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700}
+    .toc a:hover .toc-t{color:var(--orange)}
+    .toc-no{color:var(--orange);font:600 9px var(--mono)}
+    .toc-dots{flex:1;border-bottom:1.5px dotted #aaa79f;transform:translateY(-3px)}
+    .toc-pg{color:var(--quiet);font:600 8px var(--mono);letter-spacing:.06em}
+    .insights{list-style:none;display:grid;gap:9px;margin:22px 0 0;padding:0}
+    .insights li{display:grid;grid-template-columns:34px 1fr;gap:4px 14px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--orange)}
+    .insights li.plain{border-left-color:var(--ink)}
+    .ins-no{grid-row:1/3;display:grid;place-items:start center;color:var(--orange);font:600 10px var(--mono);padding-top:3px}
+    .insights li.plain .ins-no{color:var(--ink)}
+    .insights b{font-size:13px;letter-spacing:-.03em}
+    .insights p{margin:0;color:var(--muted);font-size:12px}
+    /* ══ reveal ══ */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.on{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+    /* ══ responsive ══ */
+    @media(max-width:980px){.links{display:none}.metric-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){:root{--pad:20px}.nav{min-height:62px}.actions .btn:first-child{display:none}.footer-inner{flex-direction:column}.doc-head{flex-direction:column}
+      .rank-row{grid-template-columns:minmax(60px,86px) 1fr 84px;gap:7px}
+      .hm-row{gap:2px}.heatmap{grid-template-columns:24px 1fr;gap:3px 6px}
+      .spark-axis span:nth-child(even){display:none}
+      .groups{gap:10px}.grp-bars i{width:min(16px,30%)}
+      .plot-area{height:150px}
+      .toc ol{columns:1}
+      .dot b{display:none}
+    }
+    @media(max-width:480px){.metric-grid{grid-template-columns:1fr}.pipe-chips{display:grid;grid-template-columns:1fr 1fr}.cta-row .btn{width:100%}}
+    /* ══ print ══ */
+    @media print{
+      .nav,.cta-row,.footer,.sec-top,.skip{display:none}
+      body{background:#fff}body:before{display:none}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .rpt-sec,.fig,.insights li{break-inside:avoid}
+      .reveal{opacity:1;transform:none}
+    }
+    .footer{padding:28px var(--pad);background:#111315;color:#818382;font-size:9px}.footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:16px;font-family:var(--mono)}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://baryon.ai/about.html">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="바리온랩스">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:url" content="https://baryon.ai/about.html">
+  <meta property="og:title" content="바리온랩스 소개 — 왜 측정인가">
+  <meta property="og:description" content="AI로 돌아가는 사업을 직접 운영하며 증명합니다. 측정 공백이 우리의 제품이 되었습니다.">
+  <meta property="og:image" content="https://baryon.ai/assets/og.jpg">
+  <meta property="og:image:alt" content="불필요한 AI 사용을 줄여, 비용을 절감합니다 — baryon.ai">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="바리온랩스 소개 — 왜 측정인가">
+  <meta name="twitter:description" content="AI로 돌아가는 사업을 직접 운영하며 증명합니다.">
+  <meta name="twitter:image" content="https://baryon.ai/assets/og.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","@id":"https://baryon.ai/about#page","url":"https://baryon.ai/about.html","name":"바리온랩스 소개","inLanguage":"ko","isPartOf":{"@id":"https://baryon.ai/#website"},"about":{"@id":"https://baryon.ai/#org"}}</script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html?ref=about-brand"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+  <nav class="links" aria-label="주요 메뉴"><a href="index.html?ref=about-nav#problem">문제</a><a href="index.html?ref=about-nav#solution">해결책</a><a href="index.html?ref=about-nav#proof">도입 사례</a><a href="index.html?ref=about-nav#ecosystem">제품</a><a href="index.html?ref=about-nav#faq">FAQ</a></nav>
+  <div class="actions"><a class="btn" href="report.html?ref=about-nav">보고서 미리 보기</a><a class="btn dark" href="service.html?ref=about-nav#inquiry">도입 상담</a></div>
+</header>
+<main id="main">
+  <section class="report">
+    <div class="wrap">
+      <div class="label">ABOUT · BARYON LABS</div>
+      <h1 class="head">팔기 전에, 우리가 먼저 <span class="orange">이걸로 회사를 돌립니다.</span></h1>
+      <p class="lead">바리온랩스는 AI를 파는 회사가 아니라, AI로 돌아가는 사업을 직접 운영하며 증명하는 회사입니다. 이 홈페이지의 기능과 보고서, 측정 틀은 우리가 매일 쓰는 것과 같은 물건입니다.</p>
+
+      <section class="rpt-sec" aria-labelledby="h-why">
+        <header class="sec-head"><span class="sec-no">01</span><h2 id="h-why">왜 측정인가 — 우리가 발견한 공백</h2></header>
+        <p class="sec-lead">국내 주요 상장사의 2년치 AI 도입 활동을 공개 기록으로 전수 분석했습니다. 업무 재설계는 가장 활발한 도입 영역이었지만, <b>효과·ROI 측정은 어떤 집계 방식으로도 유일하게 비어 있는 영역</b>이었습니다.</p>
+        <figure class="fig"><figcaption class="fig-cap">모두가 일하는 방식을 다시 설계하고 있었습니다. 그 결과를 재는 곳은 거의 없었습니다 — 그 빈 곳이 우리의 제품이 되었습니다. <span style="color:var(--quiet)">(바리온랩스 연구 BL-IA-2026-03 · 요약본은 상담 시 제공)</span></figcaption></figure>
+      </section>
+
+      <section class="rpt-sec" aria-labelledby="h-trust">
+        <header class="sec-head"><span class="sec-no">02</span><h2 id="h-trust">함께 일한 조직</h2></header>
+        <p class="sec-lead">데모가 아니라 실제 조직에 전달했습니다.</p>
+        <p style="font:600 12px var(--mono);color:var(--muted);letter-spacing:.02em;line-height:2.1">한화에어로스페이스 · 한화시스템 · 아라 · 신영 · 한중엔시에스 · 연세대학교 · 알파코 · 멋쟁이사자처럼 · 당근</p>
+        <p class="micro">숫자는 우리가 주장하지 않습니다 — 귀사의 실행이 기록합니다.</p>
+      </section>
+
+      <section class="rpt-sec" aria-labelledby="h-do">
+        <header class="sec-head"><span class="sec-no">03</span><h2 id="h-do">무엇을 하는 회사인가</h2></header>
+        <p class="sec-lead">교육에서 측정까지, 도입의 전 구간을 한 팀이 맡습니다. 온보딩 교육으로 시작해 AI 업무 파이프라인으로 실행을 모으고, 성과측정으로 효과 없는 사용을 줄입니다 — 예산이 관리되는 AX 조직을 만드는 일입니다.</p>
+      </section>
+
+      <div class="cta-row" style="margin-top:34px">
+        <a class="btn fill" href="service.html?ref=about-cta#inquiry">도입 상담 →</a>
+        <a class="btn" href="index.html?ref=about-cta">서비스 소개 보기</a>
+      </div>
+      <p class="micro" style="margin-top:18px">문의: <a href="mailto:hello@baryon.ai" style="text-decoration:underline">hello@baryon.ai</a> · 정기 세미나 일정은 <a href="https://luma.com/wv4cpwb6?utm_source=baryon.ai&utm_medium=cta&utm_content=about-luma" target="_blank" rel="noopener" style="text-decoration:underline">Luma</a>에서 확인하실 수 있습니다.</p>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="index.html?ref=about-footer">홈</a><a href="about.html" aria-current="page">회사 소개</a><a href="https://luma.com/wv4cpwb6?utm_source=baryon.ai&utm_medium=cta&utm_content=about-footer-luma" target="_blank" rel="noopener">세미나 일정 ↗</a><a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=about-footer-github" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=about-footer-vibecamp" target="_blank" rel="noopener">Vibecamp ↗</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
+</body>
+</html>
