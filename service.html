@@ -410,7 +410,7 @@
     const q = new URLSearchParams(location.search);
     const track = {};
     if (q.get('ref')) track.ref = q.get('ref');
-    if (q.get('utm_content')) track.utm_content = q.get('utm_content');
+    if (q.get('utm_content')) track.utm_content = q.get('utm_content'); if (q.get('track')) track.interest_track = q.get('track'); if (q.get('utm_campaign')) track.utm_campaign = q.get('utm_campaign');
     if (document.referrer) track.referrer = document.referrer;
     const email = (fd.get('email') || '').toString().trim();
     const phone = (fd.get('phone') || '').toString().trim();
