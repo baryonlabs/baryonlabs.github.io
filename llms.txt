@@ -20,7 +20,7 @@
 - https://baryon.ai/report.html : 비용절감 보고서 미리 보기 — 가상 예시 데이터로 채운 상세 분석(주간·일간·업무별·팀별·개인별·에이전트별)과 산정 기준
 
 ## 데모·제품
-- https://ax-erp.baryon.ai/ : 회계법인 특화 AX ERP 데모 — 감사 조서·세무/기장·경영 현황·AI-Bot·데일리 보고서 (모든 수치는 가상 데이터)
+- https://ax-erp.baryon.ai/ : 범용 AX ERP 데모 — 업종별로 기능을 골라 맞추는 모듈 구성(회계법인 프리셋 예시: 감사 조서·세무/기장). 경영 현황·AI-Bot·데일리 보고서 포함, 모든 수치는 가상 데이터
 - https://chat.baryon.ai/ : 제품 로그인 진입점 (실행 환경)
 - https://cli.baryon.ai/ : CLI
 - https://www.vibecamp.us/ : 교육 (개인 캠프·기업교육)
