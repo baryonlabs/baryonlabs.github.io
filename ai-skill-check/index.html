@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1ec">
+  <title>AI 활용능력 진단 — 바리온랩스</title>
+  <meta name="description" content="AI에게 일을 맡기고 결과를 확인할 줄 아는지 직무 과제로 진단합니다. 입사 준비, 채용 전형, 재직자 팀 교육에 같은 기준으로 씁니다.">
+  <meta property="og:title" content="AI 활용능력 진단 — 바리온랩스">
+  <meta property="og:description" content="직접 하던 일에서, 맡기고 확인하는 일로. 우리 팀은 어디까지 왔을까요?">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://baryon.ai/ai-skill-check/assets/hero.jpg">
+  <link rel="canonical" href="https://baryon.ai/ai-skill-check/">
+  <meta property="og:url" content="https://baryon.ai/ai-skill-check/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"바리온 AI 활용능력 진단","applicationCategory":"EducationalApplication","operatingSystem":"Web","inLanguage":"ko","url":"https://baryon.ai/ai-skill-check/","provider":{"@type":"Organization","name":"바리온랩스","url":"https://baryon.ai/"},"description":"AI에게 일을 맡기고, 지시하고, 결과를 검증하는 능력을 직무 과제로 진단하는 웹 도구. 입사 준비, 채용 전형, 재직자 팀 교육에 사용"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"자격증이나 인증 시험인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 교육과 사내 업무 기준을 세우기 위한 진단입니다. 어떤 기관의 공식 인증도 아닙니다."}},
+      {"@type":"Question","name":"인사평가에 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"기본 용도는 교육 우선순위와 사내 역량 기준 수립입니다. 인사 판단에 참고할 경우 반드시 사람이 최종 판단하고, 사내 규정·노사 협의 절차를 먼저 확인하시길 권합니다."}},
+      {"@type":"Question","name":"채용 전형에 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"면접관이 판단할 재료를 제공하며 합격·불합격을 정하지 않습니다. 지원자에게 사전에 알리고 사람이 최종 판단하도록 운영하길 권합니다."}},
+      {"@type":"Question","name":"어떤 AI 도구로 진단하나요?","acceptedAnswer":{"@type":"Answer","text":"특정 도구에 묶이지 않습니다. 진단 화면 안에 들어 있는 AI로 과제를 수행하므로 따로 가입하거나 설치할 필요가 없습니다."}}
+    ]}
+  ]}
+  </script>
+  <style>
+    :root{--paper:#f3f1ec;--deep:#e9e6df;--card:#fbfaf7;--ink:#17191b;--muted:#62625e;--quiet:#8c8b85;--orange:#f04b17;--orange2:#d93b0b;--soft:#fff0e9;--line:#cfccc4;--dark:#191b1d;--max:1180px;--pad:clamp(16px,4vw,60px);--space:clamp(76px,9vw,128px);--sans:"Gothic A1","Apple SD Gothic Neo",sans-serif;--mono:"IBM Plex Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,25,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+    a{color:inherit;text-decoration:none}h1,h2,h3,p{margin-top:0}::selection{background:var(--orange);color:#fff}:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
+    .preview{padding:7px var(--pad);background:var(--ink);color:#c9c9c4;font:10px var(--mono);letter-spacing:.04em;text-align:center}.preview b{color:#ff7950}
+    .nav{position:sticky;top:0;z-index:50;min-height:66px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em}.mark{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative;flex:none}.mark:before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:var(--orange);border-radius:50%}.mark:after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:var(--ink);border-radius:50%}
+    .crumb{color:var(--quiet);font-weight:700;font-size:12px}
+    .links{display:flex;gap:22px;color:var(--muted);font-size:12px;font-weight:700}.links a:hover{color:var(--orange)}
+    .btn{min-height:46px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:13px;font-weight:800;transition:.2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn.fill{background:var(--orange);border-color:var(--orange);color:#fff}.btn.fill:hover{background:var(--orange2)}.btn.light{border-color:#6a6c6e;color:#fff}.btn.sm{min-height:38px;padding:0 14px;font-size:12px}
+    section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:relative}
+    .wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin:auto}
+    .label{display:inline-flex;margin-bottom:20px;color:var(--muted);font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.label.light{color:#a9aaa7}
+    .display{margin-bottom:0;font-size:clamp(36px,5vw,68px);font-weight:900;line-height:1.14;letter-spacing:-.072em}
+    .head{margin-bottom:0;font-size:clamp(28px,3.6vw,50px);font-weight:900;line-height:1.22;letter-spacing:-.065em}
+    .orange{color:var(--orange)}
+    .lead{max-width:690px;margin:20px 0 0;color:var(--muted);font-size:clamp(15px,1.4vw,17px);line-height:1.85}
+    .micro{margin:12px 0 0;color:var(--quiet);font-size:11px;line-height:1.7}
+    .note{display:block;margin:8px 0 0;padding:6px 10px;background:#fff7d6;border:1px dashed #c9a400;color:#6b5600;font:10px/1.6 var(--mono)}
+
+    /* hero */
+    .hero{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(64px,9vw,120px)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,70px);align-items:center}
+    .hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
+    .aud{display:inline-flex;margin-top:28px;border:1px solid var(--ink);background:var(--card)}
+    .aud button{min-height:44px;padding:0 18px;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);font:800 13px var(--sans);cursor:pointer}.aud button:last-child{border-right:0}
+    .aud button[aria-selected="true"]{background:var(--ink);color:#fff}
+    .aud-panel p{max-width:560px;margin:14px 0 0;font-size:15px;font-weight:700;line-height:1.7}
+    .aud-panel .hero-actions{margin-top:18px}
+    .uses{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:36px}
+    .use{display:flex;flex-direction:column;padding:24px;background:var(--card);border:1px solid var(--line);scroll-margin-top:90px}
+    .use small{color:var(--orange);font:600 10px var(--mono);letter-spacing:.06em}.use h3{margin:10px 0 6px;font-size:21px;letter-spacing:-.05em}.use .who{margin:0 0 14px;color:var(--muted);font-size:13px}
+    .use dl{margin:0;display:grid;gap:10px;flex:1;align-content:start}.use dt{font-size:11px;font-weight:800;color:var(--quiet)}.use dd{margin:2px 0 0;font-size:13.5px;line-height:1.65}
+    .use .btn{margin-top:18px}
+    .use.hire{background:var(--dark);color:#fff;border-color:var(--dark)}.use.hire .who,.use.hire dt{color:#a9aaa7}
+    .guard{margin-top:12px;padding:12px;border:1px dashed #6a6c6e;color:#d6d6d2;font-size:12px;line-height:1.65}
+    .hero-fig{margin:0;position:relative;border:1px solid #aaa79f;background:var(--deep)}
+    .hero-fig img{display:block;width:100%;height:auto}
+    .hero-fig figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+    .hero-fig figcaption span{padding:9px 6px;text-align:center;background:var(--ink);color:#fff;font-size:12px;font-weight:800}
+    .shift-fig{margin:34px 0 0;border:1px solid var(--line);background:var(--card)}
+    .shift-fig img{display:block;width:100%;height:auto}
+    .shift-fig figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px 20px;border-top:1px solid var(--line);font-size:16px}
+    .shift-fig figcaption span{color:var(--orange);font-weight:900}.shift-fig em{flex-basis:100%;font-style:normal;color:var(--quiet);font-size:12px}
+    .use-img{display:block;width:calc(100% + 48px);margin:-24px -24px 18px;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--line)}
+    .use.hire .use-img{border-bottom-color:#2c2f31}
+    .why-top{display:grid;grid-template-columns:1fr 440px;gap:clamp(28px,5vw,64px);align-items:center}
+    .shift-pair{margin:0;display:grid;grid-template-columns:1fr 26px 1fr;gap:6px;align-items:center}
+    .sp{position:relative;border:1px solid var(--line);background:var(--card)}
+    .sp img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+    .sp b{position:absolute;top:8px;left:8px;padding:2px 7px;background:var(--ink);color:#fff;font:600 9px var(--mono);letter-spacing:.06em}
+    .sp.after{border-color:#f6b49c}.sp.after b{background:var(--orange)}
+    .sp span{display:block;padding:9px 10px;border-top:1px solid var(--line);font-size:12px;font-weight:800;line-height:1.4;min-height:52px}
+    .sp.after span{background:var(--soft);color:var(--orange2)}
+    .sp-arrow{text-align:center;color:var(--orange);font-weight:900;font-size:20px}
+    .shift-pair figcaption{grid-column:1/-1;margin-top:6px;color:var(--quiet);font-size:11px;text-align:center}
+    .modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:16px;background:#17191bb3;backdrop-filter:blur(4px)}
+    .modal[hidden]{display:none}
+    .m-box{width:min(520px,100%);max-height:calc(100svh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--ink);box-shadow:0 30px 70px #0007}
+    .m-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:22px 24px 0}
+    .m-head small{display:block;color:var(--orange);font:600 10px var(--mono);letter-spacing:.06em}
+    .m-head h2{margin:6px 0 0;font-size:23px;line-height:1.3;letter-spacing:-.05em}
+    .m-x{width:40px;height:40px;flex:none;border:1px solid var(--line);background:var(--card);font-size:18px;cursor:pointer}
+    .m-desc{margin:10px 24px 0;color:var(--muted);font-size:13px;line-height:1.7}
+    .m-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 24px 24px}
+    .m-field{display:grid;gap:5px}.m-field[hidden]{display:none}.m-field.full{grid-column:1/-1}
+    .m-field label{font-size:12px;font-weight:800}.m-field label em{font-style:normal;color:var(--quiet);font-weight:600}.m-field label i{font-style:normal;color:var(--orange)}
+    .m-field input,.m-field select{width:100%;min-height:46px;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:0;font:inherit;font-size:14px;color:var(--ink)}
+    .m-field input:focus,.m-field select:focus{outline:0;border-color:var(--orange)}
+    .m-field.invalid input{border-color:#c62f00}.m-err{color:#c62f00;font-size:11px}
+    .m-consent{grid-column:1/-1;display:grid;gap:8px;padding:12px;background:var(--card);border:1px solid var(--line);font-size:12px;line-height:1.6}
+    .m-consent label{display:flex;gap:8px;align-items:flex-start}.m-consent input{margin-top:3px;accent-color:var(--orange)}
+    .m-consent details{padding:0;border:0;color:var(--muted);font-size:11px}.m-consent summary{display:list-item;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer}.m-consent summary:after{content:none}
+    .m-actions{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .m-actions .btn{flex:1}.m-actions .btn[disabled]{opacity:.6;cursor:wait;transform:none}
+    .m-status{grid-column:1/-1;margin:0;font-size:12px}.m-status.err{color:#c62f00}
+    .m-done{padding:24px}.m-done h3{margin:0 0 8px;font-size:21px}.m-done p{margin:0 0 6px;color:var(--muted);font-size:14px}.m-done b{color:var(--ink)}
+    @media(max-width:560px){.m-form{grid-template-columns:1fr}.m-field.full{grid-column:auto}}
+    .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.chip{padding:6px 10px;background:#fbfaf7cc;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700}
+    .shift{background:var(--card);border:1px solid var(--line);padding:clamp(20px,3vw,32px)}
+    .shift small{display:block;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.06em;margin-bottom:14px}
+    .shift-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:stretch}
+    .s-box{padding:16px;border:1px solid var(--line);background:var(--paper)}.s-box b{display:block;font-size:15px;margin-bottom:6px}.s-box p{margin:0;font-size:12px;color:var(--muted);line-height:1.6}
+    .s-box.after{background:var(--soft);border-color:#f6b49c}
+    .s-arrow{display:grid;place-items:center;color:var(--orange);font-weight:900;font-size:20px}
+    .verbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.verbs span{padding:9px 6px;text-align:center;background:var(--ink);color:#fff;font-size:12px;font-weight:800}
+
+    /* trend */
+    .trend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:34px}
+    .fact{padding:22px;background:var(--card);border:1px solid var(--line)}.fact small{color:var(--orange);font:600 10px var(--mono);letter-spacing:.06em}.fact h3{margin:10px 0 8px;font-size:17px;line-height:1.45}.fact p{margin:0;font-size:13px;color:var(--muted);line-height:1.7}
+    .src{margin-top:16px;color:var(--quiet);font-size:10px;line-height:1.7}.src a{border-bottom:1px solid var(--line)}
+
+    /* dims */
+    .dims{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:36px}
+    .dim{min-height:180px;padding:22px;background:var(--card);border:1px solid var(--line);transition:.25s}.dim:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 13px 28px #17191b12}
+    .dim .n{display:grid;place-items:center;width:28px;height:28px;margin-bottom:22px;background:var(--orange);color:#fff;font:600 11px var(--mono)}
+    .dim.key .n{background:var(--ink)}
+    .dim h3{margin:0 0 8px;font-size:19px;letter-spacing:-.05em}.dim p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+    .dim .q{display:block;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);color:var(--ink);font-size:12px;font-weight:700}
+
+    /* how */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border:1px solid var(--line);background:var(--card)}
+    .step{padding:26px;border-right:1px solid var(--line)}.step:last-child{border-right:0}
+    .step small{font:600 10px var(--mono);color:var(--quiet);letter-spacing:.06em}.step h3{margin:10px 0 8px;font-size:19px}.step p{margin:0;color:var(--muted);font-size:13px}
+    .tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:14px}
+    .task{padding:20px;background:var(--dark);color:#fff;border:1px solid #2c2f31}
+    .task small{color:#ff8a63;font:600 10px var(--mono);letter-spacing:.06em}.task h4{margin:8px 0 10px;font-size:16px}
+    .task pre{margin:0;padding:12px;background:#242729;border:1px solid #3a3d3f;color:#d6d6d2;font:12px/1.65 var(--sans);white-space:pre-wrap}
+    .task .see{display:block;margin-top:10px;color:#a9aaa7;font-size:11px}
+    .not{display:flex;gap:10px;align-items:center;margin-top:22px;padding:14px 18px;border:1px solid var(--ink);background:var(--card);font-size:14px;font-weight:800}
+    .not s{color:var(--quiet);font-weight:600}
+
+    /* result */
+    .result{background:var(--deep)}
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+    .panel{padding:24px;background:var(--card);border:1px solid var(--line)}
+    .panel small{display:block;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.06em;margin-bottom:14px}
+    .ladder{display:grid;gap:6px}
+    .rung{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);background:var(--paper)}
+    .rung b{font:600 12px var(--mono);color:var(--quiet)}.rung span{font-size:14px;font-weight:800}.rung em{display:block;font-style:normal;font-size:11px;color:var(--muted);font-weight:500}
+    .rung.me{background:var(--orange);border-color:var(--orange);color:#fff}.rung.me b,.rung.me em{color:#ffe1d6}
+    .radar{display:block;width:100%;max-width:340px;margin:0 auto}
+    .gap{display:grid;gap:12px}
+    .bar{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;font-size:12px;font-weight:700}
+    .track{height:12px;background:var(--deep);position:relative}
+    .track i{position:absolute;inset:0 auto 0 0;background:var(--line)}.track i.real{background:var(--orange)}
+    .gap-note{margin:14px 0 0;padding:12px;background:var(--soft);font-size:13px;line-height:1.65}
+    .next{display:grid;gap:8px}.next div{display:flex;gap:10px;padding:12px;border:1px solid var(--line);background:var(--paper);font-size:13px}.next b{color:var(--orange);font-family:var(--mono)}
+
+    /* team */
+    .team{background:var(--dark);color:#fff;border:0}
+    .team .lead{color:#bcbdbb}
+    .team-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,64px);align-items:start}
+    .flow{display:grid;gap:8px;margin-top:28px}
+    .flow div{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:14px;border:1px solid #3a3d3f}
+    .flow b{font:600 12px var(--mono);color:#ff8a63}.flow span{font-size:14px;font-weight:700}.flow em{display:block;font-style:normal;color:#a9aaa7;font-size:12px;font-weight:500}
+    .pdf{background:#fbfaf7;color:var(--ink);padding:26px;border:1px solid #444;box-shadow:0 30px 60px #0006;position:relative}
+    .pdf:before{content:"팀 결과지 · 예시";position:absolute;top:-11px;left:18px;padding:3px 8px;background:var(--orange);color:#fff;font:600 10px var(--mono)}
+    .pdf h4{margin:4px 0 4px;font-size:18px}.pdf .meta{color:var(--quiet);font:10px var(--mono);margin-bottom:16px}
+    .dist{display:flex;align-items:flex-end;gap:6px;height:90px;padding:10px;border:1px solid var(--line);background:var(--paper)}
+    .dist i{flex:1;background:var(--line)}.dist i.hi{background:var(--orange)}
+    .dist-l{display:flex;gap:6px;padding:4px 10px 0;font:10px var(--mono);color:var(--quiet)}.dist-l span{flex:1;text-align:center}
+    .pdf ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+    .pdf li{padding:10px 12px;border-left:3px solid var(--orange);background:var(--paper);font-size:13px}.pdf li b{display:block;font-size:11px;color:var(--muted);font-weight:700}
+    .pdf li.law{border-left-color:var(--ink)}
+
+    /* path */
+    .path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border:1px solid var(--line)}
+    .p-step{padding:24px;background:var(--card);border-right:1px solid var(--line)}.p-step:last-child{border-right:0}
+    .p-step.now{background:var(--soft)}
+    .p-step small{font:600 10px var(--mono);color:var(--quiet)}.p-step h3{margin:8px 0 6px;font-size:17px}.p-step p{margin:0;color:var(--muted);font-size:12.5px}
+
+    /* trust */
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:36px}
+    .t{padding:22px;border:1px solid var(--line);background:var(--card)}.t h3{margin:0 0 8px;font-size:16px}.t p{margin:0;font-size:13px;color:var(--muted)}
+
+    /* faq */
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px)}
+    details{border-top:1px solid var(--line);padding:18px 0}details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:800;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--orange);font-family:var(--mono)}details[open] summary:after{content:"–"}
+    details p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+    /* final */
+    .final{background:var(--dark);color:#fff;border:0;text-align:center}
+    .final .lead{color:#bcbdbb;margin-left:auto;margin-right:auto}
+    .final .hero-actions{justify-content:center}
+    .footer{padding:26px var(--pad);background:#111315;color:#818382;font-size:10px}
+    .footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    @media(max-width:860px){
+      .links{display:none}
+      .hero-grid,.team-grid,.faq-grid,.res-grid{grid-template-columns:1fr}
+      .dims,.trend-grid,.tasks,.trust{grid-template-columns:1fr}
+      .steps,.path{grid-template-columns:1fr}.step,.p-step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child,.p-step:last-child{border-bottom:0}
+      .uses{grid-template-columns:1fr}
+      .why-top{grid-template-columns:1fr}.shift-pair{max-width:440px}
+      .aud{display:flex;width:100%}.aud button{flex:1;padding:0 8px}
+      .shift-row{grid-template-columns:1fr}.s-arrow{transform:rotate(90deg);height:30px}
+      .hero-actions .btn{flex:1 1 100%}
+      .crumb{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>BARYON LABS <span class="crumb">/ AI 활용능력 진단</span></a>
+    <nav class="links" aria-label="페이지 메뉴"><a href="#why">왜 지금</a><a href="#uses">쓰임</a><a href="#what">무엇을 재나</a><a href="#how">진단 방식</a><a href="#result">결과</a><a href="#team">팀으로 쓰기</a><a href="#faq">FAQ</a></nav>
+    <a class="btn fill sm" href="#start">진단 시작</a>
+  </header>
+
+  <main>
+    <!-- 01 HERO -->
+    <section class="hero" id="top"><div class="wrap"><div class="hero-grid">
+      <div>
+        <div class="label">AI 활용능력 진단 · 직무 과제 기반</div>
+        <h1 class="display">AI를 쓰는지가 아니라,<br><span class="orange">맡기고 확인할 줄</span><br>아는지를 봅니다.</h1>
+        <p class="lead">일은 이미 바뀌고 있습니다. 직접 하던 일이, AI에게 맡기고 지시하고 결과를 검증하는 일로. 입사를 준비할 때도, 사람을 뽑을 때도, 함께 일하는 팀을 키울 때도 같은 기준으로 봅니다.</p>
+        <div class="aud" role="tablist" aria-label="쓰임 선택" id="start">
+          <button role="tab" aria-selected="true" data-aud="job">입사 준비</button>
+          <button role="tab" aria-selected="false" data-aud="hire">채용 전형</button>
+          <button role="tab" aria-selected="false" data-aud="staff">재직자·팀</button>
+        </div>
+        <div class="aud-panel" data-panel="job"><p>지원할 직무의 실제 과제로 연습하고, 면접에서 "AI로 이렇게 일합니다"라고 말할 근거를 만드세요.</p><div class="hero-actions"><a class="btn fill" href="#start" data-open="job">직무 골라 연습 시작 →</a><a class="btn" href="#use-job">결과로 무엇을 얻나</a></div></div>
+        <div class="aud-panel" data-panel="hire" hidden><p>지원자에게 링크를 보내 같은 과제를 풀게 하고, 면접관이 볼 과정·결과 요약을 받으세요. 합격 여부는 사람이 정합니다.</p><div class="hero-actions"><a class="btn fill" href="#start" data-open="hire">채용 전형 링크 만들기 →</a><a class="btn" href="#use-hire">전형 운영 방식 보기</a></div></div>
+        <div class="aud-panel" data-panel="staff" hidden><p>팀에 링크를 보내 각자 진단하고, 팀이 막힌 곳과 교육 우선순위를 한 장의 결과지로 받으세요.</p><div class="hero-actions"><a class="btn fill" href="#start" data-open="self">혼자 진단 시작 →</a><a class="btn" href="#start" data-open="team">팀 진단 링크 만들기</a></div></div>
+        <div class="chips"><span class="chip">무료</span><span class="chip">설치·가입 없이 시작</span><span class="chip">결과 바로 확인</span><span class="chip">직무별 현업 과제</span></div>
+        
+      </div>
+      <figure class="hero-fig"><img src="assets/hero.jpg" alt="공장 사무실에서 AI에게 업무를 나눠 맡기고, 돌아온 보고서를 펜으로 직접 확인하는 엔지니어" width="1536" height="1024"><figcaption><span>맡기기</span><span>지시하기</span><span>검증하기</span></figcaption></figure>
+    </div></div></section>
+
+    <!-- 02 WHY NOW -->
+    <section id="why"><div class="wrap">
+      <div class="why-top">
+        <div>
+          <div class="label">01 · Why now</div>
+          <h2 class="head">대기업은 이미<br><span class="orange">이 능력을 보기 시작했습니다.</span></h2>
+          <p class="lead">올해 하반기, 국내 여러 대기업이 신입 채용과 임원 평가에 "AI로 실무 과제를 푸는 능력"을 넣었습니다. 반도체·조선 같은 제조 대기업이 앞장섰고, 생산·설계 직무까지 적용합니다. 지원자는 무엇을 준비해야 할지, 중견·중소기업은 무엇을 기준으로 뽑고 키워야 할지 아직 막막합니다.</p>
+        </div>
+        <figure class="shift-pair" aria-label="일의 변화: 직접 하는 일에서 맡기고 확인하는 일로">
+          <div class="sp before"><img src="assets/shift-before.jpg" alt="서류 더미에 묻혀 모든 일을 직접 처리하는 직원" loading="lazy" width="480" height="600"><b>BEFORE</b><span>직접 하는 일</span></div>
+          <div class="sp-arrow" aria-hidden="true">→</div>
+          <div class="sp after"><img src="assets/shift-after.jpg" alt="같은 직원이 AI에게 업무 카드를 건네고 돌아온 결과를 돋보기로 확인하는 모습" loading="lazy" width="480" height="600"><b>AFTER</b><span>맡기고 · 지시하고 · 검증하는 일</span></div>
+          <figcaption>이 진단은 오른쪽 일을 얼마나 해내는지 봅니다.</figcaption>
+        </figure>
+      </div>
+      <div class="trend-grid">
+        <article class="fact"><small>FACT 01 · 채용</small><h3>지식 시험 대신,<br>AI를 써서 과제를 풀게 합니다.</h3><p>코딩 테스트를 없애거나, 반나절짜리 과제형 면접으로 바꾼 곳이 생겼습니다.</p></article>
+        <article class="fact"><small>FACT 02 · 사내 평가</small><h3>얼마나 썼는지가 아니라,<br>무엇을 바꿨는지를 봅니다.</h3><p>도구 도입이나 교육 이수가 아니라, 실제 업무 결과를 평가에 넣는 회사가 늘고 있습니다.</p></article>
+        <article class="fact"><small>FACT 03 · 공통 기준</small><h3>문제 정의 · 활용 과정 ·<br>결과물 · 결과 검증</h3><p>기업마다 표현은 달라도 보는 축은 비슷합니다. 이 진단도 같은 축으로 봅니다.</p></article>
+      </div>
+      <p class="src">출처: SK하이닉스 뉴스룸(2026-07-30), EBN(2026-08-25), 녹색경제신문, 이투데이 등 공개 보도. 개별 기업은 바리온랩스 고객사가 아니며, 이 진단과 관련이 없습니다.</p>
+      
+    </div></section>
+
+    <!-- 02.5 USES -->
+    <section id="uses"><div class="wrap">
+      <div class="label">Uses · 세 가지 쓰임</div>
+      <h2 class="head">한 가지 기준으로,<br><span class="orange">준비하고 · 뽑고 · 키웁니다.</span></h2>
+      <p class="lead">과제와 채점 기준은 같습니다. 누가 쓰느냐에 따라 받는 결과물과 다음 단계만 달라집니다.</p>
+      <div class="uses">
+        <article class="use" id="use-job"><img class="use-img" src="assets/use-job.jpg" alt="집 책상에서 노트북의 AI 화면과 초안을 나란히 두고, 출력한 결과물에 주황 펜으로 고칠 곳을 표시하며 과제를 연습하는 구직자" loading="lazy"><small>FOR JOB SEEKERS · 입사 준비</small><h3>입사 준비용</h3><p class="who">취업 준비생 · 이직 준비자 · 직무 전환자</p>
+          <dl><dt>무엇을 하나</dt><dd>지원할 직무(생산·품질·설계·구매·사무)의 과제로 연습하고, 다시 풀며 나아진 점을 확인합니다.</dd>
+          <dt>무엇을 받나</dt><dd>내 단계와 약한 차원, 연습 기록이 담긴 개인 결과지. 면접에서 AI로 일하는 방식을 설명할 근거가 됩니다.</dd>
+          <dt>다음 단계</dt><dd>약한 차원만 골라 다시 연습 · 교육 과정 안내</dd></dl>
+          <a class="btn fill" href="#start" data-open="job">직무 골라 연습 시작 →</a></article>
+        <article class="use hire" id="use-hire"><img class="use-img" src="assets/use-hire.jpg" alt="면접관 두 명이 태블릿으로 지원자의 과제 수행 과정을 함께 보는 면접 장면" loading="lazy"><small>FOR HIRING · 채용 전형</small><h3>채용 전형용</h3><p class="who">인사·채용 담당자 · 현업 면접관</p>
+          <dl><dt>무엇을 하나</dt><dd>직무에 맞는 과제 묶음을 골라 지원자에게 링크를 보냅니다. 모두가 같은 과제, 같은 기준으로 풉니다.</dd>
+          <dt>무엇을 받나</dt><dd>지원자별 과정·결과 요약과 면접에서 물어볼 질문. 점수 순위표가 아니라 면접관이 판단할 재료입니다.</dd>
+          <dt>다음 단계</dt><dd>입사 후 같은 기준으로 재진단 → 온보딩 계획</dd></dl>
+          <p class="guard">합격·불합격은 진단이 정하지 않습니다. 지원자에게 AI 활용 평가 사실을 미리 알리고, 사람이 최종 판단하며, 요청 시 결과를 설명할 수 있게 운영하도록 안내합니다.</p>
+          <a class="btn fill" href="#start" data-open="hire">채용 전형 링크 만들기 →</a></article>
+        <article class="use" id="use-staff"><img class="use-img" src="assets/use-staff.jpg" alt="공장 현장 화이트보드 앞에서 팀장이 팀 결과지를 가리키며 팀원들과 이야기하는 모습" loading="lazy"><small>FOR TEAMS · 재직자</small><h3>재직자·팀용</h3><p class="who">교육·HR 담당자 · 팀장 · 경영진</p>
+          <dl><dt>무엇을 하나</dt><dd>팀에 링크를 보내 각자 진단합니다. 개인 결과는 본인만 봅니다.</dd>
+          <dt>무엇을 받나</dt><dd>팀이 막힌 차원, 교육 우선순위, 함께 점검할 사내 규정이 담긴 팀 결과지(PDF). 품의에 바로 붙일 수 있습니다.</dd>
+          <dt>다음 단계</dt><dd>좌석 온보딩 → 같은 기준으로 다시 진단</dd></dl>
+          <a class="btn fill" href="#start" data-open="team">팀 진단 링크 만들기 →</a></article>
+      </div>
+      
+    </div></section>
+
+    <!-- 03 WHAT -->
+    <section id="what"><div class="wrap">
+      <div class="label">02 · What we look at</div>
+      <h2 class="head">여섯 가지를 봅니다.<br><span class="orange">가운데 셋이 핵심입니다.</span></h2>
+      <p class="lead">국제 AI 리터러시 기준(OECD·EC AILit, EU DigComp 3.0)이 공통으로 다루는 축을, 제조 현장 말로 다시 정리했습니다.</p>
+      <div class="dims">
+        <article class="dim"><span class="n">01</span><h3>AI 이해</h3><p>AI가 잘하는 일과 틀리기 쉬운 일을 구분합니다.</p><span class="q">"이건 AI가 지어낼 수 있는 질문인가?"</span></article>
+        <article class="dim key"><span class="n">02</span><h3>맡길 일 정하기</h3><p>업무를 쪼개서 AI 몫과 사람 몫을 나눕니다.</p><span class="q">"이번 주 일 중 무엇을 맡길까?"</span></article>
+        <article class="dim key"><span class="n">03</span><h3>지시하기</h3><p>목적·조건·형식을 담아 한 번에 알아듣게 요청합니다.</p><span class="q">"공정·기준·양식까지 말했나?"</span></article>
+        <article class="dim key"><span class="n">04</span><h3>결과 검증</h3><p>틀린 수치, 없는 근거, 빠진 조건을 찾아 고칩니다.</p><span class="q">"이 보고서, 그대로 올려도 되나?"</span></article>
+        <article class="dim"><span class="n">05</span><h3>책임·보안</h3><p>회사 자료를 어디까지 넣어도 되는지, 결과의 책임이 누구에게 있는지 압니다.</p><span class="q">"이 도면, 외부 AI에 넣어도 되나?"</span></article>
+        <article class="dim"><span class="n">06</span><h3>팀에 퍼뜨리기</h3><p>잘 된 방법을 팀의 업무 방식으로 남깁니다.</p><span class="q">"내 방법을 옆자리도 쓸 수 있나?"</span></article>
+      </div>
+    </div></section>
+
+    <!-- 04 HOW -->
+    <section id="how"><div class="wrap">
+      <div class="label">03 · How it works</div>
+      <h2 class="head">질문에 답하는 게 아니라,<br><span class="orange">일을 한 번 맡겨 봅니다.</span></h2>
+      <div class="steps">
+        <div class="step"><small>STEP 01</small><h3>짧은 문답</h3><p>직무와 지금 AI를 쓰는 방식, 스스로 생각하는 수준을 묻습니다.</p></div>
+        <div class="step"><small>STEP 02</small><h3>현업 미니 과제</h3><p>화면 안의 AI로 실제 현장 과제를 처리합니다. 따로 가입하거나 설치할 필요가 없습니다.</p></div>
+        <div class="step"><small>STEP 03</small><h3>결과 바로 확인</h3><p>단계, 여섯 가지 차원, 다음에 연습할 것을 바로 보여드립니다.</p></div>
+      </div>
+      <div class="tasks">
+        <article class="task"><small>과제 예시 A · 맡길 일 정하기</small><h4>이번 주 업무를 나눠 보세요</h4><pre>□ 주간 생산실적 표 정리
+□ 협력사 납기 지연 메일 회신
+□ 신규 설비 견적 비교
+□ 라인 작업자 면담
+→ AI에게 맡길 일 / 내가 할 일 / 같이 할 일</pre><span class="see">보는 것: 나눈 이유가 맞는가</span></article>
+        <article class="task"><small>과제 예시 B · 지시하기</small><h4>작업 표준서를 요청해 보세요</h4><pre>상황: 신규 작업자 교육용
+조건: 사출 성형 2호기, 금형 교체 절차
+형식: 현장에 붙일 1장짜리
+→ AI에게 보낼 요청문을 써 보세요</pre><span class="see">보는 것: 목적·조건·형식이 담겼는가</span></article>
+        <article class="task"><small>과제 예시 C · 결과 검증</small><h4>AI가 쓴 불량 보고서를 확인하세요</h4><pre>AI가 작성한 주간 불량 분석 보고서에
+틀린 수치와 근거 없는 원인이 섞여 있습니다.
+→ 그대로 올릴 수 없는 부분을 표시하고
+  고칠 방법을 적어 보세요</pre><span class="see">보는 것: 오류를 찾고 이유를 대는가</span></article>
+      </div>
+      <div class="not"><s>몇 번이나 썼는지</s> → 무엇을 맞게 해냈는지</div>
+      <p class="micro">과제 채점은 항목별 기준표로 AI가 1차 채점하고, 일부는 사람이 다시 확인합니다. 결과에 이의가 있으면 재검토를 요청할 수 있습니다.</p>
+    </div></section>
+
+    <!-- 05 RESULT -->
+    <section class="result" id="result"><div class="wrap">
+      <div class="label">04 · Your result</div>
+      <h2 class="head">결과는 점수가 아니라,<br><span class="orange">지금 서 있는 단계</span>로 드립니다.</h2>
+      <p class="lead">다른 사람과 줄 세우지 않습니다. 내가 어느 단계에 있고, 다음 단계로 가려면 무엇을 연습하면 되는지만 보여드립니다.</p>
+      <div class="res-grid">
+        <div class="panel">
+          <small>LEVEL · 결과 예시</small>
+          <div class="ladder">
+            <div class="rung"><b>L4</b><span>설계하는 단계<em>팀이 함께 쓸 방법과 기준을 만든다</em></span></div>
+            <div class="rung"><b>L3</b><span>검증하는 단계<em>AI 결과를 확인하고 책임지고 내보낸다</em></span></div>
+            <div class="rung me"><b>L2</b><span>맡기는 단계 · 지금 여기<em>일을 쪼개 AI에게 맡기기 시작했다</em></span></div>
+            <div class="rung"><b>L1</b><span>물어보는 단계<em>궁금한 걸 AI에게 물어본다</em></span></div>
+            <div class="rung"><b>L0</b><span>직접 하는 단계<em>아직 일을 모두 직접 한다</em></span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <small>SIX DIMENSIONS · 결과 예시</small>
+          <svg class="radar" viewBox="-36 0 372 280" role="img" aria-label="여섯 가지 차원 중 결과 검증과 팀에 퍼뜨리기가 상대적으로 약한 모양의 예시 그래프">
+            <g fill="none" stroke="#cfccc4">
+              <polygon points="150,30 254,90 254,190 150,250 46,190 46,90"/>
+              <polygon points="150,74 216,112 216,168 150,206 84,168 84,112"/>
+              <line x1="150" y1="30" x2="150" y2="250"/><line x1="46" y1="90" x2="254" y2="190"/><line x1="254" y1="90" x2="46" y2="190"/>
+            </g>
+            <polygon points="150,52 228,105 196,167 150,192 72,175 86,113" fill="#f04b1733" stroke="#f04b17" stroke-width="2"/>
+            <g font-family="Gothic A1, sans-serif" font-size="11" font-weight="700" fill="#17191b" text-anchor="middle">
+              <text x="150" y="20">AI 이해</text><text x="268" y="86" text-anchor="start">맡길 일</text><text x="268" y="200" text-anchor="start">지시</text>
+              <text x="150" y="268">결과 검증</text><text x="32" y="200" text-anchor="end">책임·보안</text><text x="32" y="86" text-anchor="end">팀 확산</text>
+            </g>
+          </svg>
+          <p class="micro" style="text-align:center">값 대신 모양만 보여드립니다. 어디가 비었는지가 중요합니다.</p>
+        </div>
+        <div class="panel">
+          <small>SELF vs REAL · 생각한 나와 실제 나</small>
+          <div class="gap">
+            <div class="bar"><span>지시하기</span><div class="track"><i style="width:72%"></i></div></div>
+            <div class="bar"><span></span><div class="track"><i class="real" style="width:64%"></i></div></div>
+            <div class="bar"><span>결과 검증</span><div class="track"><i style="width:78%"></i></div></div>
+            <div class="bar"><span></span><div class="track"><i class="real" style="width:38%"></i></div></div>
+          </div>
+          <p class="micro">회색 = 스스로 생각한 수준 · 주황 = 과제에서 보인 수준</p>
+          <p class="gap-note"><b>결과 검증</b>은 스스로 생각한 것보다 아직 약합니다. AI를 자주 쓰는 사람일수록 이 차이가 크게 나타나는 경향이 있습니다.</p>
+        </div>
+        <div class="panel">
+          <small>NEXT · 다음에 연습할 것</small>
+          <div class="next">
+            <div><b>01</b><span>AI가 쓴 수치는 원본 표와 한 번 대조하는 습관</span></div>
+            <div><b>02</b><span>요청할 때 "근거를 함께 적어 줘"를 붙이기</span></div>
+            <div><b>03</b><span>그대로 내보내면 안 되는 문서 목록 만들기</span></div>
+          </div>
+          <div class="hero-actions" style="margin-top:18px"><a class="btn sm" href="#">결과 이미지 저장</a><a class="btn sm" href="#">결과지 PDF</a></div>
+        </div>
+      </div>
+      
+    </div></section>
+
+    <!-- 06 TEAM -->
+    <section class="team" id="team"><div class="wrap"><div class="team-grid">
+      <div>
+        <div class="label light">05 · For teams</div>
+        <h2 class="head">팀으로 모으면,<br><span class="orange">교육 계획의 근거</span>가 됩니다.</h2>
+        <p class="lead">개인 결과로 끝나지 않습니다. 담당자가 링크를 만들어 팀에 보내면, 응답이 모인 뒤 팀 결과지를 한 장으로 받아 품의에 바로 붙일 수 있습니다.</p>
+        <div class="flow">
+          <div><b>01</b><span>팀 링크 만들기<em>회사·팀 이름만 입력합니다</em></span></div>
+          <div><b>02</b><span>팀원에게 공유<em>각자 진단하고 개인 결과는 본인만 봅니다</em></span></div>
+          <div><b>03</b><span>팀 결과지 받기<em>다섯 명 이상 모이면 열립니다. 개인을 특정할 수 없게 묶어서 보여드립니다</em></span></div>
+        </div>
+        <div class="hero-actions"><a class="btn fill" href="#start" data-open="team">팀 진단 링크 만들기 →</a></div>
+      </div>
+      <div class="pdf" aria-label="팀 결과지 예시">
+        <h4>OO정밀 생산기술팀 · AI 활용능력 진단 결과</h4>
+        <div class="meta">TEAM REPORT · 예시 화면 · 실제 고객 데이터 아님</div>
+        <div class="dist" aria-hidden="true"><i style="height:30%"></i><i class="hi" style="height:85%"></i><i class="hi" style="height:70%"></i><i style="height:25%"></i><i style="height:8%"></i></div>
+        <div class="dist-l"><span>L0</span><span>L1</span><span>L2</span><span>L3</span><span>L4</span></div>
+        <ul>
+          <li><b>팀이 가장 막혀 있는 곳</b>결과 검증 — AI가 만든 수치를 원본과 대조하지 않고 내보내는 경우가 많음</li>
+          <li><b>교육 우선순위</b>① 결과 검증 실습 ② 맡길 일 나누기 ③ 사내 자료 입력 기준</li>
+          <li class="law"><b>함께 점검할 사내 규정</b>AI 이용 규정 유무 · 직무기술서의 "AI 결과 검증 책임" 문구 · 노사협의회 안건 여부</li>
+          <li><b>다음 단계</b>같은 기준으로 교육 전후를 다시 진단해 변화를 확인</li>
+        </ul>
+      </div>
+    </div>
+    
+    </div></section>
+
+    <!-- 07 PATH -->
+    <section id="path"><div class="wrap">
+      <div class="label">06 · After the result</div>
+      <h2 class="head">진단 다음엔,<br><span class="orange">같은 기준으로 다시 잽니다.</span></h2>
+      <p class="lead">진단은 출발점입니다. 교육으로 먼저 시작하고, 효과가 보이면 업무에 연결합니다. 숫자는 우리가 주장하지 않고, 귀사의 실행이 기록합니다.</p>
+      <div class="path">
+        <div class="p-step now"><small>NOW</small><h3>진단</h3><p>개인·팀이 어디에 서 있는지 확인합니다.</p></div>
+        <div class="p-step"><small>NEXT</small><h3>좌석 온보딩</h3><p>막힌 차원을 실제 업무로 연습합니다.</p></div>
+        <div class="p-step"><small>THEN</small><h3>다시 진단</h3><p>같은 기준으로 전후를 비교합니다.</p></div>
+        <div class="p-step"><small>LATER</small><h3>상시 운영</h3><p>효과가 확인된 업무부터 연결해 기록을 쌓습니다.</p></div>
+      </div>
+      <div class="hero-actions"><a class="btn" href="/service.html#inquiry">진단 결과로 상담받기</a></div>
+    </div></section>
+
+    <!-- 08 TRUST -->
+    <section id="trust"><div class="wrap">
+      <div class="label">07 · Before you start</div>
+      <h2 class="head">시작 전에 <span class="orange">먼저 밝혀 둡니다.</span></h2>
+      <div class="trust">
+        <article class="t"><h3>무엇을 참고했나</h3><p>OECD·EC AI Literacy Framework(AILit), EU DigComp 3.0의 공통 축을 참고했습니다. 어떤 기관의 공식 인증이나 승인도 받지 않았습니다.</p></article>
+        <article class="t"><h3>무엇에 쓰는 진단인가</h3><p>교육 우선순위와 사내 역량 기준을 세우는 데 씁니다. 인사 판단에 참고할 때는 반드시 사람이 최종 판단해 주세요.</p></article>
+        <article class="t"><h3>응답은 어떻게 다루나</h3><p>응답 보관 위치, 채점에 쓰는 AI, 보관 기간과 삭제 요청 방법을 진단 시작 화면에 먼저 보여드립니다.</p></article>
+      </div>
+    </div></section>
+
+    <!-- 09 FAQ -->
+    <section id="faq"><div class="wrap"><div class="faq-grid">
+      <div><div class="label">08 · FAQ</div><h2 class="head">자주 묻는 질문</h2></div>
+      <div>
+        <details open><summary>자격증이나 인증 시험인가요?</summary><p>아닙니다. 교육과 사내 업무 기준을 세우기 위한 진단입니다. 결과는 단계와 설명으로 드리며 합격·불합격이 없습니다.</p></details>
+        <details><summary>인사평가에 써도 되나요?</summary><p>이 진단은 사람을 키우기 위한 것이고, 보상을 정하기 위한 것이 아닙니다. 그래서 인사 시스템과 자동으로 연결하지 않습니다. 결과를 성과급이나 승진에 반영하려면 취업규칙 변경이나 노사협의 절차가 필요할 수 있으니 먼저 확인하시고, 그 경우에도 반드시 사람이 최종 판단해 주세요. (법률 자문이 아닙니다.)</p></details>
+        <details><summary>채용 전형에 써도 되나요?</summary><p>쓸 수 있습니다. 다만 진단은 면접관이 판단할 재료를 드릴 뿐, 합격·불합격을 정하지 않습니다. 지원자에게 AI 활용 과제를 본다는 사실과 결과 활용 범위를 미리 알리고, 사람이 최종 판단하며, 지원자가 요청하면 결과를 설명할 수 있게 운영하시길 권합니다. (법률 자문이 아닙니다.)</p></details>
+        <details><summary>입사 준비용 결과를 이력서에 써도 되나요?</summary><p>자격증이 아니므로 자격란에는 쓰지 않습니다. 대신 개인 결과지의 과제 기록을 바탕으로 "AI에게 어떤 일을 맡기고 어떻게 검증하는지"를 자기소개나 면접에서 설명하는 데 활용하세요.</p></details>
+        <details><summary>어떤 AI 도구로 진단하나요?</summary><p>특정 도구에 묶이지 않습니다. 진단 화면 안에 있는 AI로 과제를 수행합니다. 회사에서 쓰는 도구로 다시 재고 싶다면 상담으로 연결해 드립니다.</p></details>
+        <details><summary>팀 결과지는 몇 명부터 볼 수 있나요?</summary><p>개인을 특정할 수 없도록 다섯 명 이상 응답이 모였을 때 열립니다. 개인 결과는 본인만 볼 수 있습니다.</p></details>
+        <details><summary>회사 자료를 넣어야 하나요?</summary><p>아니요. 과제는 모두 예시 상황으로 준비되어 있습니다. 실제 회사 자료를 넣지 마세요.</p></details>
+        <details><summary>비용이 드나요?</summary><p>개인 진단과 팀 결과지는 무료입니다. 교육과 업무 연결은 도입 상담으로 범위를 함께 정합니다.</p></details>
+      </div>
+    </div></div></section>
+
+    <!-- 10 FINAL -->
+    <section class="final" id="final"><div class="wrap">
+      <div class="label light">09 · Start</div>
+      <h2 class="head">AI에게 일을 맡기고 확인할 줄,<br><span class="orange">지금 어디까지 왔을까요?</span></h2>
+      <p class="lead">준비하는 사람도, 뽑는 사람도, 키우는 사람도 같은 과제로 시작합니다.</p>
+      <div class="hero-actions"><a class="btn fill" href="#start" data-open="job">입사 준비 · 연습 시작 →</a><a class="btn light" href="#start" data-open="hire">채용 전형 링크 만들기</a><a class="btn light" href="#start" data-open="team">팀 진단 링크 만들기</a></div>
+    </div></section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.aud button').forEach(function(b){
+      b.addEventListener('click',function(){
+        document.querySelectorAll('.aud button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+        document.querySelectorAll('.aud-panel').forEach(function(p){p.hidden=p.dataset.panel!==b.dataset.aud});
+      });
+    });
+  </script>
+  <div class="modal" id="start-modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+    <div class="m-box">
+      <div class="m-head"><div><small id="m-kicker">AI 활용능력 진단</small><h2 id="m-title">연습 링크를 메일로 보내드립니다</h2></div><button class="m-x" type="button" data-close aria-label="닫기">✕</button></div>
+      <p class="m-desc" id="m-desc">입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다.</p>
+      <form class="m-form" id="start-form" novalidate>
+        <input type="hidden" name="mode" value="job">
+        <div class="m-field"><label for="f-name">이름 <i>*</i></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="m-field"><label for="f-email">이메일 <i>*</i></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><span class="m-err" hidden>이메일 형식을 확인해 주세요.</span></div>
+        <div class="m-field full" id="f-company-wrap"><label for="f-company">회사명 <em id="f-company-opt">(선택)</em></label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="m-field"><label for="f-role">직군 <em>(선택)</em></label><select id="f-role" name="role"><option value="">선택 안 함</option><option>생산·제조</option><option>품질</option><option>설계·개발</option><option>구매·SCM</option><option>영업·마케팅</option><option>경영지원·사무</option><option>인사·교육</option><option>IT·전산</option><option>기타</option></select></div>
+        <div class="m-field" id="f-stage-wrap"><label for="f-stage">지금 상황 <em>(선택)</em></label><select id="f-stage" name="stage"><option value="">선택 안 함</option><option>학생·취업 준비</option><option>이직 준비</option><option>재직 중</option><option>팀장·관리자</option></select></div>
+        <div class="m-field" id="f-size-wrap" hidden><label for="f-size">대상 인원 <em>(선택)</em></label><select id="f-size" name="team_size"><option value="">선택 안 함</option><option>5~10명</option><option>11~30명</option><option>31~100명</option><option>100명 이상</option></select></div>
+        <div class="m-consent">
+          <label><input type="checkbox" name="agree_privacy" required> <span><b>[필수]</b> 개인정보 수집·이용에 동의합니다.</span></label>
+          <details><summary>수집 항목·목적·보관 기간 보기</summary>수집 항목: 이름, 이메일, 회사명·직군·상황(입력 시) · 목적: 진단 링크 및 결과 발송, 진단 운영 · 보관: 진단 종료 후 1년 또는 삭제 요청 시까지. 동의하지 않으실 수 있으나 이 경우 링크를 보내드릴 수 없습니다.</details>
+          <label><input type="checkbox" name="agree_marketing"> <span>[선택] 교육·세미나 소식을 메일로 받겠습니다.</span></label>
+        </div>
+        <p class="m-status" role="status" aria-live="polite"></p>
+        <div class="m-actions"><button class="btn fill" type="submit" id="m-submit">메일로 신청하기 →</button></div>
+      </form>
+      <div class="m-done" hidden><h3>메일 앱에서 보내기를 눌러 주세요.</h3><p>입력하신 내용이 담긴 메일이 열렸습니다. 보내 주시면 <b id="m-done-email"></b>로 영업일 1일 안에 진단 링크를 보내드립니다.</p><p>메일 앱이 열리지 않으면 <a href="mailto:hello@baryon.ai?subject=%5BAI%20%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5%20%EC%A7%84%EB%8B%A8%5D%20%EB%A7%81%ED%81%AC%20%EC%8B%A0%EC%B2%AD" style="border-bottom:1px solid var(--line)">hello@baryon.ai</a>로 이름과 신청 유형을 적어 보내 주세요.</p><div class="m-actions" style="margin-top:16px"><button class="btn" type="button" data-close>닫기</button></div></div>
+    </div>
+  </div>
+  <script>
+  // 진단 시작 모달 → Form2AI2Email worker (service.html 문의 폼과 같은 호출 방식)
+  (() => {
+    // 신청은 메일 작성창(mailto)으로 받음. Form2AI2Email 연동은 보류(진단 폼 UUID 7008cd80-801c-488e-878a-7f53ce2f8dc3, 수신 메일 미연결)
+    const TO = 'hello@baryon.ai';
+    const MODE_LABEL = { job: '입사 준비', self: '개인 진단', hire: '채용 전형', team: '팀 진단' };
+    const COPY = {
+      job:  {k:'입사 준비 · 직무 연습', t:'연습 링크를 메일로 보내드립니다', d:'지원할 직무의 과제로 연습할 수 있는 링크를 영업일 1일 안에 메일로 보내드립니다. 몇 번이든 다시 풀 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
+      self: {k:'재직자 · 개인 진단', t:'진단 링크를 메일로 보내드립니다', d:'입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다. 결과도 같은 메일로 다시 볼 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
+      hire: {k:'채용 전형', t:'채용 전형 링크를 만들어 드립니다', d:'지원자에게 보낼 전형 링크와 운영 안내(지원자 사전 고지 문구 포함)를 영업일 1일 안에 담당자 메일로 보내드립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'},
+      team: {k:'재직자 · 팀 진단', t:'팀 진단 링크를 만들어 드립니다', d:'팀원에게 공유할 링크를 영업일 1일 안에 메일로 보내드립니다. 다섯 명 이상 응답하면 팀 결과지가 열립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'}
+    };
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const modal = document.getElementById('start-modal');
+    const form = document.getElementById('start-form');
+    const done = modal.querySelector('.m-done');
+    const status = form.querySelector('.m-status');
+    const submit = document.getElementById('m-submit');
+    const emailIn = form.querySelector('[name=email]');
+    const emailErr = emailIn.parentElement.querySelector('.m-err');
+    const company = form.querySelector('[name=company]');
+    let lastFocus = null;
+
+    function open(mode) {
+      const c = COPY[mode] || COPY.job;
+      form.mode.value = mode;
+      document.getElementById('m-kicker').textContent = c.k;
+      document.getElementById('m-title').textContent = c.t;
+      document.getElementById('m-desc').textContent = c.d;
+      submit.textContent = c.btn;
+      company.required = c.company;
+      document.getElementById('f-company-opt').textContent = c.company ? '*' : '(선택)';
+      document.getElementById('f-stage-wrap').hidden = !c.stage;
+      document.getElementById('f-size-wrap').hidden = !c.size;
+      form.hidden = false; done.hidden = true; status.textContent = ''; status.className = 'm-status';
+      lastFocus = document.activeElement;
+      modal.hidden = false; document.body.style.overflow = 'hidden';
+      form.querySelector('[name=name]').focus();
+    }
+    function close() { modal.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+
+    document.querySelectorAll('[data-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); open(a.dataset.open); }));
+    modal.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+    emailIn.addEventListener('input', () => { const ok = emailIn.value.trim() === '' || EMAIL_RE.test(emailIn.value.trim()); emailErr.hidden = ok; emailIn.parentElement.classList.toggle('invalid', !ok); });
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const email = (fd.get('email') || '').toString().trim();
+      const name = (fd.get('name') || '').toString().trim();
+      const emailOk = EMAIL_RE.test(email);
+      emailErr.hidden = emailOk; emailIn.parentElement.classList.toggle('invalid', !emailOk);
+      if (!name || !emailOk || (company.required && !company.value.trim()) || !fd.get('agree_privacy')) {
+        status.className = 'm-status err';
+        status.textContent = (!name || !emailOk || (company.required && !company.value.trim())) ? '필수 항목(*)을 확인해 주세요.' : '개인정보 수집·이용 동의가 필요합니다.';
+        return;
+      }
+      const d = {
+        mode: fd.get('mode'), name, email,
+        company: (fd.get('company') || '').toString().trim(),
+        role: fd.get('role') || '', stage: fd.get('stage') || '', team_size: fd.get('team_size') || '',
+        marketing: fd.get('agree_marketing') ? '동의' : '미동의'
+      };
+      const rows = [
+        ['신청 유형', MODE_LABEL[d.mode] || d.mode], ['이름', d.name], ['이메일', d.email],
+        ['회사명', d.company], ['직군', d.role], ['지금 상황', d.stage], ['대상 인원', d.team_size],
+        ['개인정보 수집·이용', '동의'], ['교육·세미나 소식 수신', d.marketing]
+      ].filter(r => r[1]);
+      const subject = `[AI 활용능력 진단] ${MODE_LABEL[d.mode]} 링크 신청 - ${d.name}`;
+      const body = 'AI 활용능력 진단 링크를 신청합니다.\n\n' + rows.map(r => `${r[0]}: ${r[1]}`).join('\n') + '\n\n(baryon.ai/ai-skill-check 에서 작성됨)';
+      location.href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (window.posthog) posthog.capture('assess_signup', { mode: d.mode, role: d.role, channel: 'mailto' });
+      document.getElementById('m-done-email').textContent = email;
+      form.hidden = true; done.hidden = false; done.querySelector('[data-close]').focus();
+    });
+  })();
+  </script>
+  <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><span>AI 활용능력 진단은 학습·기준 수립용 진단이며 공식 자격·인증이 아닙니다.</span></div></footer>
+</body>
+</html>
