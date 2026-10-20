@@ -121,6 +121,15 @@
     @media(max-width:980px){.clips{grid-template-columns:1fr 1fr}}
     @media(max-width:860px){.scrap{grid-template-columns:1fr}.scrap-img{width:110px;height:110px}}
     @media(max-width:520px){.clips{grid-template-columns:1fr}}
+    .hb-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+    .hb-book{display:grid;grid-template-columns:150px 1fr;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 40px #17191b14}
+    .hb-cover{display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:18px 16px;background:var(--ink);color:#fff;min-height:240px;border-right:6px solid var(--orange)}
+    .hb-cover small{font:600 9px var(--mono);letter-spacing:.06em;color:#a9aaa7}.hb-cover b{font-size:19px;line-height:1.3;letter-spacing:-.05em}.hb-cover span{font-size:11px;color:#ff8a63;font-weight:700}
+    .hb-toc{margin:0;padding:16px 18px;list-style:none;display:grid;gap:2px;align-content:center}
+    .hb-toc li{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px;font-weight:700;line-height:1.5}.hb-toc li:last-child{border-bottom:0}
+    .hb-toc b{font:600 11px var(--mono);color:var(--orange);padding-top:2px}
+    .m-hb{display:flex;gap:10px;align-items:flex-start;margin:12px 24px 0;padding:11px 12px;background:var(--soft);border:1px solid #f6b49c;font-size:12.5px;line-height:1.6}.m-hb b{flex:none;padding:1px 6px;background:var(--orange);color:#fff;font:600 10px var(--mono)}
+    @media(max-width:860px){.hb-grid{grid-template-columns:1fr}.hb-book{grid-template-columns:1fr}.hb-cover{min-height:auto;border-right:0;border-bottom:6px solid var(--orange)}}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.chip{padding:6px 10px;background:#fbfaf7cc;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700}
     .shift{background:var(--card);border:1px solid var(--line);padding:clamp(20px,3vw,32px)}
     .shift small{display:block;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.06em;margin-bottom:14px}
@@ -230,7 +239,7 @@
 
   <header class="nav">
     <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>BARYON LABS <span class="crumb">/ AI 활용능력 진단</span></a>
-    <nav class="links" aria-label="페이지 메뉴"><a href="#why">왜 지금</a><a href="#uses">쓰임</a><a href="#what">무엇을 재나</a><a href="#how">진단 방식</a><a href="#result">결과</a><a href="#team">팀으로 쓰기</a><a href="#faq">FAQ</a></nav>
+    <nav class="links" aria-label="페이지 메뉴"><a href="#why">왜 지금</a><a href="#uses">쓰임</a><a href="#handbook">핸드북</a><a href="#result">결과</a><a href="#team">팀으로 쓰기</a><a href="#faq">FAQ</a></nav>
     <a class="btn fill sm" href="#start">진단 시작</a>
   </header>
 
@@ -270,11 +279,6 @@
           <figcaption>이 진단은 오른쪽 일을 얼마나 해내는지 봅니다.</figcaption>
         </figure>
       </div>
-      <div class="trend-grid">
-        <article class="fact"><small>FACT 01 · 채용</small><h3>지식 시험 대신,<br>AI를 써서 과제를 풀게 합니다.</h3><p>코딩 테스트를 없애거나, 반나절짜리 과제형 면접으로 바꾼 곳이 생겼습니다.</p></article>
-        <article class="fact"><small>FACT 02 · 사내 평가</small><h3>얼마나 썼는지가 아니라,<br>무엇을 바꿨는지를 봅니다.</h3><p>도구 도입이나 교육 이수가 아니라, 실제 업무 결과를 평가에 넣는 회사가 늘고 있습니다.</p></article>
-        <article class="fact"><small>FACT 03 · 공통 기준</small><h3>문제 정의 · 활용 과정 ·<br>결과물 · 결과 검증</h3><p>기업마다 표현은 달라도 보는 축은 비슷합니다. 이 진단도 같은 축으로 봅니다.</p></article>
-      </div>
       <div class="scrap">
         <img class="scrap-img" src="assets/news-scrap.jpg" alt="" aria-hidden="true" loading="lazy" width="480" height="480">
         <div class="scrap-body"><p class="scrap-head">기사로 보기</p><div class="clips"><a class="clip" href="https://news.skhynix.co.kr/ai-talent-recruit-2026-02/" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>SK하이닉스 뉴스룸</b><time>2026.07.30</time></span><span class="clip-tag">채용</span><strong>“스펙 보다 ‘생각 근육’ 본다”… AI 시대 맞춤형 인재 선발 SK하이닉스, ‘반나절 심층면접’ 도입</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.ebn.co.kr/news/articleView.html?idxno=1721610" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>EBN</b><time>2026.08.25</time></span><span class="clip-tag">채용</span><strong>넥슨, 코딩테스트 없앴다…신입 개발자 ‘AI 활용 능력’ 본다</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.greened.kr/news/articleView.html?idxno=349301" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>녹색경제신문</b><time>2026.09.05</time></span><span class="clip-tag">채용</span><strong>HD현대, 하반기 신입 채용… ‘생성형 AI 활용’ 능력 본다</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.etoday.co.kr/news/view/2627307" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>이투데이</b><time>2026.10.06</time></span><span class="clip-tag">사내 평가</span><strong>같은 회사인데 몸값은 달라졌다⋯AI가 만든 ‘직장인 新계급’ [AI 신계급사회]</strong><span class="clip-go">원문 보기 ↗</span></a></div>
@@ -309,48 +313,26 @@
       
     </div></section>
 
-    <!-- 03 WHAT -->
-    <section id="what"><div class="wrap">
-      <div class="label">02 · What we look at</div>
-      <h2 class="head">여섯 가지를 봅니다.<br><span class="orange">가운데 셋이 핵심입니다.</span></h2>
-      <p class="lead">국제 AI 리터러시 기준(OECD·EC AILit, EU DigComp 3.0)이 공통으로 다루는 축을, 제조 현장 말로 다시 정리했습니다.</p>
-      <div class="dims">
-        <article class="dim"><span class="n">01</span><h3>AI 이해</h3><p>AI가 잘하는 일과 틀리기 쉬운 일을 구분합니다.</p><span class="q">"이건 AI가 지어낼 수 있는 질문인가?"</span></article>
-        <article class="dim key"><span class="n">02</span><h3>맡길 일 정하기</h3><p>업무를 쪼개서 AI 몫과 사람 몫을 나눕니다.</p><span class="q">"이번 주 일 중 무엇을 맡길까?"</span></article>
-        <article class="dim key"><span class="n">03</span><h3>지시하기</h3><p>목적·조건·형식을 담아 한 번에 알아듣게 요청합니다.</p><span class="q">"공정·기준·양식까지 말했나?"</span></article>
-        <article class="dim key"><span class="n">04</span><h3>결과 검증</h3><p>틀린 수치, 없는 근거, 빠진 조건을 찾아 고칩니다.</p><span class="q">"이 보고서, 그대로 올려도 되나?"</span></article>
-        <article class="dim"><span class="n">05</span><h3>책임·보안</h3><p>회사 자료를 어디까지 넣어도 되는지, 결과의 책임이 누구에게 있는지 압니다.</p><span class="q">"이 도면, 외부 AI에 넣어도 되나?"</span></article>
-        <article class="dim"><span class="n">06</span><h3>팀에 퍼뜨리기</h3><p>잘 된 방법을 팀의 업무 방식으로 남깁니다.</p><span class="q">"내 방법을 옆자리도 쓸 수 있나?"</span></article>
+    <!-- 03 HANDBOOK -->
+    <section id="handbook"><div class="wrap"><div class="hb-grid">
+      <div>
+        <div class="label">Handbook · 신청하면 함께 드립니다</div>
+        <h2 class="head">무엇을 묻고, 무엇을 연습할지<br><span class="orange">짧은 핸드북으로 정리해 드립니다.</span></h2>
+        <p class="lead">기업들이 채용과 사내 평가에서 실제로 보는 기준, 이 진단이 보는 차원, 직무별 과제 예시와 연습 체크리스트를 한 권에 담았습니다. 신청하시면 진단 링크와 함께 메일로 보내드립니다.</p>
+        <div class="hero-actions"><a class="btn fill" href="#start" data-open="book">핸드북 받기 →</a></div>
       </div>
-    </div></section>
-
-    <!-- 04 HOW -->
-    <section id="how"><div class="wrap">
-      <div class="label">03 · How it works</div>
-      <h2 class="head">질문에 답하는 게 아니라,<br><span class="orange">일을 한 번 맡겨 봅니다.</span></h2>
-      <div class="steps">
-        <div class="step"><small>STEP 01</small><h3>짧은 문답</h3><p>직무와 지금 AI를 쓰는 방식, 스스로 생각하는 수준을 묻습니다.</p></div>
-        <div class="step"><small>STEP 02</small><h3>현업 미니 과제</h3><p>화면 안의 AI로 실제 현장 과제를 처리합니다. 따로 가입하거나 설치할 필요가 없습니다.</p></div>
-        <div class="step"><small>STEP 03</small><h3>결과 바로 확인</h3><p>단계, 여섯 가지 차원, 다음에 연습할 것을 바로 보여드립니다.</p></div>
+      <div class="hb-book" aria-label="핸드북 목차">
+        <div class="hb-cover"><small>BARYON LABS · HANDBOOK</small><b>AI 활용능력 진단<br>핸드북</b><span>무엇을 묻고, 무엇을 연습하나</span></div>
+        <ol class="hb-toc">
+          <li><b>01</b>기업들은 무엇을 보나 — 채용·사내 평가의 공통 기준</li>
+          <li><b>02</b>진단이 보는 차원과 단계</li>
+          <li><b>03</b>진단은 어떻게 진행되나</li>
+          <li><b>04</b>직무별 과제 예시</li>
+          <li><b>05</b>채점 기준과 재검토 요청</li>
+          <li><b>06</b>지금부터 할 수 있는 연습 체크리스트</li>
+        </ol>
       </div>
-      <div class="tasks">
-        <article class="task"><small>과제 예시 A · 맡길 일 정하기</small><h4>이번 주 업무를 나눠 보세요</h4><pre>□ 주간 생산실적 표 정리
-□ 협력사 납기 지연 메일 회신
-□ 신규 설비 견적 비교
-□ 라인 작업자 면담
-→ AI에게 맡길 일 / 내가 할 일 / 같이 할 일</pre><span class="see">보는 것: 나눈 이유가 맞는가</span></article>
-        <article class="task"><small>과제 예시 B · 지시하기</small><h4>작업 표준서를 요청해 보세요</h4><pre>상황: 신규 작업자 교육용
-조건: 사출 성형 2호기, 금형 교체 절차
-형식: 현장에 붙일 1장짜리
-→ AI에게 보낼 요청문을 써 보세요</pre><span class="see">보는 것: 목적·조건·형식이 담겼는가</span></article>
-        <article class="task"><small>과제 예시 C · 결과 검증</small><h4>AI가 쓴 불량 보고서를 확인하세요</h4><pre>AI가 작성한 주간 불량 분석 보고서에
-틀린 수치와 근거 없는 원인이 섞여 있습니다.
-→ 그대로 올릴 수 없는 부분을 표시하고
-  고칠 방법을 적어 보세요</pre><span class="see">보는 것: 오류를 찾고 이유를 대는가</span></article>
-      </div>
-      <div class="not"><s>몇 번이나 썼는지</s> → 무엇을 맞게 해냈는지</div>
-      <p class="micro">과제 채점은 항목별 기준표로 AI가 1차 채점하고, 일부는 사람이 다시 확인합니다. 결과에 이의가 있으면 재검토를 요청할 수 있습니다.</p>
-    </div></section>
+    </div></div></section>
 
     <!-- 05 RESULT -->
     <section class="result" id="result"><div class="wrap">
@@ -497,7 +479,8 @@
   <div class="modal" id="start-modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
     <div class="m-box">
       <div class="m-head"><div><small id="m-kicker">AI 활용능력 진단</small><h2 id="m-title">연습 링크를 메일로 보내드립니다</h2></div><button class="m-x" type="button" data-close aria-label="닫기">✕</button></div>
-      <p class="m-desc" id="m-desc">입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다.</p>
+      <p class="m-desc" id="m-desc">입력하신 메일로 영업일 1일 안에 진단 링크와 핸드북을 보내드립니다.</p>
+      <p class="m-hb"><b>+ 핸드북</b><span>신청하시면 무엇을 묻고 무엇을 연습해야 하는지 정리한 짧은 핸드북을 진단 링크와 함께 보내드립니다.</span></p>
       <form class="m-form" id="start-form" novalidate>
         <input type="hidden" name="mode" value="job">
         <div class="m-field"><label for="f-name">이름 <i>*</i></label><input id="f-name" name="name" autocomplete="name" required></div>
@@ -514,7 +497,7 @@
         <p class="m-status" role="status" aria-live="polite"></p>
         <div class="m-actions"><button class="btn fill" type="submit" id="m-submit">메일로 신청하기 →</button></div>
       </form>
-      <div class="m-done" hidden><h3>메일 앱에서 보내기를 눌러 주세요.</h3><p>입력하신 내용이 담긴 메일이 열렸습니다. 보내 주시면 <b id="m-done-email"></b>로 영업일 1일 안에 진단 링크를 보내드립니다.</p><p>메일 앱이 열리지 않으면 <a href="mailto:hello@baryon.ai?subject=%5BAI%20%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5%20%EC%A7%84%EB%8B%A8%5D%20%EB%A7%81%ED%81%AC%20%EC%8B%A0%EC%B2%AD" style="border-bottom:1px solid var(--line)">hello@baryon.ai</a>로 이름과 신청 유형을 적어 보내 주세요.</p><div class="m-actions" style="margin-top:16px"><button class="btn" type="button" data-close>닫기</button></div></div>
+      <div class="m-done" hidden><h3>메일 앱에서 보내기를 눌러 주세요.</h3><p>입력하신 내용이 담긴 메일이 열렸습니다. 보내 주시면 <b id="m-done-email"></b>로 영업일 1일 안에 진단 링크와 핸드북을 보내드립니다.</p><p>메일 앱이 열리지 않으면 <a href="mailto:hello@baryon.ai?subject=%5BAI%20%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5%20%EC%A7%84%EB%8B%A8%5D%20%EB%A7%81%ED%81%AC%20%EC%8B%A0%EC%B2%AD" style="border-bottom:1px solid var(--line)">hello@baryon.ai</a>로 이름과 신청 유형을 적어 보내 주세요.</p><div class="m-actions" style="margin-top:16px"><button class="btn" type="button" data-close>닫기</button></div></div>
     </div>
   </div>
   <script>
@@ -522,11 +505,12 @@
   (() => {
     // 신청은 메일 작성창(mailto)으로 받음. Form2AI2Email 연동은 보류(진단 폼 UUID 7008cd80-801c-488e-878a-7f53ce2f8dc3, 수신 메일 미연결)
     const TO = 'hello@baryon.ai';
-    const MODE_LABEL = { job: '입사 준비', self: '개인 진단', hire: '채용 전형', team: '팀 진단' };
+    const MODE_LABEL = { book: '핸드북 요청', job: '입사 준비', self: '개인 진단', hire: '채용 전형', team: '팀 진단' };
     const COPY = {
       job:  {k:'입사 준비 · 직무 연습', t:'연습 링크를 메일로 보내드립니다', d:'지원할 직무의 과제로 연습할 수 있는 링크를 영업일 1일 안에 메일로 보내드립니다. 몇 번이든 다시 풀 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →', cl:'지원할 회사', rl:'지원할 직군'},
       self: {cl:'회사명', rl:'직군', k:'재직자 · 개인 진단', t:'진단 링크를 메일로 보내드립니다', d:'입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다. 결과도 같은 메일로 다시 볼 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
       hire: {cl:'회사명', rl:'채용할 직군', k:'채용 전형', t:'채용 전형 링크를 만들어 드립니다', d:'지원자에게 보낼 전형 링크와 운영 안내(지원자 사전 고지 문구 포함)를 영업일 1일 안에 담당자 메일로 보내드립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'},
+      book: {cl:'회사명', rl:'직군', k:'핸드북 · 진단 링크', t:'핸드북과 진단 링크를 보내드립니다', d:'무엇을 묻고 무엇을 연습해야 하는지 정리한 핸드북과 진단 링크를 영업일 1일 안에 메일로 보내드립니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
       team: {cl:'회사명', rl:'팀의 주 직군', k:'재직자 · 팀 진단', t:'팀 진단 링크를 만들어 드립니다', d:'팀원에게 공유할 링크를 영업일 1일 안에 메일로 보내드립니다. 다섯 명 이상 응답하면 팀 결과지가 열립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'}
     };
     const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -589,8 +573,8 @@
         [(COPY[d.mode] || COPY.job).cl, d.company], [(COPY[d.mode] || COPY.job).rl, d.role], ['지금 상황', d.stage], ['대상 인원', d.team_size],
         ['개인정보 수집·이용', '동의'], ['교육·세미나 소식 수신', d.marketing]
       ].filter(r => r[1]);
-      const subject = `[AI 활용능력 진단] ${MODE_LABEL[d.mode]} 링크 신청 - ${d.name}`;
-      const body = 'AI 활용능력 진단 링크를 신청합니다.\n\n' + rows.map(r => `${r[0]}: ${r[1]}`).join('\n') + '\n\n(baryon.ai/ai-skill-check 에서 작성됨)';
+      const subject = `[AI 활용능력 진단] 링크·핸드북 신청 (${MODE_LABEL[d.mode]}) - ${d.name}`;
+      const body = 'AI 활용능력 진단 링크와 핸드북을 신청합니다.\n\n' + rows.map(r => `${r[0]}: ${r[1]}`).join('\n') + '\n\n(baryon.ai/ai-skill-check 에서 작성됨)';
       location.href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       if (window.posthog) posthog.capture('assess_signup', { mode: d.mode, role: d.role, channel: 'mailto' });
       document.getElementById('m-done-email').textContent = email;
