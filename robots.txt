@@ -49,4 +49,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://baryon.ai/sitemap.xml
+Sitemap: https://www.baryon.ai/sitemap.xml
