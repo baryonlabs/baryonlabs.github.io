@@ -106,6 +106,21 @@
     .m-status{grid-column:1/-1;margin:0;font-size:12px}.m-status.err{color:#c62f00}
     .m-done{padding:24px}.m-done h3{margin:0 0 8px;font-size:21px}.m-done p{margin:0 0 6px;color:var(--muted);font-size:14px}.m-done b{color:var(--ink)}
     @media(max-width:560px){.m-form{grid-template-columns:1fr}.m-field.full{grid-column:auto}}
+    .scrap{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start;margin-top:22px}
+    .scrap-img{width:150px;height:150px;object-fit:cover;border:1px solid var(--line);transform:rotate(-2deg);box-shadow:0 8px 18px #17191b14}
+    .scrap-head{margin:0 0 10px;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.08em}
+    .clips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .clip{position:relative;display:flex;flex-direction:column;gap:8px;padding:18px 14px 14px;background:#fdfcf8;border:1px solid #ddd8cc;box-shadow:0 6px 14px #17191b12;transition:.2s;clip-path:polygon(0 3%,6% 0,14% 2%,22% 0,31% 2%,40% 0,50% 2%,60% 0,70% 2%,80% 0,90% 2%,100% 0,100% 97%,93% 100%,84% 98%,75% 100%,64% 98%,54% 100%,43% 98%,33% 100%,22% 98%,12% 100%,0 98%)}
+    .clip:nth-child(odd){transform:rotate(-1deg)}.clip:nth-child(even){transform:rotate(.8deg)}
+    .clip:before{content:"";position:absolute;top:-2px;left:50%;width:54px;height:16px;margin-left:-27px;background:#f04b1733;transform:rotate(-3deg)}
+    .clip:hover{transform:rotate(0) translateY(-3px);box-shadow:0 12px 24px #17191b1f}
+    .clip-meta{display:flex;justify-content:space-between;gap:6px;padding-bottom:6px;border-bottom:1px solid #e3ddd0;font:600 10px var(--mono);color:var(--quiet)}.clip-meta b{color:var(--ink)}
+    .clip-tag{align-self:flex-start;padding:1px 6px;background:var(--ink);color:#fff;font-size:10px;font-weight:800}
+    .clip strong{font-family:"Nanum Myeongjo","AppleMyungjo",serif;font-size:14px;line-height:1.5;font-weight:800;letter-spacing:-.03em}
+    .clip-go{margin-top:auto;color:var(--orange);font-size:11px;font-weight:800}
+    @media(max-width:980px){.clips{grid-template-columns:1fr 1fr}}
+    @media(max-width:860px){.scrap{grid-template-columns:1fr}.scrap-img{width:110px;height:110px}}
+    @media(max-width:520px){.clips{grid-template-columns:1fr}}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.chip{padding:6px 10px;background:#fbfaf7cc;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700}
     .shift{background:var(--card);border:1px solid var(--line);padding:clamp(20px,3vw,32px)}
     .shift small{display:block;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.06em;margin-bottom:14px}
@@ -260,7 +275,11 @@
         <article class="fact"><small>FACT 02 · 사내 평가</small><h3>얼마나 썼는지가 아니라,<br>무엇을 바꿨는지를 봅니다.</h3><p>도구 도입이나 교육 이수가 아니라, 실제 업무 결과를 평가에 넣는 회사가 늘고 있습니다.</p></article>
         <article class="fact"><small>FACT 03 · 공통 기준</small><h3>문제 정의 · 활용 과정 ·<br>결과물 · 결과 검증</h3><p>기업마다 표현은 달라도 보는 축은 비슷합니다. 이 진단도 같은 축으로 봅니다.</p></article>
       </div>
-      <p class="src">출처: SK하이닉스 뉴스룸(2026-07-30), EBN(2026-08-25), 녹색경제신문, 이투데이 등 공개 보도. 개별 기업은 바리온랩스 고객사가 아니며, 이 진단과 관련이 없습니다.</p>
+      <div class="scrap">
+        <img class="scrap-img" src="assets/news-scrap.jpg" alt="" aria-hidden="true" loading="lazy" width="480" height="480">
+        <div class="scrap-body"><p class="scrap-head">기사로 보기</p><div class="clips"><a class="clip" href="https://news.skhynix.co.kr/ai-talent-recruit-2026-02/" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>SK하이닉스 뉴스룸</b><time>2026.07.30</time></span><span class="clip-tag">채용</span><strong>“스펙 보다 ‘생각 근육’ 본다”… AI 시대 맞춤형 인재 선발 SK하이닉스, ‘반나절 심층면접’ 도입</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.ebn.co.kr/news/articleView.html?idxno=1721610" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>EBN</b><time>2026.08.25</time></span><span class="clip-tag">채용</span><strong>넥슨, 코딩테스트 없앴다…신입 개발자 ‘AI 활용 능력’ 본다</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.greened.kr/news/articleView.html?idxno=349301" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>녹색경제신문</b><time>2026.09.05</time></span><span class="clip-tag">채용</span><strong>HD현대, 하반기 신입 채용… ‘생성형 AI 활용’ 능력 본다</strong><span class="clip-go">원문 보기 ↗</span></a><a class="clip" href="https://www.etoday.co.kr/news/view/2627307" target="_blank" rel="noopener nofollow"><span class="clip-meta"><b>이투데이</b><time>2026.10.06</time></span><span class="clip-tag">사내 평가</span><strong>같은 회사인데 몸값은 달라졌다⋯AI가 만든 ‘직장인 新계급’ [AI 신계급사회]</strong><span class="clip-go">원문 보기 ↗</span></a></div>
+        <p class="src">제목은 각 매체 원문 그대로입니다. 개별 기업은 바리온랩스 고객사가 아니며, 이 진단과 관련이 없습니다.</p></div>
+      </div>
       
     </div></section>
 
