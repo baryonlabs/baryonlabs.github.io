@@ -271,7 +271,7 @@
       <p class="lead">과제와 채점 기준은 같습니다. 누가 쓰느냐에 따라 받는 결과물과 다음 단계만 달라집니다.</p>
       <div class="uses">
         <article class="use" id="use-job"><img class="use-img" src="assets/use-job.jpg" alt="집 책상에서 노트북의 AI 화면과 초안을 나란히 두고, 출력한 결과물에 주황 펜으로 고칠 곳을 표시하며 과제를 연습하는 구직자" loading="lazy"><small>FOR JOB SEEKERS · 입사 준비</small><h3>입사 준비용</h3><p class="who">취업 준비생 · 이직 준비자 · 직무 전환자</p>
-          <dl><dt>무엇을 하나</dt><dd>지원할 직무(생산·품질·설계·구매·사무)의 과제로 연습하고, 다시 풀며 나아진 점을 확인합니다.</dd>
+          <dl><dt>무엇을 하나</dt><dd>지원할 직무(제조·개발·영업·마케팅·광고·미디어·경영지원 등)의 과제로 연습하고, 다시 풀며 나아진 점을 확인합니다.</dd>
           <dt>무엇을 받나</dt><dd>내 단계와 약한 차원, 연습 기록이 담긴 개인 결과지. 면접에서 AI로 일하는 방식을 설명할 근거가 됩니다.</dd>
           <dt>다음 단계</dt><dd>약한 차원만 골라 다시 연습 · 교육 과정 안내</dd></dl>
           <a class="btn fill" href="#start" data-open="job">직무 골라 연습 시작 →</a></article>
@@ -483,8 +483,8 @@
         <input type="hidden" name="mode" value="job">
         <div class="m-field"><label for="f-name">이름 <i>*</i></label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="m-field"><label for="f-email">이메일 <i>*</i></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><span class="m-err" hidden>이메일 형식을 확인해 주세요.</span></div>
-        <div class="m-field full" id="f-company-wrap"><label for="f-company">회사명 <em id="f-company-opt">(선택)</em></label><input id="f-company" name="company" autocomplete="organization"></div>
-        <div class="m-field"><label for="f-role">직군 <em>(선택)</em></label><select id="f-role" name="role"><option value="">선택 안 함</option><option>생산·제조</option><option>품질</option><option>설계·개발</option><option>구매·SCM</option><option>영업·마케팅</option><option>경영지원·사무</option><option>인사·교육</option><option>IT·전산</option><option>기타</option></select></div>
+        <div class="m-field full" id="f-company-wrap"><label for="f-company"><span id="f-company-lbl">회사명</span> <em id="f-company-opt">(선택)</em></label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="m-field"><label for="f-role"><span id="f-role-lbl">직군</span> <em>(선택)</em></label><select id="f-role" name="role"><option value="">선택 안 함</option><optgroup label="제조·생산"><option>생산관리</option><option>생산·제조 현장</option><option>품질관리·품질보증</option><option>공정·생산기술</option><option>설비·보전</option><option>안전·환경(EHS)</option></optgroup><optgroup label="연구·개발·설계"><option>기계 설계</option><option>전기·전자 설계</option><option>연구개발(R&D)</option><option>소프트웨어 개발</option><option>데이터·AI</option></optgroup><optgroup label="구매·물류·무역"><option>구매·조달</option><option>자재·재고</option><option>물류·유통</option><option>무역·수출입</option></optgroup><optgroup label="영업·고객"><option>B2B·기술영업</option><option>B2C·매장 영업</option><option>영업관리·영업지원</option><option>고객지원·CS</option></optgroup><optgroup label="마케팅·광고·미디어"><option>마케팅 기획</option><option>퍼포먼스·디지털 마케팅</option><option>광고 기획·AE</option><option>브랜드·PR·홍보</option><option>콘텐츠 기획·에디터</option><option>영상·사진 제작</option><option>방송·미디어·출판</option><option>디자인(시각·UX)</option></optgroup><optgroup label="경영지원"><option>경영기획·전략</option><option>재무·회계·세무</option><option>인사·HR</option><option>교육·HRD</option><option>총무·사무</option><option>법무·컴플라이언스</option></optgroup><optgroup label="IT·전산"><option>IT 인프라·전산</option><option>정보보안</option></optgroup><optgroup label="서비스·전문직"><option>금융·보험</option><option>의료·간호·보건</option><option>교육·강사</option><option>공공·행정</option><option>건설·건축</option></optgroup><optgroup label="기타"><option>아직 정하지 않음(학생·취업 준비)</option><option>기타</option></optgroup></select></div>
         <div class="m-field" id="f-stage-wrap"><label for="f-stage">지금 상황 <em>(선택)</em></label><select id="f-stage" name="stage"><option value="">선택 안 함</option><option>학생·취업 준비</option><option>이직 준비</option><option>재직 중</option><option>팀장·관리자</option></select></div>
         <div class="m-field" id="f-size-wrap" hidden><label for="f-size">대상 인원 <em>(선택)</em></label><select id="f-size" name="team_size"><option value="">선택 안 함</option><option>5~10명</option><option>11~30명</option><option>31~100명</option><option>100명 이상</option></select></div>
         <div class="m-consent">
@@ -505,10 +505,10 @@
     const TO = 'hello@baryon.ai';
     const MODE_LABEL = { job: '입사 준비', self: '개인 진단', hire: '채용 전형', team: '팀 진단' };
     const COPY = {
-      job:  {k:'입사 준비 · 직무 연습', t:'연습 링크를 메일로 보내드립니다', d:'지원할 직무의 과제로 연습할 수 있는 링크를 영업일 1일 안에 메일로 보내드립니다. 몇 번이든 다시 풀 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
-      self: {k:'재직자 · 개인 진단', t:'진단 링크를 메일로 보내드립니다', d:'입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다. 결과도 같은 메일로 다시 볼 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
-      hire: {k:'채용 전형', t:'채용 전형 링크를 만들어 드립니다', d:'지원자에게 보낼 전형 링크와 운영 안내(지원자 사전 고지 문구 포함)를 영업일 1일 안에 담당자 메일로 보내드립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'},
-      team: {k:'재직자 · 팀 진단', t:'팀 진단 링크를 만들어 드립니다', d:'팀원에게 공유할 링크를 영업일 1일 안에 메일로 보내드립니다. 다섯 명 이상 응답하면 팀 결과지가 열립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'}
+      job:  {k:'입사 준비 · 직무 연습', t:'연습 링크를 메일로 보내드립니다', d:'지원할 직무의 과제로 연습할 수 있는 링크를 영업일 1일 안에 메일로 보내드립니다. 몇 번이든 다시 풀 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →', cl:'지원할 회사', rl:'지원할 직군'},
+      self: {cl:'회사명', rl:'직군', k:'재직자 · 개인 진단', t:'진단 링크를 메일로 보내드립니다', d:'입력하신 메일로 영업일 1일 안에 진단 링크를 보내드립니다. 결과도 같은 메일로 다시 볼 수 있습니다.', company:false, stage:true, size:false, btn:'메일로 신청하기 →'},
+      hire: {cl:'회사명', rl:'채용할 직군', k:'채용 전형', t:'채용 전형 링크를 만들어 드립니다', d:'지원자에게 보낼 전형 링크와 운영 안내(지원자 사전 고지 문구 포함)를 영업일 1일 안에 담당자 메일로 보내드립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'},
+      team: {cl:'회사명', rl:'팀의 주 직군', k:'재직자 · 팀 진단', t:'팀 진단 링크를 만들어 드립니다', d:'팀원에게 공유할 링크를 영업일 1일 안에 메일로 보내드립니다. 다섯 명 이상 응답하면 팀 결과지가 열립니다.', company:true, stage:false, size:true, btn:'메일로 신청하기 →'}
     };
     const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const modal = document.getElementById('start-modal');
@@ -529,6 +529,8 @@
       document.getElementById('m-desc').textContent = c.d;
       submit.textContent = c.btn;
       company.required = c.company;
+      document.getElementById('f-company-lbl').textContent = c.cl;
+      document.getElementById('f-role-lbl').textContent = c.rl;
       document.getElementById('f-company-opt').textContent = c.company ? '*' : '(선택)';
       document.getElementById('f-stage-wrap').hidden = !c.stage;
       document.getElementById('f-size-wrap').hidden = !c.size;
@@ -565,7 +567,7 @@
       };
       const rows = [
         ['신청 유형', MODE_LABEL[d.mode] || d.mode], ['이름', d.name], ['이메일', d.email],
-        ['회사명', d.company], ['직군', d.role], ['지금 상황', d.stage], ['대상 인원', d.team_size],
+        [(COPY[d.mode] || COPY.job).cl, d.company], [(COPY[d.mode] || COPY.job).rl, d.role], ['지금 상황', d.stage], ['대상 인원', d.team_size],
         ['개인정보 수집·이용', '동의'], ['교육·세미나 소식 수신', d.marketing]
       ].filter(r => r[1]);
       const subject = `[AI 활용능력 진단] ${MODE_LABEL[d.mode]} 링크 신청 - ${d.name}`;
