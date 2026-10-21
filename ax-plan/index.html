@@ -59,7 +59,7 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.8;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     a{color:inherit}h1,h2,h3,p{margin-top:0}:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
-    .annc{padding:9px var(--pad);background:var(--orange2);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:1.5}.annc b{margin-right:6px;padding:1px 6px;background:#fff;color:var(--orange2);font:600 10px var(--mono);letter-spacing:.04em}
+    .annc{padding:9px var(--pad);background:var(--orange2);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:1.5}.annc-s{display:none}.annc b{margin-right:6px;padding:1px 6px;background:#fff;color:var(--orange2);font:600 10px var(--mono);letter-spacing:.04em}
     .nav{position:sticky;top:0;z-index:50;min-height:62px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em;text-decoration:none}
     .mark{width:24px;height:24px;border:2px solid var(--ink);border-radius:50%;position:relative;flex:none}.mark:before{content:"";position:absolute;width:6px;height:6px;left:7px;top:7px;background:var(--orange);border-radius:50%}
@@ -128,13 +128,28 @@
     .footer{padding:26px var(--pad);background:#111315;color:#9a9b99;font-size:12px}.footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer a{color:#c9c9c4}
     .sticky-cta{display:none}
     @media(max-width:900px){.hero-grid,.report,.apply-grid{grid-template-columns:1fr}.paper{position:static;transform:none}.steps{grid-template-columns:1fr 1fr}.steps div:nth-child(2){border-right:0}.steps div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-    @media(max-width:640px){.grid2,.grid3,.who,.form-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}.steps{grid-template-columns:1fr}.steps div{border-right:0!important;border-bottom:1px solid var(--line)}.steps div:last-child{border-bottom:0}.nav .btn{min-height:38px;padding:0 12px;font-size:12px}
-      .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#f3f1ecf2;border-top:1px solid var(--line);backdrop-filter:blur(10px)}.sticky-cta .btn{flex:1}
+    @media(max-width:640px){
+      .annc{padding:8px 16px;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.annc-l{display:none}.annc-s{display:inline}
+      .nav{min-height:56px}.nav .btn{min-height:38px;padding:0 12px;font-size:12px}
+      .hero{padding:22px 0 44px}.crumb{margin-bottom:16px}.tag{font-size:12px;margin-bottom:12px}
+      .lead{font-size:15px;line-height:1.75}
+      .facts{grid-template-columns:1fr 1fr;margin-top:20px}.facts div{padding:10px 14px;border-right:0;border-bottom:1px solid var(--line)}.facts div:first-child{grid-column:1/-1}.facts div:nth-child(2){border-right:1px solid var(--line)}.facts div:nth-child(n+2){border-bottom:0}.facts b{font-size:14px}
+      .hero-actions{flex-direction:column}.hero-actions .btn{width:100%}
+      section{padding:52px 0}h2{font-size:clamp(24px,7vw,30px)}
+      .grid2,.grid3,.who,.form-grid{grid-template-columns:1fr}.box{padding:18px}
+      .toc-list li{grid-template-columns:34px 1fr;gap:8px;padding:14px 0}.toc-list b{font-size:15px}
+      .paper{padding:18px 14px;margin-top:6px}.paper h3{font-size:17px}.paper th,.paper td{padding:7px 6px;font-size:12px}
+      .steps{grid-template-columns:1fr}.steps div{display:grid;grid-template-columns:62px 1fr;column-gap:8px;padding:16px;border-right:0!important;border-bottom:1px solid var(--line)}.steps div:last-child{border-bottom:0}.steps small{grid-row:span 2;margin:3px 0 0}.steps b{margin:0}
+      .apply-grid{gap:22px}.form{padding:18px 16px;margin:0 -4px}
+      .field input,.field select,.field textarea{font-size:16px;min-height:48px}
+      .submit-row{flex-direction:column;align-items:stretch}.submit-row .btn{width:100%}
+      .related a{flex:1 1 calc(50% - 8px);text-align:center;padding:10px}
+      .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#f3f1ecf2;border-top:1px solid var(--line);backdrop-filter:blur(10px)}.sticky-cta .btn{flex:1;min-height:48px}
       body{padding-bottom:72px}.sticky-cta.hide{display:none}}
   </style>
 </head>
 <body>
-  <div class="annc"><b>EVENT</b>100인 이하 국내 제조기업 대상 · AX 전환 계획 리포트 무료 제공 · 2026년 11월 30일까지 신청</div>
+  <div class="annc"><b>EVENT</b><span class="annc-l">100인 이하 국내 제조기업 대상 · AX 전환 계획 리포트 무료 제공 · 2026년 11월 30일까지 신청</span><span class="annc-s">제조 100인 이하 · AX 리포트 무료 · 11월 30일까지</span></div>
   <header class="nav">
     <a class="brand" href="/?ref=ax-plan-nav"><span class="mark" aria-hidden="true"></span>BARYON LABS</a>
     <div><a class="btn fill" href="#apply" data-track="nav">리포트 신청 →</a></div>
@@ -150,7 +165,7 @@
           <p class="lead">생산·품질·구매·설계·관리 업무 중 AI로 먼저 바꿀 일과, 절대 밖으로 내보내면 안 되는 자료, 그리고 실행 순서를 <b>우리 회사 기준으로 정리한 AX 전환 계획 리포트</b>를 무료로 만들어 드립니다.</p>
           <div class="facts">
             <div><small>대상</small><b>국내 제조기업 · 임직원 100인 이하</b></div>
-            <div><small>신청 기간</small><b>2026년 11월 30일까지</b></div>
+            <div><small>신청 기간 · 2026</small><b>11월 30일(일)까지</b></div>
             <div><small>비용</small><b>무료</b></div>
           </div>
           <div class="hero-actions"><a class="btn fill big" href="#apply" data-track="hero">리포트 신청하기 →</a><a class="btn big" href="#report">리포트에 담기는 것</a></div>
@@ -297,7 +312,8 @@
       document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',()=>window.posthog?.capture?.('ax_plan_cta',{pos:a.dataset.track,...track})));
       // 신청 영역이 보이면 모바일 하단 버튼을 숨김
       const sc=document.getElementById('sticky-cta'),ap=document.getElementById('apply');
-      if(sc&&ap&&'IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>sc.classList.toggle('hide',e.isIntersecting)),{threshold:.05}).observe(ap);
+      const ha=document.querySelector('.hero-actions'),vis=new Set();
+      if(sc&&ap&&ha&&'IntersectionObserver' in window){sc.classList.add('hide');new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?vis.add(e.target):vis.delete(e.target));sc.classList.toggle('hide',vis.size>0||ha.getBoundingClientRect().top>innerHeight)},{threshold:0}).observe(ha);new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?vis.add(e.target):vis.delete(e.target));sc.classList.toggle('hide',vis.size>0)},{threshold:.05}).observe(ap)}
       const f=document.getElementById('ax-form'),s=document.getElementById('ax-status'),done=document.getElementById('ax-done');
       const fail=m=>{s.className='status err';s.textContent=m};
       f.addEventListener('submit',async e=>{
