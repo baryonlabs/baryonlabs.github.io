@@ -48,9 +48,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="/ds/tokens.css?v=20261022e">
-<link rel="stylesheet" href="/ds/components.css?v=20261022e">
-<link rel="stylesheet" href="/ds/motion.css?v=20261022e">
+<link rel="stylesheet" href="/ds/tokens.css?v=20261022f">
+<link rel="stylesheet" href="/ds/components.css?v=20261022f">
+<link rel="stylesheet" href="/ds/motion.css?v=20261022f">
 <style>
   .svc-hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
   .method{margin-top:44px}
@@ -139,13 +139,14 @@
 </header>
 
 <main id="main">
-<div class="svc-hero"><div class="wrap">
+<div class="curtain">
+<div class="svc-hero curtain-hero"><div class="wrap">
   <div class="label">01 · 도입 안내</div>
   <h1 class="display">시작하는 방법은<br><span class="orange">두 가지입니다</span></h1>
   <p class="lead">좌석 온보딩으로 바로 시작하거나, 저희가 먼저 만들어 돌린 결과를 보고 계약할 수 있습니다.</p>
 </div></div>
 
-<section id="svc"><div class="wrap">
+<section class="curtain-card" id="svc"><div class="wrap">
   <div class="method">
     <div class="method-k">방법 1 · 좌석 온보딩</div>
     <div class="journey">
@@ -191,6 +192,7 @@
     </div>
   </div>
 </div></section>
+</div>
 
 <section id="training"><div class="wrap edu">
   <div>
@@ -332,6 +334,6 @@
   });
 })();
 </script>
-<script src="/ds/ds.js?v=20261022e" defer></script>
+<script src="/ds/ds.js?v=20261022f" defer></script>
 </body>
 </html>

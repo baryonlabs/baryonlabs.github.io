@@ -124,8 +124,11 @@ section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:rela
    <div class="curtain"><section class="curtain-hero">…</section><section class="curtain-card">…</section></div>
    히어로는 내비 아래에 붙어 있고, 다음 카드가 그 위로 올라와 덮는다. 모바일은 일반 흐름. */
 .curtain{position:relative}
-.curtain>.curtain-hero{position:sticky;top:calc(var(--nav-h) + var(--subnav-h));z-index:0}
-.curtain>.curtain-card{position:relative;z-index:1;padding-top:clamp(56px,6vw,88px);background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -18px 40px #17191b14}
+.curtain>.curtain-hero{position:sticky;top:var(--nav-h);z-index:0}
+body:has(.subnav) .curtain>.curtain-hero{top:calc(var(--nav-h) + var(--subnav-h))}
+.curtain>.curtain-card{position:relative;z-index:1;border-top:1px solid var(--line);box-shadow:0 -18px 40px #17191b14}
+:where(.curtain>.curtain-card){background:var(--paper)}
+:where(.curtain>.curtain-card.pad-top){padding-top:clamp(56px,6vw,88px)}
 @media(max-width:720px){.curtain>.curtain-hero{position:relative;top:auto}.curtain>.curtain-card{box-shadow:none}}
 
 /* 자동 시연 데모 — [data-demo] 안의 단계가 스스로 넘어가고, 멈춤 버튼·단계 클릭 가능.
@@ -154,3 +157,20 @@ section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:rela
 .demo.is-playing .demo-prog i{width:100%;transition:width var(--step-ms,3000ms) linear}
 @media(max-width:720px){.demo-body{grid-template-columns:1fr}.demo-rail{display:flex;overflow-x:auto;padding:0;border-right:0;border-bottom:1px solid var(--line)}.demo-rail li{flex:0 0 auto}.demo-rail button{padding:10px 12px;border-left:0;border-bottom:2px solid transparent}.demo-rail button.is-on{border-bottom-color:var(--orange)}.demo-rail button small{display:none}.demo-body{min-height:0}.demo-stage{min-height:300px}}
 @media(prefers-reduced-motion:reduce){.demo-step [data-i]{opacity:1;transform:none}}
+
+/* 데모 화면 안의 재료 — 메시지·목록·표·기록 카드 */
+.dm-msg{max-width:440px;padding:14px 16px;margin-bottom:12px;background:var(--paper);border:1px solid var(--line)}
+.dm-msg b{display:block;font-size:12px;color:var(--muted)}.dm-msg p{margin:4px 0 0;font-size:15px}
+.dm-ai{margin-left:auto;background:#fff}
+.dm-file{display:inline-block;margin-top:8px;padding:3px 8px;border:1px dashed var(--line-strong);font:600 11px var(--mono);color:var(--muted)}
+.dm-k{margin:0 0 12px;color:var(--quiet);font:600 12px var(--mono)}
+.dm-list{list-style:none;margin:0;padding:0}
+.dm-list li{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.dm-list li span{display:grid;place-items:center;width:22px;height:22px;background:var(--ink);color:#fff;font:700 11px var(--mono)}
+.dm-list li.dm-warn{color:var(--ink);font-weight:800}.dm-list li.dm-warn span{background:var(--orange)}
+.dm-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:14px}
+.dm-table th,.dm-table td{padding:10px;border:1px solid var(--line);text-align:left}.dm-table th{background:var(--deep);font-size:12px}
+.dm-rec{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-2)}
+.dm-rec div{padding:16px;background:var(--paper);border:1px solid var(--line)}
+.dm-rec b{display:block;margin-top:4px;font-size:16px}
+@media(max-width:720px){.demo-head{grid-template-columns:1fr}.dm-table{font-size:12px}.dm-table th,.dm-table td{padding:7px}.dm-rec{grid-template-columns:1fr}}

@@ -21,13 +21,16 @@
 .fx-stagger.in>*{opacity:1;transform:none}
 .fx-stagger.in>:nth-child(2){transition-delay:.1s}.fx-stagger.in>:nth-child(3){transition-delay:.2s}.fx-stagger.in>:nth-child(4){transition-delay:.3s}.fx-stagger.in>:nth-child(5){transition-delay:.4s}.fx-stagger.in>:nth-child(n+6){transition-delay:.5s}
 .fx-stagger.fx-settled>*{transition-delay:0s;transition-duration:var(--dur-1)}
+/* 섹션 안 요소(라벨·제목·설명·블록): 차례로 올라옴 */
+.fx-up{opacity:0;transform:translateY(var(--fx-move));transition:opacity var(--fx-dur) var(--ease),transform var(--fx-dur) var(--ease);transition-delay:var(--fx-d,0s)}
+.fx-up.in{opacity:1;transform:none}
 /* 섹션 배경 일러스트: 들어올 때 은근히 */
 .has-bg:before{transition:opacity var(--fx-dur) var(--ease),translate var(--fx-dur) var(--ease)}
 .has-bg.fx-bg:not(.in):before{opacity:0;translate:0 var(--fx-move)}
 /* 커튼 히어로: 카드가 덮을수록 글이 살짝 물러남(--cover 0→1) */
-.curtain-hero .hero-copy{opacity:calc(1 - var(--cover,0)*.7);transform:translateY(calc(var(--cover,0)*-40px)) scale(calc(1 - var(--cover,0)*.04))}
+.curtain-hero>.wrap{opacity:calc(1 - var(--cover,0)*.7);transform:translateY(calc(var(--cover,0)*-40px)) scale(calc(1 - var(--cover,0)*.04))}
 /* 읽은 위치: 2단 내비 아래 얇은 선 */
 .subnav{--read:0}
 .subnav:after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:calc(var(--read)*100%);background:var(--orange)}
-.no-js .fx-img img,.no-js .fx-stagger>*{clip-path:none;opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.fx-img img,.fx-img>svg{clip-path:none;transform:none}.fx-stagger>*{opacity:1;transform:none}.has-bg.fx-bg:not(.in):before{opacity:.32;translate:none}.curtain-hero .hero-copy{opacity:1;transform:none}}
+.no-js .fx-up,.no-js .fx-img img,.no-js .fx-stagger>*{clip-path:none;opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fx-up{opacity:1;transform:none}.fx-img img,.fx-img>svg{clip-path:none;transform:none}.fx-stagger>*{opacity:1;transform:none}.has-bg.fx-bg:not(.in):before{opacity:.32;translate:none}.curtain-hero>.wrap{opacity:1;transform:none}}
