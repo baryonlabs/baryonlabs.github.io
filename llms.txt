@@ -3,7 +3,7 @@
 > 바리온랩스는 AI 도입 효과를 실행 데이터로 측정하는 회사입니다. 무분별한 AI 사용이 아닌, 예산이 관리되는 AX 조직을 만듭니다 — 교육에서 측정까지 도입의 전 구간을 한 팀이 맡습니다.
 
 ## 대표
-- 홍승우(Seungwoo "Martin" Hong) — 바리온랩스 대표(CEO), 연세대학교 글로벌인재대학 겸임교수(NLP·LLM, 오픈소스 SW), 바이브캠프 대표. 고려대학교 컴퓨터학 석사·학사. [LinkedIn](https://www.linkedin.com/in/martin-hong-sw/)
+- 홍승우(Seungwoo "Martin" Hong) — 바리온랩스 대표(CEO), 연세대학교 글로벌인재대학 겸임교수(자연어정보분석 NLP·LLM, 오픈소스 소프트웨어, 모바일 응용 프로그래밍), 바이브캠프 대표. 고려대학교 컴퓨터학 석사·학사. [LinkedIn](https://www.linkedin.com/in/martin-hong-sw/)
 - 분야: 제조자동화·법무·세무·AI SaaS·미디어·에듀테크·헬스케어 등 여러 업종에서 AI·소프트웨어 제품을 직접 만들어 옴
 
 ## 핵심 서비스
