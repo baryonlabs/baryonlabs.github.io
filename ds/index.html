@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/ds/tokens.css?v=20261022c">
-  <link rel="stylesheet" href="/ds/components.css?v=20261022c">
-  <link rel="stylesheet" href="/ds/motion.css?v=20261022c">
+  <link rel="stylesheet" href="/ds/tokens.css?v=20261022d">
+  <link rel="stylesheet" href="/ds/components.css?v=20261022d">
+  <link rel="stylesheet" href="/ds/motion.css?v=20261022d">
   <style>
     /* 이 페이지 전용 — 견본 배치만 */
     .ds-hero{padding:clamp(56px,7vw,96px) 0}
@@ -188,19 +188,20 @@
       <div class="label">09 · 쓰는 법</div>
       <h2 class="head">새 페이지는 <span class="orange">이 네 줄로 시작</span></h2>
       <div class="rule"><h3>&lt;head&gt;</h3><ul style="list-style:none;padding:0;font:12px/1.9 var(--mono)">
-        <li>&lt;link rel="stylesheet" href="/ds/tokens.css?v=20261022c"&gt;</li>
-        <li>&lt;link rel="stylesheet" href="/ds/components.css?v=20261022c"&gt;</li>
-        <li>&lt;link rel="stylesheet" href="/ds/motion.css?v=20261022c"&gt;</li>
-        <li>&lt;script src="/ds/ds.js?v=20261022c" defer&gt;&lt;/script&gt;</li>
+        <li>&lt;link rel="stylesheet" href="/ds/tokens.css?v=20261022d"&gt;</li>
+        <li>&lt;link rel="stylesheet" href="/ds/components.css?v=20261022d"&gt;</li>
+        <li>&lt;link rel="stylesheet" href="/ds/motion.css?v=20261022d"&gt;</li>
+        <li>&lt;script src="/ds/ds.js?v=20261022d" defer&gt;&lt;/script&gt;</li>
       </ul></div>
       <div class="rule"><h3>sticky 히어로 + 커튼 업</h3><ul><li><code>&lt;div class="curtain"&gt;</code> 안에 <code>.curtain-hero</code>와 바로 다음 <code>.curtain-card</code>를 둡니다. 라이브러리 없이 <code>position:sticky</code>만 씁니다.</li><li>페이지당 한 번, 첫 화면에만. 모바일(720px 이하)에서는 일반 흐름으로 돌아갑니다.</li></ul></div>
       <div class="rule"><h3>자동 시연 데모</h3><ul><li><code>[data-demo]</code> 안에 <code>.demo-rail</code>(단계 버튼)과 <code>[data-demo-step]</code>(단계 화면, <code>data-ms</code> 머무는 시간, <code>data-cap</code> 설명)을 둡니다.</li><li>화면에 보일 때만 재생하고, 멈춤 버튼과 단계 클릭을 항상 제공합니다. 줄인 모션 설정이면 멈춘 상태로 시작합니다.</li><li>실제 고객 수치 대신 상태 말(정상·확인 필요 등)과 "예시" 표기를 씁니다.</li></ul></div>
+      <div class="rule"><h3>스크롤 이펙트 (ds.js가 자동 적용)</h3><ul><li>이미지(<code>.visual</code> 등): 아래에서 위로 열리며 1.04→1 줌, 스크롤에 따라 ±8px 패럴랙스. 직접 붙이려면 <code>data-fx-img</code>.</li><li>카드 묶음(<code>.cards</code>·<code>.grid3</code> 등): 0.06초 간격으로 차례 등장. 직접 붙이려면 <code>data-fx-stagger</code>.</li><li>섹션 배경 일러스트: 섹션이 들어올 때 은근히 나타남. 커튼 히어로: 카드가 덮을수록 글이 살짝 물러남. 2단 내비 아래: 읽은 위치 선.</li><li>첫 화면에 이미 보이는 요소엔 걸지 않고, 줄인 모션 설정이면 모두 끕니다.</li></ul></div>
       <div class="rule"><h3>하지 않기</h3><ul><li>페이지 안에 <code>:root{…}</code> 다시 쓰기</li><li><code>--orange-press</code>를 채움색으로 쓰기 (hover 전용)</li><li><code>h1</code>/<code>h2</code> 태그에 직접 글자 크기 주기</li><li>한 섹션에 오렌지 둘 이상</li><li>8px 넘는 이동, 0.6초 넘는 전환, 튀는 이징</li></ul></div>
     </div></section>
   </main>
 
   <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs · Design System v1</span><div class="footer-links"><a href="/">홈</a><a href="/ax-plan/">제조 AX 리포트</a></div></div></footer>
   <div class="sticky-cta" data-hide-when=".ds-hero"><a class="btn fill" href="/#inquiry">도입 상담</a></div>
-  <script src="/ds/ds.js?v=20261022c" defer></script>
+  <script src="/ds/ds.js?v=20261022d" defer></script>
 </body>
 </html>
