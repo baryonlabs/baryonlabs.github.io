@@ -105,6 +105,7 @@ section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:rela
   .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#f3f1ecf5;border-top:1px solid var(--line);backdrop-filter:blur(12px);transition:transform var(--dur-2) var(--ease)}
   .sticky-cta .btn{flex:1}
   .sticky-cta.is-hidden{transform:translateY(110%)}
+  body:has(.sticky-cta){padding-bottom:72px}
 }
 
 /* 섹션 배경 일러스트 — 빈 모서리에 은근하게. data-bg 이미지 + 위치 클래스 */
