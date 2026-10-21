@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/ds/tokens.css?v=20261022f">
-  <link rel="stylesheet" href="/ds/components.css?v=20261022f">
-  <link rel="stylesheet" href="/ds/motion.css?v=20261022f">
+  <link rel="stylesheet" href="/ds/tokens.css?v=20261022i">
+  <link rel="stylesheet" href="/ds/components.css?v=20261022i">
+  <link rel="stylesheet" href="/ds/motion.css?v=20261022i">
   <style>.micro{margin:12px 0 0;color:var(--quiet);font-size:11px}
     .report{padding:clamp(56px,7vw,92px) 0 clamp(72px,8vw,110px)}
     .doc{margin-top:30px;padding:clamp(22px,3vw,38px);background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange)}
@@ -171,9 +171,10 @@
 <body>
   <a class="skip" href="#main">본문 바로가기</a>
   <header class="nav" id="top">
-    <a class="brand" href="index.html?ref=report-brand"><span class="mark" aria-hidden="true"></span>BARYON LABS</a>
-    <nav class="links" aria-label="주요 메뉴"><a href="index.html?ref=report-nav#problem">문제</a><a href="solution/?ref=report-nav">해결책</a><a href="cases/?ref=report-nav">도입 사례</a><a href="index.html?ref=report-nav#features">기능</a><a href="index.html?ref=report-nav#faq">FAQ</a></nav>
-    <div class="actions"><a class="btn" href="#top" aria-current="page">보고서 미리 보기</a><a class="btn dark" href="service.html?ref=report-nav#inquiry">도입 상담</a></div>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+    <nav class="links" aria-label="주요 메뉴"><a class="nav-event" href="/ax-plan/?ref=report-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=report-nav">서비스</a><a href="/cases/?ref=report-nav">도입 사례</a><a href="/ai-skill-check/?ref=report-nav">AI 활용능력 진단</a><a href="/service.html?ref=report-nav">도입 안내</a><a href="/about.html?ref=report-nav">회사 소개</a></nav>
+    <div class="actions"><a class="btn" href="#top" aria-current="page">보고서 미리 보기</a><a class="btn dark" href="/service.html?ref=report-nav#inquiry">도입 상담</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="메뉴 열기"><i></i></button></div>
+    <nav class="nav-panel" id="nav-panel" aria-label="모바일 메뉴"><a class="nav-event" href="/ax-plan/?ref=report-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=report-nav">서비스</a><a href="/cases/?ref=report-nav">도입 사례</a><a href="/ai-skill-check/?ref=report-nav">AI 활용능력 진단</a><a href="/service.html?ref=report-nav">도입 안내</a><a href="/about.html?ref=report-nav">회사 소개</a><a class="btn" href="#top" aria-current="page">보고서 미리 보기</a><a class="btn dark" href="/service.html?ref=report-nav#inquiry">도입 상담</a></nav>
   </header>
 
   <main id="main">
@@ -418,6 +419,6 @@
   <script>
     (()=>{const els=document.querySelectorAll('.reveal:not(.on)');if(!('IntersectionObserver'in window)){els.forEach(el=>el.classList.add('on'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -35px'});els.forEach(el=>io.observe(el))}})();
   </script>
-  <script src="/ds/ds.js?v=20261022f" defer></script>
+  <script src="/ds/ds.js?v=20261022i" defer></script>
 </body>
 </html>

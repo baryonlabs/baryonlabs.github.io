@@ -48,9 +48,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="/ds/tokens.css?v=20261022f">
-<link rel="stylesheet" href="/ds/components.css?v=20261022f">
-<link rel="stylesheet" href="/ds/motion.css?v=20261022f">
+<link rel="stylesheet" href="/ds/tokens.css?v=20261022i">
+<link rel="stylesheet" href="/ds/components.css?v=20261022i">
+<link rel="stylesheet" href="/ds/motion.css?v=20261022i">
 <style>
   .svc-hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
   .method{margin-top:44px}
@@ -133,10 +133,11 @@
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="nav">
-  <a class="brand" href="/?ref=service-brand"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
-  <nav class="links" aria-label="주요 메뉴"><a href="/ax-plan/?ref=service-nav">제조 AX 리포트</a><a href="/ai-skill-check/?ref=service-nav">AI 활용능력 진단</a><a href="/solution/?ref=service-nav">해결책</a><a href="/cases/?ref=service-nav">도입 사례</a><a href="/service.html" aria-current="page">도입 안내</a></nav>
-  <div class="actions"><a class="btn" href="/report.html?ref=service-nav">보고서 미리 보기</a><a class="btn dark" href="#inquiry">도입 상담</a></div>
-</header>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+    <nav class="links" aria-label="주요 메뉴"><a class="nav-event" href="/ax-plan/?ref=service-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=service-nav">서비스</a><a href="/cases/?ref=service-nav">도입 사례</a><a href="/ai-skill-check/?ref=service-nav">AI 활용능력 진단</a><a href="/service.html" aria-current="page">도입 안내</a><a href="/about.html?ref=service-nav">회사 소개</a></nav>
+    <div class="actions"><a class="btn" href="/report.html?ref=service-nav">보고서 미리 보기</a><a class="btn dark" href="#inquiry">도입 상담</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="메뉴 열기"><i></i></button></div>
+    <nav class="nav-panel" id="nav-panel" aria-label="모바일 메뉴"><a class="nav-event" href="/ax-plan/?ref=service-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=service-nav">서비스</a><a href="/cases/?ref=service-nav">도입 사례</a><a href="/ai-skill-check/?ref=service-nav">AI 활용능력 진단</a><a href="/service.html" aria-current="page">도입 안내</a><a href="/about.html?ref=service-nav">회사 소개</a><a class="btn" href="/report.html?ref=service-nav">보고서 미리 보기</a><a class="btn dark" href="#inquiry">도입 상담</a></nav>
+  </header>
 
 <main id="main">
 <div class="curtain">
@@ -334,6 +335,6 @@
   });
 })();
 </script>
-<script src="/ds/ds.js?v=20261022f" defer></script>
+<script src="/ds/ds.js?v=20261022i" defer></script>
 </body>
 </html>

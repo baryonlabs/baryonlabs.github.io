@@ -40,7 +40,7 @@ section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:rela
 .links a:hover,.links a[aria-current="page"]{color:var(--ink)}
 .actions{display:flex;gap:7px}
 @media(max-width:980px){.links{display:none}}
-@media(max-width:720px){.actions .btn:not(:last-child){display:none}}
+@media(max-width:720px){.actions .btn:not(:last-of-type){display:none}}
 
 /* 내비 2단 — 긴 페이지 섹션 목록 + scrollspy (ds.js) */
 .subnav{position:sticky;top:var(--nav-h);z-index:49;height:var(--subnav-h);background:#f3f1ecf2;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
@@ -174,3 +174,32 @@ body:has(.subnav) .curtain>.curtain-hero{top:calc(var(--nav-h) + var(--subnav-h)
 .dm-rec div{padding:16px;background:var(--paper);border:1px solid var(--line)}
 .dm-rec b{display:block;margin-top:4px;font-size:16px}
 @media(max-width:720px){.demo-head{grid-template-columns:1fr}.dm-table{font-size:12px}.dm-table th,.dm-table td{padding:7px}.dm-rec{grid-template-columns:1fr}}
+
+/* 상단 메뉴 v2 — 페이지만 올린다(섹션은 2단 내비). 순서: 서비스 · 도입 사례 · AI 활용능력 진단 · 도입 안내 · 회사 소개
+   기간 한정 이벤트는 .nav-event(배지), data-until 지나면 ds.js가 숨김. 모바일은 ☰ 패널 */
+.links{align-items:center}
+.nav-event{display:inline-flex;align-items:center;gap:6px;padding:4px 9px 4px 4px;border:1px solid var(--orange);color:var(--ink)!important}
+.nav-event b{padding:1px 6px;background:var(--orange);color:#fff;font:600 10px var(--mono);letter-spacing:.04em}
+.nav-event:hover{background:var(--soft)}
+.nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--ink);background:transparent;position:relative}
+.nav-toggle i,.nav-toggle i:before,.nav-toggle i:after{position:absolute;left:12px;width:18px;height:2px;background:var(--ink);transition:transform var(--dur-1) var(--ease),opacity var(--dur-1) var(--ease)}
+.nav-toggle i{top:20px}.nav-toggle i:before{content:"";left:0;top:-6px}.nav-toggle i:after{content:"";left:0;top:6px}
+.nav.is-open .nav-toggle i{background:transparent}
+.nav.is-open .nav-toggle i:before{transform:translateY(6px) rotate(45deg)}
+.nav.is-open .nav-toggle i:after{transform:translateY(-6px) rotate(-45deg)}
+.nav-panel{display:none}
+@media(max-width:980px){
+  .nav-toggle{display:inline-block}
+  .nav.is-open{backdrop-filter:none;background:var(--paper);z-index:200}
+  .nav-panel{position:fixed;left:0;right:0;top:var(--panel-top,var(--nav-h));bottom:0;z-index:70;display:flex;flex-direction:column;gap:2px;padding:20px var(--pad) calc(24px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),visibility 0s linear var(--dur-1)}
+  .nav.is-open .nav-panel{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+  .nav-panel>a:not(.btn){display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:19px;font-weight:800;letter-spacing:-.04em}
+  .nav-panel>a:not(.btn):after{content:"→";color:var(--quiet);font:16px var(--mono)}
+  .nav-panel>a[aria-current="page"]{color:var(--orange)}
+  .nav-panel>a.nav-event{justify-content:flex-start;gap:10px;margin-bottom:10px;padding:14px 12px;border:1px solid var(--orange)}
+  .nav-panel .nav-event:after{margin-left:auto}
+  .nav-panel .btn{margin-top:10px;min-height:52px;font-size:15px}
+  html.nav-lock{overflow:hidden}
+  html.nav-lock .axp,html.nav-lock .sticky-cta{visibility:hidden}
+}
+@media(min-width:981px){.nav-panel{display:none!important}}

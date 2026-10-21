@@ -41,6 +41,19 @@
     d.querySelectorAll(sc.getAttribute('data-hide-when')).forEach(function(e){so.observe(e)});
   }
 
+  // 6) 기간 한정 항목 — data-until(ISO) 지나면 숨김
+  d.querySelectorAll('[data-until]').forEach(function(el){var t=Date.parse(el.getAttribute('data-until'));if(t&&Date.now()>=t)el.remove()});
+
+  // 7) 모바일 메뉴 ☰ — 패널 열기/닫기, Esc·링크 클릭 시 닫힘
+  var nav=d.querySelector('.nav'),tg=nav&&nav.querySelector('.nav-toggle'),panel=nav&&nav.querySelector('.nav-panel');
+  if(tg&&panel){
+    var setOpen=function(o){if(o)panel.style.setProperty('--panel-top',Math.round(nav.getBoundingClientRect().bottom)+'px');nav.classList.toggle('is-open',o);tg.setAttribute('aria-expanded',o?'true':'false');tg.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');root.classList.toggle('nav-lock',o)};
+    tg.addEventListener('click',function(){setOpen(!nav.classList.contains('is-open'))});
+    panel.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false)});
+    d.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('is-open')){setOpen(false);tg.focus()}});
+    window.addEventListener('resize',function(){if(innerWidth>980)setOpen(false)});
+  }
+
   // 4) 자동 시연 데모 — 화면에 보일 때만 재생, 멈춤/재생 버튼, 단계 클릭, 줄인 모션이면 자동 재생 안 함
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   d.querySelectorAll('[data-demo]').forEach(function(root){

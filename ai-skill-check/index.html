@@ -35,9 +35,9 @@
     ]}
   ]}
   </script>
-  <link rel="stylesheet" href="/ds/tokens.css?v=20261022f">
-  <link rel="stylesheet" href="/ds/components.css?v=20261022f">
-  <link rel="stylesheet" href="/ds/motion.css?v=20261022f">
+  <link rel="stylesheet" href="/ds/tokens.css?v=20261022i">
+  <link rel="stylesheet" href="/ds/components.css?v=20261022i">
+  <link rel="stylesheet" href="/ds/motion.css?v=20261022i">
   <style>
     .crumb{color:var(--quiet);font-weight:700;font-size:12px}.btn.sm{min-height:38px;padding:0 14px;font-size:12px}
     .micro{margin:12px 0 0;color:var(--quiet);font-size:11px;line-height:1.7}
@@ -186,10 +186,14 @@
 <body>
 
   <header class="nav">
-    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>BARYON LABS <span class="crumb">/ AI 활용능력 진단</span></a>
-    <nav class="links" aria-label="페이지 메뉴"><a href="/ai-skill/">AI 활용능력이란</a><a href="#why">왜 지금</a><a href="#uses">쓰임</a><a href="#handbook">핸드북</a><a href="#result">결과</a><a href="#team">팀으로 쓰기</a><a href="#faq">FAQ</a></nav>
-    <a class="btn fill sm" href="#start">진단 시작</a>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+    <nav class="links" aria-label="주요 메뉴"><a class="nav-event" href="/ax-plan/?ref=ai-skill-check-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=ai-skill-check-nav">서비스</a><a href="/cases/?ref=ai-skill-check-nav">도입 사례</a><a href="/ai-skill-check/" aria-current="page">AI 활용능력 진단</a><a href="/service.html?ref=ai-skill-check-nav">도입 안내</a><a href="/about.html?ref=ai-skill-check-nav">회사 소개</a></nav>
+    <div class="actions"><a class="btn fill" href="#start">진단 시작</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="메뉴 열기"><i></i></button></div>
+    <nav class="nav-panel" id="nav-panel" aria-label="모바일 메뉴"><a class="nav-event" href="/ax-plan/?ref=ai-skill-check-nav" data-until="2026-12-01T00:00:00+09:00"><b>11월</b>제조 AX 리포트</a><a href="/solution/?ref=ai-skill-check-nav">서비스</a><a href="/cases/?ref=ai-skill-check-nav">도입 사례</a><a href="/ai-skill-check/" aria-current="page">AI 활용능력 진단</a><a href="/service.html?ref=ai-skill-check-nav">도입 안내</a><a href="/about.html?ref=ai-skill-check-nav">회사 소개</a><a class="btn fill" href="#start">진단 시작</a></nav>
   </header>
+  <nav class="subnav" aria-label="이 페이지 목차"><ol>
+    <li><a href="#why">왜 지금</a></li><li><a href="#uses">쓰임</a></li><li><a href="#handbook">핸드북</a></li><li><a href="#result">결과</a></li><li><a href="#team">팀으로 쓰기</a></li><li><a href="#faq">FAQ</a></li><li><a href="/ai-skill/?ref=ai-skill-check-subnav">AI 활용능력이란 ↗</a></li>
+  </ol></nav>
 
   <main>
     <!-- 01 HERO -->
@@ -535,6 +539,6 @@
     })();
   </script>
   <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><span>AI 활용능력 진단은 학습·기준 수립용 진단이며 공식 자격·인증이 아닙니다.</span></div></footer>
-  <script src="/ds/ds.js?v=20261022f" defer></script>
+  <script src="/ds/ds.js?v=20261022i" defer></script>
 </body>
 </html>
