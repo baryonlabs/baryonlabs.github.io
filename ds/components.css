@@ -119,3 +119,38 @@ section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:rela
 .on-dark.has-bg:before{opacity:.4}
 @media(max-width:1100px){.bg-hide-md:before{display:none}}
 @media(max-width:720px){.has-bg:before{display:none}}
+
+/* sticky 히어로 + 커튼 업 — 라이브러리 없이 position:sticky만.
+   <div class="curtain"><section class="curtain-hero">…</section><section class="curtain-card">…</section></div>
+   히어로는 내비 아래에 붙어 있고, 다음 카드가 그 위로 올라와 덮는다. 모바일은 일반 흐름. */
+.curtain{position:relative}
+.curtain>.curtain-hero{position:sticky;top:calc(var(--nav-h) + var(--subnav-h));z-index:0}
+.curtain>.curtain-card{position:relative;z-index:1;padding-top:clamp(56px,6vw,88px);background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -18px 40px #17191b14}
+@media(max-width:720px){.curtain>.curtain-hero{position:relative;top:auto}.curtain>.curtain-card{box-shadow:none}}
+
+/* 자동 시연 데모 — [data-demo] 안의 단계가 스스로 넘어가고, 멈춤 버튼·단계 클릭 가능.
+   단계 패널: [data-demo-step] (data-ms로 머무는 시간), 단계 목록: .demo-rail button */
+.demo{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-2)}
+.demo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font:600 11px var(--mono);letter-spacing:.04em;color:var(--muted)}
+.demo-bar i{display:inline-block;width:8px;height:8px;margin-right:4px;border-radius:50%;background:var(--line)}
+.demo-pause{min-height:32px;padding:0 12px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:700 12px var(--sans)}
+.demo-pause:hover{background:var(--ink);color:#fff}
+.demo-body{display:grid;grid-template-columns:200px 1fr;min-height:340px}
+.demo-rail{list-style:none;margin:0;padding:12px 0;border-right:1px solid var(--line);counter-reset:d}
+.demo-rail button{counter-increment:d;width:100%;display:block;padding:10px 16px;border:0;border-left:2px solid transparent;background:none;color:var(--quiet);text-align:left;font:700 13px var(--sans);transition:color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease)}
+.demo-rail button:before{content:"0" counter(d);display:inline-block;width:26px;font:600 10px var(--mono)}
+.demo-rail button small{display:block;margin-left:26px;font-weight:500;font-size:11px;color:var(--quiet)}
+.demo-rail button.is-done{color:var(--ink)}
+.demo-rail button.is-on{color:var(--ink);border-left-color:var(--orange)}
+.demo-stage{position:relative;padding:clamp(16px,2.5vw,26px)}
+.demo-step{display:none}
+.demo-step.is-on{display:block}
+.demo-step [data-i]{opacity:0;transform:translateY(var(--move));transition:opacity var(--dur-2) var(--ease),transform var(--dur-2) var(--ease)}
+.demo-step.is-on [data-i]{opacity:1;transform:none}
+.demo-step.is-on [data-i="2"]{transition-delay:.5s}.demo-step.is-on [data-i="3"]{transition-delay:1s}.demo-step.is-on [data-i="4"]{transition-delay:1.5s}.demo-step.is-on [data-i="5"]{transition-delay:2s}
+.demo-cap{margin:0;padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.demo-prog{height:2px;background:var(--line)}
+.demo-prog i{display:block;height:100%;width:0;background:var(--ink)}
+.demo.is-playing .demo-prog i{width:100%;transition:width var(--step-ms,3000ms) linear}
+@media(max-width:720px){.demo-body{grid-template-columns:1fr}.demo-rail{display:flex;overflow-x:auto;padding:0;border-right:0;border-bottom:1px solid var(--line)}.demo-rail li{flex:0 0 auto}.demo-rail button{padding:10px 12px;border-left:0;border-bottom:2px solid transparent}.demo-rail button.is-on{border-bottom-color:var(--orange)}.demo-rail button small{display:none}.demo-body{min-height:0}.demo-stage{min-height:300px}}
+@media(prefers-reduced-motion:reduce){.demo-step [data-i]{opacity:1;transform:none}}

@@ -40,4 +40,35 @@
     var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target)});sc.classList.toggle('is-hidden',vis.size>0)},{threshold:0});
     d.querySelectorAll(sc.getAttribute('data-hide-when')).forEach(function(e){so.observe(e)});
   }
+
+  // 4) 자동 시연 데모 — 화면에 보일 때만 재생, 멈춤/재생 버튼, 단계 클릭, 줄인 모션이면 자동 재생 안 함
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.querySelectorAll('[data-demo]').forEach(function(root){
+    var steps=[].slice.call(root.querySelectorAll('[data-demo-step]'));
+    var rail=[].slice.call(root.querySelectorAll('.demo-rail button'));
+    var btn=root.querySelector('.demo-pause'),cap=root.querySelector('.demo-cap'),bar=root.querySelector('.demo-prog i');
+    if(!steps.length)return;
+    var i=0,timer=null,paused=reduce,visible=false;
+    function show(n){
+      i=(n+steps.length)%steps.length;
+      steps.forEach(function(s,k){s.classList.toggle('is-on',k===i)});
+      rail.forEach(function(b,k){b.classList.toggle('is-on',k===i);b.classList.toggle('is-done',k<i);if(k===i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+      if(cap)cap.textContent=steps[i].getAttribute('data-cap')||'';
+    }
+    function ms(){return parseInt(steps[i].getAttribute('data-ms'),10)||3200}
+    function stop(){clearTimeout(timer);timer=null;root.classList.remove('is-playing');if(bar){bar.style.transition='none';bar.style.width='0'}}
+    function run(){
+      stop();if(paused||!visible)return;
+      var t=ms();root.style.setProperty('--step-ms',t+'ms');
+      if(bar){bar.style.transition='none';bar.style.width='0';void bar.offsetWidth;bar.style.transition='';bar.style.width=''}
+      requestAnimationFrame(function(){root.classList.add('is-playing')});
+      timer=setTimeout(function(){show(i+1);run()},t+(i===steps.length-1?1200:0));
+    }
+    function label(){if(btn){btn.textContent=paused?'▶ 재생':'❚❚ 멈춤';btn.setAttribute('aria-pressed',paused?'true':'false')}}
+    if(btn)btn.addEventListener('click',function(){paused=!paused;label();run()});
+    rail.forEach(function(b,k){b.addEventListener('click',function(){show(k);run()})});
+    if(hasIO)new IntersectionObserver(function(es){visible=es[0].isIntersecting;run()},{threshold:.35}).observe(root);
+    else visible=true;
+    show(0);label();run();
+  });
 })();
