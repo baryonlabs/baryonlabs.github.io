@@ -76,7 +76,7 @@
   if(!reduce&&hasIO){
     var IMG='.visual,.whyus-visual,.hero-img,.edu-art,.dcard-img,.ldr-mono,[data-fx-img]';
     var GRID='.cards,.dpanel,.grid2,.grid3,.steps,.steps3,.who,.toc-list,.ldr-list,[data-fx-stagger]';
-    var fxo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');fxo.unobserve(t);setTimeout(function(){t.classList.add('fx-settled')},900)}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+    var fxo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');fxo.unobserve(t);setTimeout(function(){t.classList.add('fx-settled')},1500)}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'});
     d.querySelectorAll(IMG).forEach(function(el){if(el.querySelector('img,svg')&&el.getBoundingClientRect().top>innerHeight*.9){el.classList.add('fx-img');fxo.observe(el)}});
     d.querySelectorAll(GRID).forEach(function(el){if(el.children.length>1&&el.getBoundingClientRect().top>innerHeight*.9&&!el.closest('.reveal')){el.classList.add('fx-stagger');fxo.observe(el)}});
     d.querySelectorAll('.has-bg').forEach(function(el){if(el.getBoundingClientRect().top>innerHeight*.6){el.classList.add('fx-bg');fxo.observe(el)}});
@@ -85,7 +85,7 @@
     var fxTick=false;
     var fx=function(){
       fxTick=false;var vh=innerHeight;
-      par.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var c=(r.top+r.height/2-vh/2)/vh;el.style.setProperty('--px',Math.max(-8,Math.min(8,-c*12)).toFixed(1)+'px')});
+      par.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var c=(r.top+r.height/2-vh/2)/vh;el.style.setProperty('--px',Math.max(-20,Math.min(20,-c*36)).toFixed(1)+'px')});
       if(card&&getComputedStyle(hero).position==='sticky'){var ct=card.getBoundingClientRect().top,h=hero.offsetHeight;hero.style.setProperty('--cover',Math.max(0,Math.min(1,1-(ct-hero.getBoundingClientRect().top)/h)).toFixed(3))}
       if(sub){var max=root.scrollHeight-vh;sub.style.setProperty('--read',max>0?(scrollY/max).toFixed(4):0)}
     };

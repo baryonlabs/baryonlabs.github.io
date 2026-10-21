@@ -1,6 +1,6 @@
 /* 바리온 디자인 시스템 v1 — 모션
    규칙: 이동 4–8px · 이징 하나(--ease) · .25–.6s · 신뢰를 파는 페이지의 절제된 톤 */
-.reveal{opacity:0;transform:translateY(var(--move));transition:opacity var(--dur-2) var(--ease),transform var(--dur-2) var(--ease)}
+.reveal{opacity:0;transform:translateY(var(--fx-move));transition:opacity var(--fx-dur) var(--ease),transform var(--fx-dur) var(--ease)}
 .reveal.on{opacity:1;transform:none}
 /* JS가 없거나 실패해도 내용은 보이게 */
 .no-js .reveal{opacity:1;transform:none}
@@ -13,21 +13,21 @@
 /* 스크롤 이펙트 — ds.js가 자동으로 붙인다. 규칙 동일: 이동 ≤8px · --ease · ≤.6s */
 /* 이미지: 아래에서 위로 열리며 살짝 줌 아웃 */
 .fx-img{overflow:hidden}
-.fx-img img,.fx-img>svg{clip-path:inset(12% 0 0 0);transform:scale(1.04) translateY(var(--px,0px));transition:clip-path var(--dur-3) var(--ease),transform var(--dur-3) var(--ease)}
-.fx-img.in img,.fx-img.in>svg{clip-path:inset(0 0 0 0);transform:scale(1) translateY(var(--px,0px))}
+.fx-img img,.fx-img>svg{clip-path:inset(28% 0 0 0);transform:scale(1.12) translateY(var(--px,0px));transition:clip-path var(--fx-dur) var(--ease),transform var(--fx-dur) var(--ease)}
+.fx-img.in img,.fx-img.in>svg{clip-path:inset(0 0 0 0);transform:scale(1.05) translateY(var(--px,0px))}
 .fx-img.in.fx-settled img{transition:none}
 /* 카드 묶음: 하나씩 차례로 */
-.fx-stagger>*{opacity:0;transform:translateY(var(--move));transition:opacity var(--dur-2) var(--ease),transform var(--dur-2) var(--ease)}
+.fx-stagger>*{opacity:0;transform:translateY(var(--fx-move));transition:opacity var(--fx-dur) var(--ease),transform var(--fx-dur) var(--ease)}
 .fx-stagger.in>*{opacity:1;transform:none}
-.fx-stagger.in>:nth-child(2){transition-delay:.06s}.fx-stagger.in>:nth-child(3){transition-delay:.12s}.fx-stagger.in>:nth-child(4){transition-delay:.18s}.fx-stagger.in>:nth-child(5){transition-delay:.24s}.fx-stagger.in>:nth-child(n+6){transition-delay:.3s}
+.fx-stagger.in>:nth-child(2){transition-delay:.1s}.fx-stagger.in>:nth-child(3){transition-delay:.2s}.fx-stagger.in>:nth-child(4){transition-delay:.3s}.fx-stagger.in>:nth-child(5){transition-delay:.4s}.fx-stagger.in>:nth-child(n+6){transition-delay:.5s}
 .fx-stagger.fx-settled>*{transition-delay:0s;transition-duration:var(--dur-1)}
 /* 섹션 배경 일러스트: 들어올 때 은근히 */
-.has-bg:before{transition:opacity var(--dur-3) var(--ease),translate var(--dur-3) var(--ease)}
-.has-bg.fx-bg:not(.in):before{opacity:0;translate:0 var(--move)}
+.has-bg:before{transition:opacity var(--fx-dur) var(--ease),translate var(--fx-dur) var(--ease)}
+.has-bg.fx-bg:not(.in):before{opacity:0;translate:0 var(--fx-move)}
 /* 커튼 히어로: 카드가 덮을수록 글이 살짝 물러남(--cover 0→1) */
-.curtain-hero .hero-copy{opacity:calc(1 - var(--cover,0)*.55);transform:translateY(calc(var(--cover,0)*-8px))}
+.curtain-hero .hero-copy{opacity:calc(1 - var(--cover,0)*.7);transform:translateY(calc(var(--cover,0)*-40px)) scale(calc(1 - var(--cover,0)*.04))}
 /* 읽은 위치: 2단 내비 아래 얇은 선 */
 .subnav{--read:0}
-.subnav:after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:calc(var(--read)*100%);background:var(--ink);opacity:.5}
+.subnav:after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:calc(var(--read)*100%);background:var(--orange)}
 .no-js .fx-img img,.no-js .fx-stagger>*{clip-path:none;opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.fx-img img,.fx-img>svg{clip-path:none;transform:none}.fx-stagger>*{opacity:1;transform:none}.has-bg.fx-bg:not(.in):before{opacity:.32;translate:none}.curtain-hero .hero-copy{opacity:1;transform:none}}
