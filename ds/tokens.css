@@ -1,0 +1,22 @@
+/* 바리온 디자인 시스템 v1 — 계측 오렌지 · 토큰
+   규칙 요약은 /ds/ 참고. 페이지 인라인 :root 재정의 금지 — 값이 필요하면 여기서 바꾼다. */
+:root{
+  /* 색 — 오렌지는 강조 하나에만 */
+  --paper:#f3f1ec;--deep:#e9e6df;--card:#fbfaf7;
+  --ink:#17191b;--muted:#5d5d59;--quiet:#77766f;--line:#cfccc4;--line-strong:#a9a69f;
+  --dark:#191b1d;--dark2:#111315;--on-dark:#c9c9c4;--on-dark-quiet:#818382;
+  --orange:#f04b17;--orange-press:#d93b0b;--soft:#fff0e9;--on-dark-orange:#ff8a63;
+  /* 글꼴 */
+  --sans:"Gothic A1","Apple SD Gothic Neo",sans-serif;
+  --mono:"IBM Plex Mono",monospace;
+  /* 레이아웃 */
+  --max:1180px;--pad:clamp(16px,4vw,60px);--space:clamp(76px,9vw,128px);
+  --nav-h:64px;--subnav-h:44px;
+  --gap-1:8px;--gap-2:12px;--gap-3:20px;--gap-4:32px;
+  /* 표면 */
+  --radius:0;--shadow-1:0 13px 28px #17191b12;--shadow-2:0 18px 40px #17191b1a;
+  /* 모션 — 이동 4–8px, 이징 하나, .25–.6s */
+  --move:6px;--ease:cubic-bezier(.2,.7,.2,1);
+  --dur-1:.25s;--dur-2:.45s;--dur-3:.6s;
+}
+@media(max-width:720px){:root{--pad:20px;--space:72px;--nav-h:60px}}

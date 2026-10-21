@@ -1,0 +1,11 @@
+/* 바리온 디자인 시스템 v1 — 모션
+   규칙: 이동 4–8px · 이징 하나(--ease) · .25–.6s · 신뢰를 파는 페이지의 절제된 톤 */
+.reveal{opacity:0;transform:translateY(var(--move));transition:opacity var(--dur-2) var(--ease),transform var(--dur-2) var(--ease)}
+.reveal.on{opacity:1;transform:none}
+/* JS가 없거나 실패해도 내용은 보이게 */
+.no-js .reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}

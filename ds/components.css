@@ -1,0 +1,120 @@
+/* 바리온 디자인 시스템 v1 — 기본 · 타입 · 컴포넌트 (tokens.css 다음에 로드) */
+
+/* 기본 */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,25,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+::selection{background:var(--orange);color:#fff}
+:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
+h1,h2,h3,h4,p{margin-top:0}
+.skip{position:fixed;top:-70px;left:16px;z-index:100;background:#111;color:#fff;padding:10px 14px}
+.skip:focus{top:16px}
+.wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin:auto}
+section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:relative;scroll-margin-top:calc(var(--nav-h) + var(--subnav-h))}
+.mobile-br{display:none}
+@media(max-width:720px){.mobile-br{display:inline}}
+
+/* 타입 스케일 — 클래스로만 쓴다 (h1/h2 태그 자체에 크기 지정 금지) */
+.display{margin-bottom:0;font-size:clamp(38px,4.7vw,67px);font-weight:900;line-height:1.13;letter-spacing:-.072em}
+.head{margin-bottom:0;font-size:clamp(30px,3.7vw,52px);font-weight:900;line-height:1.2;letter-spacing:-.065em}
+.sub{margin-bottom:0;font-size:clamp(18px,2vw,22px);font-weight:900;line-height:1.4;letter-spacing:-.045em}
+.lead{max-width:680px;margin:21px 0 0;color:var(--muted);font-size:clamp(15px,1.4vw,17px);line-height:1.85}
+.small{color:var(--quiet);font-size:12px;line-height:1.6}
+.label{display:inline-flex;align-items:center;margin-bottom:23px;color:var(--muted);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.label.light{color:#bbb}
+.orange{color:var(--orange)}
+@media(max-width:720px){.display{font-size:clamp(34px,9.4vw,42px);letter-spacing:-.085em}}
+
+/* 내비 1단 */
+.nav{position:sticky;top:0;z-index:50;min-height:var(--nav-h);padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em}
+.mark{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative}
+.mark:before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:var(--orange);border-radius:50%}
+.mark:after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:var(--ink);border-radius:50%}
+.links{display:flex;gap:25px;color:var(--muted);font-size:12px;font-weight:700}
+.links a:hover,.links a[aria-current="page"]{color:var(--ink)}
+.actions{display:flex;gap:7px}
+@media(max-width:980px){.links{display:none}}
+@media(max-width:720px){.actions .btn:not(:last-child){display:none}}
+
+/* 내비 2단 — 긴 페이지 섹션 목록 + scrollspy (ds.js) */
+.subnav{position:sticky;top:var(--nav-h);z-index:49;height:var(--subnav-h);background:#f3f1ecf2;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.subnav ol{list-style:none;margin:0 auto;padding:0 var(--pad);height:100%;width:min(calc(var(--max) + var(--pad)*2),100%);display:flex;gap:22px;align-items:stretch;overflow-x:auto;scrollbar-width:none}
+.subnav ol::-webkit-scrollbar{display:none}
+.subnav li{display:flex}
+.subnav a{display:flex;align-items:center;gap:6px;white-space:nowrap;color:var(--quiet);font-size:12px;font-weight:700;border-bottom:2px solid transparent;transition:color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease)}
+.subnav a small{font:600 10px var(--mono);letter-spacing:.04em}
+.subnav a:hover{color:var(--ink)}
+.subnav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--orange)}
+
+/* 공지 띠 */
+.annc{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;padding:9px var(--pad);background:var(--orange);color:#fff;font-size:12px;font-weight:700;text-align:center;line-height:1.5}
+.annc b{padding:1px 6px;background:#fff;color:var(--orange);font:600 10px var(--mono);letter-spacing:.04em}
+.annc a{border-bottom:1px solid #ffffffaa}
+.annc a:hover{border-bottom-color:#fff}
+
+/* 버튼 — 오렌지 채움(.fill)은 화면당 주요 CTA 하나 */
+.btn{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:13px;font-weight:800;transition:transform var(--dur-1) var(--ease),background-color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn.fill{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn.fill:hover{background:var(--orange-press);border-color:var(--orange-press)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.light{border-color:#595b5d;color:#fff}
+.btn.big{min-height:52px;padding:0 24px;font-size:15px}
+@media(max-width:720px){.btn.big{width:100%}}
+
+/* 카드 — 핵심 한 칸만 .is-key */
+.card{position:relative;padding:23px;background:var(--card);border:1px solid var(--line);transition:transform var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-1)}
+.card h3{margin-bottom:9px;font-size:15px;line-height:1.55;letter-spacing:-.04em}
+.card p{margin-bottom:0;color:var(--muted);font-size:13px}
+.is-key{border:2px solid var(--orange)}
+.num{display:grid;place-items:center;width:27px;height:27px;margin-bottom:24px;background:var(--ink);color:#fff;font:10px var(--mono)}
+.is-key .num{background:var(--orange)}
+
+/* 태그 1종 */
+.tag{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700}
+.tag.key{background:var(--soft);border-color:#f04b1744;color:var(--orange-press)}
+
+/* FAQ 1종 — details/summary, 번호 + 질문 + 열림표시 */
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:42px 1fr 24px;gap:10px;align-items:center;padding:20px 0;font-size:15px;font-weight:800}
+.faq summary::-webkit-details-marker{display:none}
+.faq-no{color:var(--quiet);font:10px var(--mono)}
+.plus{font:18px var(--mono);transition:transform var(--dur-1) var(--ease)}
+.faq details[open] .plus{transform:rotate(45deg)}
+.faq .answer{padding:0 34px 22px 52px;color:var(--muted);font-size:14px;line-height:1.85}
+@media(max-width:720px){.faq summary{grid-template-columns:30px 1fr 20px}.faq .answer{padding:0 0 20px 40px}}
+
+/* 푸터 */
+.footer{padding:28px var(--pad);background:var(--dark2);color:var(--on-dark-quiet);font-size:11px}
+.footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:20px}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:var(--mono)}
+.footer a:hover{color:#fff}
+@media(max-width:720px){.footer-inner{flex-direction:column;gap:12px}}
+
+/* 모바일 하단 고정 CTA — ds.js가 data-hide-when 대상이 보이면 숨김 */
+.sticky-cta{display:none}
+@media(max-width:720px){
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#f3f1ecf5;border-top:1px solid var(--line);backdrop-filter:blur(12px);transition:transform var(--dur-2) var(--ease)}
+  .sticky-cta .btn{flex:1}
+  .sticky-cta.is-hidden{transform:translateY(110%)}
+}
+
+/* 섹션 배경 일러스트 — 빈 모서리에 은근하게. data-bg 이미지 + 위치 클래스 */
+.has-bg{isolation:isolate;--edge:calc((100% - min(var(--max),100% - var(--pad)*2))/2)}
+.has-bg>.wrap{position:relative;z-index:1}
+.has-bg:before{content:"";position:absolute;z-index:0;pointer-events:none;background:var(--bg-img) no-repeat center/contain;width:var(--bg-w,240px);aspect-ratio:var(--bg-ratio,3/2);opacity:.32}
+.bg-tr:before{top:var(--bg-y,20px);right:var(--edge)}
+.bg-br:before{bottom:var(--bg-y,48px);right:var(--edge)}
+.bg-bl:before{bottom:var(--bg-y,48px);left:var(--edge)}
+.bg-tc:before{top:var(--bg-y,48px);left:56%;transform:translateX(-50%)}
+.on-dark.has-bg:before{opacity:.4}
+@media(max-width:1100px){.bg-hide-md:before{display:none}}
+@media(max-width:720px){.has-bg:before{display:none}}

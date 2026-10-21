@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f3f1ec">
+  <title>디자인 시스템 v1 — 계측 오렌지 | 바리온랩스</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/ds/tokens.css?v=20261022">
+  <link rel="stylesheet" href="/ds/components.css?v=20261022">
+  <link rel="stylesheet" href="/ds/motion.css?v=20261022">
+  <style>
+    /* 이 페이지 전용 — 견본 배치만 */
+    .ds-hero{padding:clamp(56px,7vw,96px) 0}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-2)}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-2)}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-2)}
+    .sw{border:1px solid var(--line);background:var(--card)}
+    .sw i{display:block;height:72px;border-bottom:1px solid var(--line)}
+    .sw div{padding:10px 12px;font-size:12px}
+    .sw code,.rule code,td code{font:11px var(--mono);color:var(--muted)}
+    .row{display:flex;flex-wrap:wrap;gap:var(--gap-1);align-items:center;margin-top:var(--gap-3)}
+    .rule{margin-top:var(--gap-4);padding:20px 22px;background:var(--card);border:1px solid var(--line)}
+    .rule h3{margin:0 0 8px;font-size:15px}
+    .rule ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+    .dodont{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-3);margin-top:var(--gap-3)}
+    .verdict{display:block;margin-bottom:10px;font:600 11px var(--mono);letter-spacing:.08em}
+    .verdict.ok{color:var(--ink)}.verdict.no{color:var(--quiet);text-decoration:line-through}
+    .scale td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+    .scale{width:100%;border-collapse:collapse;margin-top:var(--gap-3)}
+    .scale td:first-child{width:120px}
+    .motion-demo{display:flex;gap:var(--gap-2);margin-top:var(--gap-3)}
+    .motion-demo .card{flex:1;min-height:120px}
+    .dark-band{background:var(--dark);color:#fff;border:0}
+    .dark-band .lead{color:var(--on-dark)}
+    @media(max-width:720px){.grid2,.grid3,.grid4,.dodont{grid-template-columns:1fr 1fr}.scale td:first-child{width:80px}}
+    @media(max-width:480px){.grid3,.grid4,.dodont{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="nav">
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+    <nav class="links" aria-label="주요 메뉴"><a href="/">홈</a><a href="/ax-plan/">제조 AX 리포트</a><a href="/ds/" aria-current="page">디자인 시스템</a></nav>
+    <div class="actions"><a class="btn" href="/report.html">보고서 미리 보기</a><a class="btn dark" href="/#inquiry">도입 상담</a></div>
+  </header>
+  <nav class="subnav" aria-label="이 페이지 목차"><ol>
+    <li><a href="#principles"><small>01</small>원칙</a></li>
+    <li><a href="#color"><small>02</small>색</a></li>
+    <li><a href="#type"><small>03</small>글자</a></li>
+    <li><a href="#layout"><small>04</small>간격</a></li>
+    <li><a href="#emphasis"><small>05</small>강조</a></li>
+    <li><a href="#components"><small>06</small>컴포넌트</a></li>
+    <li><a href="#motion"><small>07</small>모션</a></li>
+    <li><a href="#nav"><small>08</small>내비</a></li>
+    <li><a href="#use"><small>09</small>쓰는 법</a></li>
+  </ol></nav>
+
+  <main id="main">
+    <div class="wrap ds-hero">
+      <div class="label">Design System v1 · 계측 오렌지</div>
+      <h1 class="display">하나만 강조하고,<br><span class="orange">조용히 움직입니다</span></h1>
+      <p class="lead">바리온랩스 사이트의 모든 페이지가 같은 색·글자·간격·움직임을 쓰도록 정한 규칙입니다. 값은 <code>/ds/tokens.css</code> 한 곳에서만 바꿉니다.</p>
+    </div>
+
+    <section id="principles"><div class="wrap">
+      <div class="label">01 · 원칙</div>
+      <h2 class="head">신뢰를 파는 페이지의 <span class="orange">네 가지 원칙</span></h2>
+      <div class="grid4" style="margin-top:32px">
+        <div class="card reveal"><span class="num">1</span><h3>오렌지는 하나</h3><p>한 블록에 강조는 한 곳. 나머지는 먹색과 회색으로.</p></div>
+        <div class="card reveal"><span class="num">2</span><h3>조용한 움직임</h3><p>4–8px 이동, 한 가지 이징, 0.25–0.6초.</p></div>
+        <div class="card reveal"><span class="num">3</span><h3>위치를 잃지 않게</h3><p>긴 페이지는 두 줄 내비와 현재 위치 표시.</p></div>
+        <div class="card reveal"><span class="num">4</span><h3>값은 한 곳에서</h3><p>페이지에 <code>:root</code>를 다시 쓰지 않습니다.</p></div>
+      </div>
+    </div></section>
+
+    <section id="color"><div class="wrap">
+      <div class="label">02 · 색</div>
+      <h2 class="head">종이 위의 먹, <span class="orange">그리고 오렌지 한 점</span></h2>
+      <div class="grid4" style="margin-top:32px">
+        <div class="sw"><i style="background:var(--paper)"></i><div><b>paper</b><br><code>--paper #f3f1ec</code></div></div>
+        <div class="sw"><i style="background:var(--card)"></i><div><b>card</b><br><code>--card #fbfaf7</code></div></div>
+        <div class="sw"><i style="background:var(--deep)"></i><div><b>deep</b><br><code>--deep #e9e6df</code></div></div>
+        <div class="sw"><i style="background:var(--line)"></i><div><b>line</b><br><code>--line #cfccc4</code></div></div>
+        <div class="sw"><i style="background:var(--ink)"></i><div><b>ink</b> 본문·제목<br><code>--ink #17191b</code></div></div>
+        <div class="sw"><i style="background:var(--muted)"></i><div><b>muted</b> 설명글<br><code>--muted #5d5d59</code></div></div>
+        <div class="sw"><i style="background:var(--quiet)"></i><div><b>quiet</b> 보조·번호<br><code>--quiet #77766f</code></div></div>
+        <div class="sw"><i style="background:var(--dark)"></i><div><b>dark</b> 어두운 띠<br><code>--dark #191b1d</code></div></div>
+        <div class="sw"><i style="background:var(--orange)"></i><div><b>orange</b> 강조 하나<br><code>--orange #f04b17</code></div></div>
+        <div class="sw"><i style="background:var(--orange-press)"></i><div><b>orange-press</b> 눌림·hover만<br><code>--orange-press #d93b0b</code></div></div>
+        <div class="sw"><i style="background:var(--soft)"></i><div><b>soft</b> 연한 강조 배경<br><code>--soft #fff0e9</code></div></div>
+        <div class="sw"><i style="background:var(--dark2)"></i><div><b>dark2</b> 푸터<br><code>--dark2 #111315</code></div></div>
+      </div>
+    </div></section>
+
+    <section id="type"><div class="wrap">
+      <div class="label">03 · 글자</div>
+      <h2 class="head">글자 크기는 <span class="orange">여섯 단계만</span></h2>
+      <p class="lead">Gothic A1(본문·제목) + IBM Plex Mono(라벨·번호). 크기는 태그가 아니라 클래스로 정합니다.</p>
+      <table class="scale">
+        <tr><td><code>.display</code></td><td><span class="display" style="font-size:clamp(30px,4vw,52px)">AI 도입, 효과로</span></td></tr>
+        <tr><td><code>.head</code></td><td><span class="head" style="font-size:clamp(24px,3vw,40px)">섹션 제목</span></td></tr>
+        <tr><td><code>.sub</code></td><td><span class="sub">작은 제목 · 카드 묶음 제목</span></td></tr>
+        <tr><td><code>.lead</code></td><td><p class="lead" style="margin:0">섹션 설명글. 두세 줄 안에서 끝냅니다.</p></td></tr>
+        <tr><td><code>.small</code></td><td><span class="small">출처·보조 설명</span></td></tr>
+        <tr><td><code>.label</code></td><td><span class="label" style="margin:0">01 · Section label</span></td></tr>
+      </table>
+      <div class="rule"><h3>제목 쓰는 법</h3><ul><li>두 줄: 첫 줄은 먹색, 둘째 줄만 <code>.orange</code>.</li><li>짧고 쉬운 말. 마침표 없이 끝내도 됩니다.</li><li>섹션 라벨 번호는 페이지 안에서 01부터 빠짐없이.</li></ul></div>
+    </div></section>
+
+    <section id="layout"><div class="wrap">
+      <div class="label">04 · 간격</div>
+      <h2 class="head">폭과 여백은 <span class="orange">한 가지 기준</span></h2>
+      <table class="scale">
+        <tr><td><code>--max</code></td><td>1180px — 모든 페이지 본문 최대 폭</td></tr>
+        <tr><td><code>--pad</code></td><td>좌우 여백 16–60px (모바일 20px)</td></tr>
+        <tr><td><code>--space</code></td><td>섹션 위아래 76–128px (모바일 72px)</td></tr>
+        <tr><td><code>--gap-1…4</code></td><td>8 · 12 · 20 · 32px</td></tr>
+        <tr><td><code>--nav-h</code></td><td>상단 내비 64px (모바일 60px) · <code>--subnav-h</code> 44px</td></tr>
+        <tr><td>모서리·그림자</td><td>반경 0 · 그림자는 <code>--shadow-1</code>(카드 hover)과 <code>--shadow-2</code>(떠 있는 종이) 두 가지만</td></tr>
+      </table>
+    </div></section>
+
+    <section id="emphasis"><div class="wrap">
+      <div class="label">05 · 강조</div>
+      <h2 class="head">한 블록에 <span class="orange">강조는 하나</span></h2>
+      <p class="lead">제목의 오렌지 줄 <b>또는</b> 핵심 카드 한 칸(<code>.is-key</code>). 둘 다 쓰지 않습니다. 주요 CTA 버튼 하나는 예외입니다.</p>
+      <div class="dodont">
+        <div>
+          <span class="verdict ok">✓ 이렇게</span>
+          <div class="grid2">
+            <div class="card"><span class="num">1</span><h3>신청</h3><p>회사 정보 남기기</p></div>
+            <div class="card is-key"><span class="num">2</span><h3>질문지</h3><p>여기가 핵심 단계</p></div>
+            <div class="card"><span class="num">3</span><h3>인터뷰</h3><p>30분 온라인</p></div>
+            <div class="card"><span class="num">4</span><h3>리포트</h3><p>PDF 전달</p></div>
+          </div>
+        </div>
+        <div>
+          <span class="verdict no">✕ 이렇게 하지 않기</span>
+          <div class="grid2">
+            <div class="card is-key"><span class="num">1</span><h3 class="orange">신청</h3><p>회사 정보 남기기</p></div>
+            <div class="card is-key"><span class="num">2</span><h3 class="orange">질문지</h3><p>전부 강조</p></div>
+            <div class="card is-key"><span class="num">3</span><h3>인터뷰</h3><p>시선이 흩어짐</p></div>
+            <div class="card is-key"><span class="num">4</span><h3>리포트</h3><p>PDF 전달</p></div>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="components"><div class="wrap">
+      <div class="label">06 · 컴포넌트</div>
+      <h2 class="head">컴포넌트는 <span class="orange">종류마다 하나</span></h2>
+      <h3 class="sub" style="margin-top:32px">버튼</h3>
+      <div class="row"><a class="btn fill" href="#components">주요 CTA (.fill)</a><a class="btn" href="#components">기본</a><a class="btn dark" href="#components">.dark</a><a class="btn fill big" href="#components">.fill.big</a></div>
+      <h3 class="sub" style="margin-top:32px">태그</h3>
+      <div class="row"><span class="tag">기본 태그</span><span class="tag">에이전트</span><span class="tag key">핵심 태그 (.key)</span></div>
+      <h3 class="sub" style="margin-top:32px">공지 띠</h3>
+      <div class="annc" style="margin-top:12px"><b>EVENT</b><span>100인 이하 국산 제품 제조기업 · AX 전환 계획 리포트 무료 · 11월 30일까지</span><a href="/ax-plan/">리포트 신청 →</a></div>
+      <h3 class="sub" style="margin-top:32px">FAQ</h3>
+      <div class="faq" style="margin-top:12px">
+        <details open><summary><span class="faq-no">01</span><span>번호는 왜 회색인가요?</span><span class="plus">+</span></summary><div class="answer">번호는 장식이라 강조하지 않습니다. 오렌지는 블록마다 하나만 씁니다.</div></details>
+        <details><summary><span class="faq-no">02</span><span>FAQ 모양은 몇 가지인가요?</span><span class="plus">+</span></summary><div class="answer">한 가지입니다. 모든 페이지가 같은 <code>.faq</code>를 씁니다.</div></details>
+      </div>
+    </div></section>
+
+    <section id="motion"><div class="wrap">
+      <div class="label">07 · 모션</div>
+      <h2 class="head">움직임은 <span class="orange">작고 짧게</span></h2>
+      <table class="scale">
+        <tr><td><code>--move</code></td><td>6px (허용 4–8px)</td></tr>
+        <tr><td><code>--ease</code></td><td>cubic-bezier(.2,.7,.2,1) — 이 하나만</td></tr>
+        <tr><td><code>--dur-1/2/3</code></td><td>.25s hover · .45s 등장 · .6s 최대</td></tr>
+        <tr><td>줄인 모션 설정</td><td><code>prefers-reduced-motion</code>이면 모든 움직임을 끄고 바로 보여 줍니다</td></tr>
+      </table>
+      <div class="motion-demo"><div class="card reveal"><h3>등장 1</h3><p>6px 위로, .45s</p></div><div class="card reveal" style="transition-delay:.08s"><h3>등장 2</h3><p>간격 .08s</p></div><div class="card reveal" style="transition-delay:.16s"><h3>등장 3</h3><p>최대 3단계까지</p></div></div>
+    </div></section>
+
+    <section id="nav" class="dark-band"><div class="wrap">
+      <div class="label light">08 · 내비</div>
+      <h2 class="head">긴 페이지는 <span class="orange">두 줄 내비</span></h2>
+      <p class="lead">1단은 사이트 메뉴, 2단은 이 페이지 목차입니다. 지금 보고 있는 섹션에 오렌지 밑줄 하나가 따라갑니다. 홈·ax-plan·회사 소개처럼 섹션이 6개 넘는 페이지에만 씁니다.</p>
+    </div></section>
+
+    <section id="use"><div class="wrap">
+      <div class="label">09 · 쓰는 법</div>
+      <h2 class="head">새 페이지는 <span class="orange">이 네 줄로 시작</span></h2>
+      <div class="rule"><h3>&lt;head&gt;</h3><ul style="list-style:none;padding:0;font:12px/1.9 var(--mono)">
+        <li>&lt;link rel="stylesheet" href="/ds/tokens.css?v=20261022"&gt;</li>
+        <li>&lt;link rel="stylesheet" href="/ds/components.css?v=20261022"&gt;</li>
+        <li>&lt;link rel="stylesheet" href="/ds/motion.css?v=20261022"&gt;</li>
+        <li>&lt;script src="/ds/ds.js?v=20261022" defer&gt;&lt;/script&gt;</li>
+      </ul></div>
+      <div class="rule"><h3>하지 않기</h3><ul><li>페이지 안에 <code>:root{…}</code> 다시 쓰기</li><li><code>--orange-press</code>를 채움색으로 쓰기 (hover 전용)</li><li><code>h1</code>/<code>h2</code> 태그에 직접 글자 크기 주기</li><li>한 섹션에 오렌지 둘 이상</li><li>8px 넘는 이동, 0.6초 넘는 전환, 튀는 이징</li></ul></div>
+    </div></section>
+  </main>
+
+  <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs · Design System v1</span><div class="footer-links"><a href="/">홈</a><a href="/ax-plan/">제조 AX 리포트</a></div></div></footer>
+  <div class="sticky-cta" data-hide-when=".ds-hero"><a class="btn fill" href="/#inquiry">도입 상담</a></div>
+  <script src="/ds/ds.js?v=20261022" defer></script>
+</body>
+</html>
