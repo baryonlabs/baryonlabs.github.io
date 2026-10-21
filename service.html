@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" class="no-js">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -46,34 +46,70 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=Geist+Mono:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css?v=19" />
+<link rel="stylesheet" href="/ds/tokens.css?v=20261022">
+<link rel="stylesheet" href="/ds/components.css?v=20261022">
+<link rel="stylesheet" href="/ds/motion.css?v=20261022">
 <style>
-/* v13 nav — index nav와 완전 동일 구성(.nav/.brand/.mark/.links/.actions/.btn/.btn.dark 원값 복제).
-   styles.css의 구식 .nav 계열은 products.html이 아직 사용하므로 제거하지 않고,
-   .nav-doc 스코프로 이 페이지에서만 오버라이드한다. 팔레트·타이포는 index 원값 고정. */
-.nav.nav-doc{position:sticky;top:0;z-index:50;min-height:70px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:normal;background:#f3f1ecef;border-bottom:1px solid #cfccc4;backdrop-filter:blur(14px);font-family:'Gothic A1','Apple SD Gothic Neo',sans-serif;font-size:16px;letter-spacing:-.018em;line-height:1.72;color:#17191b}
-.nav-doc .brand{display:flex;align-items:center;gap:10px;font-style:normal;font-weight:900;font-size:14px;letter-spacing:-.04em;color:#17191b}
-.nav-doc .mark{width:26px;height:26px;border:2px solid #17191b;border-radius:50%;position:relative;flex-shrink:0}
-.nav-doc .mark::before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:#f04b17;border-radius:50%}
-.nav-doc .mark::after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:#17191b;border-radius:50%}
-.nav-doc .links{display:flex;gap:25px;color:#62625e;font-size:12px;font-weight:700}
-.nav-doc .links a{color:inherit;transition:color .2s;white-space:nowrap}
-.nav-doc .links a:hover{color:#f04b17}
-.nav-doc .actions{display:flex;gap:7px}
-.nav-doc .actions .btn{min-height:44px;padding:0 18px;gap:normal;display:inline-flex;align-items:center;justify-content:center;border:1px solid #17191b;border-radius:0;background:transparent;color:#17191b;font-size:12px;font-weight:800;transition:.2s;white-space:nowrap}
-.nav-doc .actions .btn:hover{transform:translateY(-2px)}
-.nav-doc .actions .btn.dark{background:#17191b;color:#fff}
-@media(max-width:980px){.nav-doc .links{display:none}}
-@media(max-width:720px){.nav.nav-doc{min-height:62px}.nav-doc .actions .btn:first-child{display:none}}
-/* v13 footer — index footer 원값 복제 (styles.css에 .footer 계열 없음 — 충돌 없이 그대로) */
-.footer{padding:28px var(--pad);background:#111315;color:#818382;font-size:9px;font-family:'Gothic A1','Apple SD Gothic Neo',sans-serif;letter-spacing:-0.288px;line-height:1.72}
-.footer-inner{width:min(1180px,100%);margin:auto;display:flex;justify-content:space-between;gap:20px}
-.footer-links{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace}
-.footer a{color:inherit;text-decoration:none}
-@media(max-width:720px){.footer-inner{flex-direction:column}}
+  .svc-hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
+  .method{margin-top:44px}
+  .method-k{display:flex;align-items:center;gap:8px;margin-bottom:14px;font:600 11px var(--mono);letter-spacing:.08em;color:var(--muted)}
+  .method-k:before{content:"";width:8px;height:8px;background:var(--ink)}
+  .journey{display:grid;grid-template-columns:1fr 56px 1fr;align-items:stretch}
+  .jr-arrow{display:grid;place-items:center;color:var(--quiet);font:20px var(--mono)}
+  .card.journey-card{padding:26px}
+  .k{display:block;margin-bottom:10px;color:var(--quiet);font:600 11px var(--mono);letter-spacing:.06em}
+  .card h3{font-size:clamp(18px,1.8vw,21px)}
+  .checks{list-style:none;margin:14px 0 0;padding:0}
+  .checks li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .checks li:before{content:"✓";position:absolute;left:0;top:9px;color:var(--ink);font-weight:800}
+  .badge{position:absolute;top:-11px;left:22px;padding:2px 8px;background:var(--orange);color:#fff;font:600 10px var(--mono)}
+  .journey-card .btn{margin-top:18px}
+  .sprint{padding:clamp(20px,3vw,32px);background:var(--card);border:1px solid var(--line)}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-2);margin-top:18px}
+  .steps3 .card{min-height:0}
+  .steps3 .card:hover{transform:none;box-shadow:none}
+  .sprint-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-top:22px}
+  .sprint-foot .tags{display:flex;gap:var(--gap-1);flex-wrap:wrap}
+  .cond{max-width:520px;margin-top:22px}
+  .rm{margin-top:32px;padding:clamp(18px,3vw,28px);background:var(--card);border:1px solid var(--line)}
+  .rm-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:var(--gap-2);margin-top:16px}
+  .rm-panel{min-height:110px;padding:14px;border:1px dashed var(--line-strong);background:var(--paper)}
+  .rm-chart{grid-row:span 2;display:flex;flex-direction:column}
+  .rm-bars{flex:1;display:flex;align-items:flex-end;gap:8%;padding:16px 4px 0;min-height:150px}
+  .rm-bars i{flex:1;background:var(--deep);border:1px solid var(--line)}
+  .rm-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-2)}
+  .edu{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
+  .ribbon{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0 0;padding:0;list-style:none;border:1px solid var(--line);background:var(--card)}
+  .ribbon li{padding:14px;text-align:center;border-right:1px solid var(--line)}
+  .ribbon li:last-child{border-right:0}
+  .ribbon small{display:block;color:var(--quiet);font:600 10px var(--mono)}
+  .ribbon b{font-size:15px}
+  .edu-art img{display:block;width:100%;height:auto}
+  .edu-plan{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:22px;font-size:13px;font-weight:800}
+  .inq{display:grid;grid-template-columns:1fr 300px;gap:var(--gap-3);margin-top:32px;align-items:start}
+  .form{padding:clamp(18px,3vw,28px);background:var(--card);border:1px solid var(--line)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .field>span{font-size:13px;font-weight:800}
+  .field>span small{color:var(--quiet);font-weight:600}
+  .field input,.field select,.field textarea{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);background:#fff;color:var(--ink);font:500 15px var(--sans);border-radius:0}
+  .field textarea{min-height:120px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);outline-offset:-1px;border-color:var(--orange)}
+  .field.invalid input,.field.invalid textarea{border-color:#b3260b}
+  .err{color:#b3260b;font-size:12px}
+  .actions-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .actions-row .small{margin:0}
+  .msg{padding:16px;background:var(--paper);border:1px solid var(--line);font-size:14px}
+  .msg.bad{border-color:#b3260b;color:#b3260b}
+  .side{display:grid;gap:var(--gap-2)}
+  .side .card{min-height:0;padding:18px}
+  .side .card:hover{transform:none;box-shadow:none}
+  .side b{display:block;font-size:15px;margin-bottom:4px}
+  .side p{margin:0;color:var(--muted);font-size:13px}
+  @media(max-width:900px){.journey{grid-template-columns:1fr}.jr-arrow{height:44px;transform:rotate(90deg)}.steps3,.edu,.inq,.rm-grid{grid-template-columns:1fr}.rm-chart{grid-row:auto}}
+  @media(max-width:720px){.row2{grid-template-columns:1fr}.field input,.field select,.field textarea{font-size:16px;min-height:48px}.actions-row .btn{width:100%}}
 </style>
 
 <!-- PostHog (chat 프로젝트 키 재사용, 대표 확정) -->
@@ -95,287 +131,110 @@
 </script>
 </head>
 <body>
-
-<!-- ════════════════ AMBIENT BACKDROP ════════════════ -->
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-aurora" aria-hidden="true"></div>
-
-<!-- ════════════════ NAV (index와 완전 동일 구성 — 링크 5·버튼 2) ════════════════ -->
-<header class="nav nav-doc">
-  <a class="brand" href="index.html?ref=service-brand"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
-  <nav class="links" aria-label="주요 메뉴"><a href="index.html?ref=service-nav#problem">문제</a><a href="solution/?ref=service-nav">해결책</a><a href="cases/?ref=service-nav">도입 사례</a><a href="index.html?ref=service-nav#features">기능</a><a href="index.html?ref=service-nav#faq">FAQ</a></nav>
-  <div class="actions"><a class="btn" href="report.html?ref=service-nav">보고서 미리 보기</a><a class="btn dark" href="#inquiry">도입 상담</a></div>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="nav">
+  <a class="brand" href="/?ref=service-brand"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+  <nav class="links" aria-label="주요 메뉴"><a href="/ax-plan/?ref=service-nav">제조 AX 리포트</a><a href="/ai-skill-check/?ref=service-nav">AI 활용능력 진단</a><a href="/solution/?ref=service-nav">해결책</a><a href="/cases/?ref=service-nav">도입 사례</a><a href="/service.html" aria-current="page">도입 안내</a></nav>
+  <div class="actions"><a class="btn" href="/report.html?ref=service-nav">보고서 미리 보기</a><a class="btn dark" href="#inquiry">도입 상담</a></div>
 </header>
 
-<main id="top">
+<main id="main">
+<div class="svc-hero"><div class="wrap">
+  <div class="label">01 · 도입 안내</div>
+  <h1 class="display">시작하는 방법은<br><span class="orange">두 가지입니다</span></h1>
+  <p class="lead">좌석 온보딩으로 바로 시작하거나, 저희가 먼저 만들어 돌린 결과를 보고 계약할 수 있습니다.</p>
+</div></div>
 
-<!-- ════════════════ GET STARTED ════════════════ -->
-<section class="onprem page" id="svc" data-screen-label="01 Get started">
-  <div class="onprem-head">
-    <div class="kicker"><span class="num">01</span><span>Get started</span></div>
-    <h1 class="section-head">
-      Two ways<br/>
-      to <em>start.</em>
-    </h1>
-    <p class="section-sub">
-      Start on seats right away, or sign after watching a result we build and run first.
-    </p>
-  </div>
-
-  <div class="method-k mk-1">Method 1 · Seat onboarding</div>
-  <div class="journey">
-    <article class="journey-card">
-      <div class="onprem-k">Stage 1 · Short onboarding</div>
-      <h3>Per-seat, same-day start.</h3>
-      <ul class="jr-checks">
-        <li>No installation, no server, no setup</li>
-        <li>Starts on the documents your team already works with</li>
-        <li>Records build from the first execution</li>
-      </ul>
-    </article>
-    <div class="journey-arrow" aria-hidden="true">
-      <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h40"/><path d="M34 4l8 8-8 8"/></svg>
-      <span class="jr-label">Transition</span>
-    </div>
-    <article class="journey-card featured">
-      <span class="jr-badge">Recommended</span>
-      <div class="onprem-k">Stage 2 · Annual subscription</div>
-      <h3>Always-on operations, report included.</h3>
-      <ul class="jr-checks">
-        <li>Adoption impact report — before and after on the same metrics</li>
-        <li>Per-project policies, cost caps, and an admin console</li>
-        <li>Ara moved from short onboarding to always-on API-integrated operations</li>
-      </ul>
-      <a class="btn btn-solid" href="#inquiry">Get a quote through a consultation →</a>
-    </article>
-  </div>
-
-  <div class="method-k mk-2">Method 2 · Build-first sprint</div>
-  <div class="sprint">
-    <h3>We build and run it first. See it working, then sign.</h3>
-    <div class="sprint-steps">
-      <div class="sp-step">
-        <span class="sp-num">Step 1</span>
-        <p class="sp-t">Build-first sprint</p>
-        <p class="sp-d">One to two weeks. A working result on your real data and your real problem.</p>
-      </div>
-      <div class="sp-step">
-        <span class="sp-num">Step 2</span>
-        <p class="sp-t">Impact verification</p>
-        <p class="sp-d">We measure the pre-adoption baseline together and fix the metrics.</p>
-      </div>
-      <div class="sp-step">
-        <span class="sp-num">Step 3</span>
-        <p class="sp-t">Outcome-linked billing</p>
-        <p class="sp-d">You pay as impact lands. A monthly minimum and an annual cap protect both sides.</p>
-      </div>
-    </div>
-    <div class="sprint-cond">
-      <span class="sc-l">We start only when all three are in place</span>
-      <ul class="jr-checks">
-        <li>Real data provided</li>
-        <li>Work whose impact can be measured in numbers</li>
-        <li>A decision-maker at the table</li>
-      </ul>
-    </div>
-    <div class="sprint-foot">
-      <div class="sprint-safe">
-        <span class="pipe-chip"><span class="pc-t">Zero impact · operations cost only</span></span>
-        <span class="pipe-chip"><span class="pc-t">Annual cap</span></span>
-        <span class="pipe-chip"><span class="pc-t">Settlement dispute process</span></span>
-      </div>
-      <a class="btn btn-ghost" href="#inquiry">Ask about the sprint →</a>
+<section id="svc"><div class="wrap">
+  <div class="method">
+    <div class="method-k">방법 1 · 좌석 온보딩</div>
+    <div class="journey">
+      <article class="card journey-card reveal">
+        <span class="k">1단계 · 단기 온보딩</span>
+        <h3>좌석 단위, 당일 시작</h3>
+        <ul class="checks"><li>설치·서버·사전 세팅 없음</li><li>팀이 이미 다루는 문서로 바로 시작</li><li>첫 실행부터 기록이 쌓임</li></ul>
+      </article>
+      <div class="jr-arrow" aria-hidden="true">→</div>
+      <article class="card journey-card is-key reveal">
+        <span class="badge">추천</span>
+        <span class="k">2단계 · 연간 구독</span>
+        <h3>성과 리포트 포함, 상시 운영</h3>
+        <ul class="checks"><li>도입 효과 리포트 — 운영 전후 동일 지표 비교</li><li>프로젝트별 정책·비용 상한·관리자 콘솔</li><li>아라는 단기 온보딩에서 API 연동 상시 운영으로 전환했습니다</li></ul>
+        <a class="btn fill" href="#inquiry">도입 상담으로 견적 받기 →</a>
+      </article>
     </div>
   </div>
 
-  <div class="report-mock">
-    <div class="rm-head">
-      <span class="rm-title">Adoption impact report</span>
-      <span class="rm-sub">— from baseline to before-and-after, your execution fills in the numbers</span>
+  <div class="method">
+    <div class="method-k">방법 2 · 선개발 스프린트</div>
+    <div class="sprint reveal">
+      <h3 class="sub">저희가 먼저 만들어 돌립니다. 굴러가는 것을 보고 계약하세요</h3>
+      <div class="steps3">
+        <div class="card"><span class="num">1</span><h3>선개발 스프린트</h3><p>1~2주. 귀사의 실데이터와 실제 문제로 동작하는 결과물을 만듭니다.</p></div>
+        <div class="card"><span class="num">2</span><h3>성과 검증</h3><p>도입 전 기준선을 함께 측정하고 지표를 확정합니다.</p></div>
+        <div class="card"><span class="num">3</span><h3>성과연동 정산</h3><p>성과가 난 만큼 정산합니다. 월 최소액과 연간 상한이 양측을 보호합니다.</p></div>
+      </div>
+      <div class="cond"><span class="k">세 가지가 갖춰진 경우에만 착수합니다</span><ul class="checks"><li>실데이터 제공</li><li>숫자로 측정할 수 있는 업무</li><li>의사결정권자 참여</li></ul></div>
+      <div class="sprint-foot">
+        <div class="tags"><span class="tag">성과가 0이면 운영비만 정산</span><span class="tag">연간 상한 있음</span><span class="tag">정산 이의 절차 있음</span></div>
+        <a class="btn" href="#inquiry">선개발 스프린트 문의 →</a>
+      </div>
     </div>
+  </div>
+
+  <div class="rm reveal" aria-label="도입 효과 리포트 예시 틀">
+    <h3 class="sub">도입 효과 리포트 <span class="small">— 기준선부터 전후 비교까지, 숫자는 귀사의 실행이 채웁니다</span></h3>
     <div class="rm-grid">
-      <div class="rm-panel rm-chart">
-        <span class="rm-l">Before / after adoption</span>
-        <div class="rm-bars">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <span class="rm-hint">Recorded from your first execution</span>
-        </div>
-      </div>
-      <div class="rm-panel rm-donut">
-        <span class="rm-l">Verification grade</span>
-        <div class="rm-ring"></div>
-      </div>
-      <div class="rm-panel rm-stat rm-hours">
-        <span class="rm-l">Hours saved</span>
-        <div class="rm-blank"></div>
-      </div>
-      <div class="rm-panel rm-stat rm-rate">
-        <span class="rm-l">Success rate</span>
-        <div class="rm-blank"></div>
-      </div>
+      <div class="rm-panel rm-chart"><span class="k">도입 전 / 도입 후 비교</span><div class="rm-bars"><i style="height:38%"></i><i style="height:52%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:56%"></i><i style="height:82%"></i></div><span class="small">첫 실행부터 기록됩니다</span></div>
+      <div class="rm-panel"><span class="k">검증 등급</span></div>
+      <div class="rm-split"><div class="rm-panel"><span class="k">절감 시간</span></div><div class="rm-panel"><span class="k">성공률</span></div></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- ════════════════ CORPORATE TRAINING (edu hero — 금액 없이 여정으로) ════════════════ -->
-<section class="edu-hero" id="training" data-screen-label="02 Corporate training">
-  <div class="edu-grid">
-    <div class="edu-copy">
-      <div class="kicker"><span class="num">02</span><span>Corporate training</span></div>
-      <h2 class="section-head">
-        From training to measurement,<br/>
-        as a <em>team.</em>
-      </h2>
-
-      <ol class="edu-ribbon" aria-label="Training, practice, measurement — three stages">
-        <li class="er-step"><small>Stage 1</small><b>Training</b></li>
-        <li class="er-step"><small>Stage 2</small><b>Practice</b></li>
-        <li class="er-step hot"><small>Stage 3</small><b>Measurement</b></li>
-      </ol>
-
-      <p class="edu-sub">Team seats start with a course taught on your own work — and end with the same records and metrics the pipeline keeps. What the training changed is something you read, not guess.</p>
-
-      <div class="edu-plan">
-        <span class="edu-plan-k">Team subscription plan</span>
-        <span class="edu-chip">Employment-insurance refund — details in a consultation</span>
-      </div>
-      <div class="edu-cta">
-        <a class="btn btn-solid btn-lg" href="#inquiry">Ask about corporate training →</a>
-      </div>
-    </div>
-
-    <figure class="edu-art" aria-hidden="true">
-      <svg viewBox="0 0 340 260" fill="none">
-        <!-- report document (behind, right) -->
-        <g transform="rotate(4 235 130)">
-          <rect x="160" y="28" width="150" height="196" rx="3" fill="var(--surface)" stroke="var(--line-2)" stroke-width="2"/>
-          <path d="M178 52h84M178 68h64" stroke="var(--line-2)" stroke-width="2.5" stroke-linecap="round"/>
-          <!-- mini bar chart, shapes only -->
-          <path d="M180 150v-22M198 150v-38M216 150v-30M234 150v-50" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
-          <path d="M172 158h124" stroke="var(--line-2)" stroke-width="2"/>
-          <!-- donut -->
-          <circle cx="272" cy="118" r="17" stroke="var(--line-2)" stroke-width="7"/>
-          <path d="M272 101a17 17 0 0 1 16 22" stroke="var(--accent)" stroke-width="7" stroke-linecap="round"/>
-          <path d="M178 180h100M178 196h72" stroke="var(--line-2)" stroke-width="2.5" stroke-linecap="round"/>
-        </g>
-        <!-- certificate document (front, left) -->
-        <g transform="rotate(-3 110 140)">
-          <rect x="30" y="48" width="156" height="184" rx="3" fill="var(--surface)" stroke="var(--text)" stroke-width="2.5"/>
-          <rect x="42" y="60" width="132" height="160" rx="2" stroke="var(--line-2)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <path d="M62 90h92M70 108h76" stroke="var(--text)" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
-          <path d="M62 132h92M62 146h92M62 160h64" stroke="var(--line-2)" stroke-width="2.5" stroke-linecap="round"/>
-          <!-- seal + ribbons -->
-          <circle cx="142" cy="192" r="15" fill="var(--surface)" stroke="var(--accent)" stroke-width="3"/>
-          <circle cx="142" cy="192" r="7" stroke="var(--accent)" stroke-width="2"/>
-          <path d="M135 204l-6 16 10-6M149 204l6 16-10-6" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M62 186h44M62 198h30" stroke="var(--line-2)" stroke-width="2.5" stroke-linecap="round"/>
-        </g>
-      </svg>
-    </figure>
+<section id="training"><div class="wrap edu">
+  <div>
+    <div class="label">02 · 기업교육</div>
+    <h2 class="head">교육에서 측정까지,<br><span class="orange">팀 단위로</span></h2>
+    <ol class="ribbon" aria-label="교육, 실습, 측정 세 단계">
+      <li><small>1단계</small><b>교육</b></li><li><small>2단계</small><b>실습</b></li><li><small>3단계</small><b>측정</b></li>
+    </ol>
+    <p class="lead">팀 좌석은 귀사의 실제 업무로 진행하는 교육 과정에서 시작해, 파이프라인이 남기는 기록과 지표로 끝납니다. 교육이 무엇을 바꿨는지, 짐작이 아니라 기록으로 읽습니다.</p>
+    <div class="edu-plan"><span>팀 구독 플랜</span><span class="tag">고용보험 환급 안내 · 자세한 내용은 상담에서</span></div>
+    <div style="margin-top:24px"><a class="btn" href="#inquiry">기업교육 상담받기 →</a></div>
   </div>
-</section>
+  <figure class="edu-art" style="margin:0"><img src="/assets/service-edu.webp" alt="교육 수료 문서와 성과 지표 리포트" width="448" height="323" loading="lazy"></figure>
+</div></section>
 
-<!-- ════════════════ INQUIRY ════════════════ -->
-<section class="inquiry" id="inquiry" data-screen-label="03 Inquiry">
-  <div class="inquiry-head">
-    <div class="kicker"><span class="num">03</span><span>Inquiry</span></div>
-    <h2 class="section-head">
-      Tell us where<br/>
-      you want to <em>start.</em>
-    </h2>
-    <p class="section-sub">
-      A few lines about your team size and the work you want to measure.
-      We reply within one business day — by email, or by phone if you leave a number.
-    </p>
-  </div>
-
-  <div class="inquiry-grid">
-    <form class="inquiry-form" id="inquiry-form" novalidate>
-      <div class="iq-row two">
-        <label class="iq-field">
-          <span class="iq-label iq-l-name">Name</span>
-          <input type="text" name="name" required autocomplete="name" />
-        </label>
-        <label class="iq-field">
-          <span class="iq-label iq-l-email">Email</span>
-          <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
-          <small class="iq-err iq-err-email" hidden>Please enter a valid email address.</small>
-        </label>
+<section id="inquiry"><div class="wrap">
+  <div class="label">03 · 문의</div>
+  <h2 class="head">어떤 업무부터 시작할지<br><span class="orange">들려주세요</span></h2>
+  <p class="lead">조직 규모와 측정하고 싶은 업무를 몇 줄이면 충분합니다. 1영업일 안에 회신드리고, 전화번호를 남기시면 전화로 연락드립니다.</p>
+  <div class="inq">
+    <form class="form" id="inquiry-form" novalidate>
+      <div class="row2">
+        <label class="field"><span>성함</span><input type="text" name="name" required autocomplete="name"></label>
+        <label class="field"><span>이메일</span><input type="email" name="email" placeholder="you@company.com" required autocomplete="email"><small class="err iq-err-email" hidden>올바른 이메일 주소를 입력해 주세요.</small></label>
       </div>
-      <div class="iq-row two">
-        <label class="iq-field">
-          <span class="iq-label iq-l-phone">Phone <small>— leave a number if you prefer a call back</small></span>
-          <input type="tel" name="phone" placeholder="010-0000-0000" autocomplete="tel" />
-          <small class="iq-err iq-err-phone" hidden>Please enter a valid phone number.</small>
-        </label>
-        <label class="iq-field">
-          <span class="iq-label iq-l-topic">Topic</span>
-          <select name="topic">
-            <option value="단기 온보딩">Short onboarding</option>
-            <option value="연간 구독" selected>Annual subscription</option>
-            <option value="선개발 스프린트">Build-first sprint</option>
-            <option value="교육 연계">Training programs</option>
-            <option value="제휴">Partnership</option>
-            <option value="기타">Other</option>
-          </select>
-        </label>
+      <div class="row2">
+        <label class="field"><span>전화번호 <small>— 전화 상담을 원하시면 남겨 주세요</small></span><input type="tel" name="phone" placeholder="010-0000-0000" autocomplete="tel"><small class="err iq-err-phone" hidden>올바른 전화번호를 입력해 주세요.</small></label>
+        <label class="field"><span>문의 유형</span><select name="topic"><option value="단기 온보딩">단기 온보딩</option><option value="연간 구독" selected>연간 구독</option><option value="선개발 스프린트">선개발 스프린트</option><option value="교육 연계">교육 연계</option><option value="제휴">제휴</option><option value="기타">기타</option></select></label>
       </div>
-      <div class="iq-row">
-        <label class="iq-field">
-          <span class="iq-label iq-l-subject">Subject</span>
-          <input type="text" name="subject" required />
-        </label>
-      </div>
-      <div class="iq-row">
-        <label class="iq-field">
-          <span class="iq-label iq-l-message">Message</span>
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-      </div>
-      <div class="iq-actions">
-        <button type="submit" class="btn btn-solid btn-lg iq-submit">Send inquiry →</button>
-        <p class="iq-fine">Goes straight to the Baryon team. No marketing, no third parties.</p>
-      </div>
-      <div class="iq-success" hidden>
-        <h4>Inquiry received.</h4>
-        <p>We will get back to you within one business day. If you left a phone number, we will call.</p>
-      </div>
-      <div class="iq-error" hidden>
-        <p>Something went wrong. Please email <a href="mailto:hello@baryon.ai">hello@baryon.ai</a> directly.</p>
-      </div>
+      <label class="field"><span>제목</span><input type="text" name="subject" required></label>
+      <label class="field"><span>문의 내용</span><textarea name="message" rows="5" required></textarea></label>
+      <div class="actions-row"><button class="btn fill big iq-submit" type="submit">문의 보내기 →</button><p class="small">Baryon 팀에게 바로 전달됩니다. 마케팅 메일 없음, 제3자 공유 없음.</p></div>
+      <div class="msg iq-success" hidden><b>문의가 접수되었습니다.</b><br>1영업일 안에 회신드리겠습니다. 전화번호를 남기셨다면 전화로 연락드립니다.</div>
+      <div class="msg bad iq-error" hidden>문제가 발생했습니다. <a href="mailto:hello@baryon.ai">hello@baryon.ai</a>로 직접 메일 주세요.</div>
     </form>
-
-    <aside class="inquiry-side">
-      <div class="iq-side-block">
-        <div class="onprem-k">Prefer to talk?</div>
-        <h3>Phone consultations, on request.</h3>
-        <p>Leave your number in the form and pick a topic — we will call you back within one business day.</p>
-      </div>
-      <div class="iq-side-block">
-        <div class="onprem-k">Email</div>
-        <a class="iq-side-link" href="mailto:hello@baryon.ai">hello@baryon.ai</a>
-      </div>
-      <div class="iq-side-block">
-        <div class="onprem-k">Response time</div>
-        <p>Within one business day.</p>
-      </div>
+    <aside class="side">
+      <div class="card"><span class="k">전화 상담</span><b>통화가 더 편하시면</b><p>폼에 전화번호를 남기고 문의 항목을 선택해 주세요. 1영업일 안에 저희가 전화드립니다.</p></div>
+      <div class="card"><span class="k">이메일</span><b><a href="mailto:hello@baryon.ai">hello@baryon.ai</a></b></div>
+      <div class="card"><span class="k">응답 시간</span><b>1영업일 이내</b></div>
     </aside>
   </div>
-</section>
-
+</div></section>
 </main>
-
-<!-- ════════════════ FOOTER (index footer와 동일 구성 — 내부 슬롯만 홈으로) ════════════════ -->
-<footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="index.html?ref=service-footer">홈</a><a href="about.html?ref=service-footer">회사 소개</a><a href="https://luma.com/wv4cpwb6?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-luma" target="_blank" rel="noopener">세미나 일정 ↗</a><a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-github" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-vibecamp" target="_blank" rel="noopener">Vibecamp ↗</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
-
-<script src="i18n.js?v=20"></script>
-<script>
-// service는 KO 기본 — 저장된 언어 선택이 없으면 브라우저 언어와 무관하게 KO로 표시.
-// 사용자가 footer 토글로 고른 언어(localStorage)는 그대로 존중한다.
-(() => {
-  try { if (!localStorage.getItem('baryon-lang')) setLang('ko'); } catch (e) {}
-})();
-</script>
+<footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="/?ref=service-footer">홈</a><a href="/about.html?ref=service-footer">회사 소개</a><a href="https://luma.com/wv4cpwb6?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-luma" target="_blank" rel="noopener">세미나 일정 ↗</a><a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-github" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=service-footer-vibecamp" target="_blank" rel="noopener">Vibecamp ↗</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
 <script>
 // inquiry form → Form2AI2Email worker
 (() => {
@@ -398,7 +257,7 @@
 
   function mark(input, errEl, ok) {
     errEl.hidden = ok;
-    input.closest('.iq-field').classList.toggle('invalid', !ok);
+    input.closest('.field').classList.toggle('invalid', !ok);
     return ok;
   }
   emailIn.addEventListener('input', () => mark(emailIn, emailErr, emailIn.value.trim() === '' || EMAIL_RE.test(emailIn.value.trim())));
@@ -421,7 +280,7 @@
     ['name', 'subject', 'message'].forEach((n) => {
       const input = form.querySelector('[name=' + n + ']');
       const ok = input.value.trim() !== '';
-      input.closest('.iq-field').classList.toggle('invalid', !ok);
+      input.closest('.field').classList.toggle('invalid', !ok);
       if (!ok) requiredOk = false;
     });
     if (!emailOk || !phoneOk || !requiredOk) return;
@@ -453,7 +312,7 @@
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.success === false) throw new Error('http ' + res.status);
-      form.querySelectorAll('.iq-row, .iq-actions').forEach(el => el.hidden = true);
+      form.querySelectorAll('.row2, .field, .actions-row').forEach(el => el.hidden = true);
       successBox.hidden = false;
       errorBox.hidden = true;
       window.posthog?.capture('inquiry_submitted', {
@@ -473,5 +332,6 @@
   });
 })();
 </script>
+<script src="/ds/ds.js?v=20261022" defer></script>
 </body>
 </html>

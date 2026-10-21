@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -35,27 +35,12 @@
     ]}
   ]}
   </script>
+  <link rel="stylesheet" href="/ds/tokens.css?v=20261022">
+  <link rel="stylesheet" href="/ds/components.css?v=20261022">
+  <link rel="stylesheet" href="/ds/motion.css?v=20261022">
   <style>
-    :root{--paper:#f3f1ec;--deep:#e9e6df;--card:#fbfaf7;--ink:#17191b;--muted:#62625e;--quiet:#8c8b85;--orange:#f04b17;--orange2:#d93b0b;--soft:#fff0e9;--line:#cfccc4;--dark:#191b1d;--max:1180px;--pad:clamp(16px,4vw,60px);--space:clamp(76px,9vw,128px);--sans:"Gothic A1","Apple SD Gothic Neo",sans-serif;--mono:"IBM Plex Mono",monospace}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.72;letter-spacing:-.018em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,25,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,27,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
-    a{color:inherit;text-decoration:none}h1,h2,h3,p{margin-top:0}::selection{background:var(--orange);color:#fff}:focus-visible{outline:3px solid #f04b1755;outline-offset:3px}
-    .preview{padding:7px var(--pad);background:var(--ink);color:#c9c9c4;font:10px var(--mono);letter-spacing:.04em;text-align:center}.preview b{color:#ff7950}
-    .nav{position:sticky;top:0;z-index:50;min-height:66px;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f3f1ecef;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px;letter-spacing:-.04em}.mark{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative;flex:none}.mark:before{content:"";position:absolute;width:6px;height:6px;left:8px;top:8px;background:var(--orange);border-radius:50%}.mark:after{content:"";position:absolute;width:5px;height:5px;right:-4px;top:8px;background:var(--ink);border-radius:50%}
-    .crumb{color:var(--quiet);font-weight:700;font-size:12px}
-    .links{display:flex;gap:22px;color:var(--muted);font-size:12px;font-weight:700}.links a:hover{color:var(--orange)}
-    .btn{min-height:46px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:13px;font-weight:800;transition:.2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn.fill{background:var(--orange);border-color:var(--orange);color:#fff}.btn.fill:hover{background:var(--orange2)}.btn.light{border-color:#6a6c6e;color:#fff}.btn.sm{min-height:38px;padding:0 14px;font-size:12px}
-    section{padding:var(--space) 0;border-bottom:1px solid var(--line);position:relative}
-    .wrap{width:min(var(--max),calc(100% - var(--pad)*2));margin:auto}
-    .label{display:inline-flex;margin-bottom:20px;color:var(--muted);font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.label.light{color:#a9aaa7}
-    .display{margin-bottom:0;font-size:clamp(36px,5vw,68px);font-weight:900;line-height:1.14;letter-spacing:-.072em}
-    .head{margin-bottom:0;font-size:clamp(28px,3.6vw,50px);font-weight:900;line-height:1.22;letter-spacing:-.065em}
-    .orange{color:var(--orange)}
-    .lead{max-width:690px;margin:20px 0 0;color:var(--muted);font-size:clamp(15px,1.4vw,17px);line-height:1.85}
+    .crumb{color:var(--quiet);font-weight:700;font-size:12px}.btn.sm{min-height:38px;padding:0 14px;font-size:12px}
     .micro{margin:12px 0 0;color:var(--quiet);font-size:11px;line-height:1.7}
-    .note{display:block;margin:8px 0 0;padding:6px 10px;background:#fff7d6;border:1px dashed #c9a400;color:#6b5600;font:10px/1.6 var(--mono)}
 
     /* hero */
     .hero{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(64px,9vw,120px)}
@@ -77,10 +62,6 @@
     .hero-fig img{display:block;width:100%;height:auto}
     .hero-fig figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
     .hero-fig figcaption span{padding:9px 6px;text-align:center;background:var(--ink);color:#fff;font-size:12px;font-weight:800}
-    .shift-fig{margin:34px 0 0;border:1px solid var(--line);background:var(--card)}
-    .shift-fig img{display:block;width:100%;height:auto}
-    .shift-fig figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px 20px;border-top:1px solid var(--line);font-size:16px}
-    .shift-fig figcaption span{color:var(--orange);font-weight:900}.shift-fig em{flex-basis:100%;font-style:normal;color:var(--quiet);font-size:12px}
     .use-img{display:block;width:calc(100% + 48px);margin:-24px -24px 18px;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--line)}
     .use.hire .use-img{border-bottom-color:#2c2f31}
     .why-top{display:grid;grid-template-columns:1fr 440px;gap:clamp(28px,5vw,64px);align-items:center}
@@ -90,7 +71,7 @@
     .sp b{position:absolute;top:8px;left:8px;padding:2px 7px;background:var(--ink);color:#fff;font:600 9px var(--mono);letter-spacing:.06em}
     .sp.after{border-color:#f6b49c}.sp.after b{background:var(--orange)}
     .sp span{display:block;padding:9px 10px;border-top:1px solid var(--line);font-size:12px;font-weight:800;line-height:1.4;min-height:52px}
-    .sp.after span{background:var(--soft);color:var(--orange2)}
+    .sp.after span{background:var(--soft);color:var(--orange)}
     .sp-arrow{text-align:center;color:var(--orange);font-weight:900;font-size:20px}
     .shift-pair figcaption{grid-column:1/-1;margin-top:6px;color:var(--quiet);font-size:11px;text-align:center}
     .modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:16px;background:#17191bb3;backdrop-filter:blur(4px)}
@@ -105,13 +86,12 @@
     .m-field{display:grid;gap:5px}.m-field[hidden]{display:none}.m-field.full{grid-column:1/-1}
     .m-field label{font-size:12px;font-weight:800}.m-field label em{font-style:normal;color:var(--quiet);font-weight:600}.m-field label i{font-style:normal;color:var(--orange)}
     .m-field input,.m-field select{width:100%;min-height:46px;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:0;font:inherit;font-size:14px;color:var(--ink)}
-    .m-field input:focus,.m-field select:focus{outline:0;border-color:var(--orange)}
-    .m-field.invalid input{border-color:#c62f00}.m-err{color:#c62f00;font-size:11px}
+    .m-field input:focus,.m-field select:focus{outline:0;border-color:var(--orange)}.m-err{color:#c62f00;font-size:11px}
     .m-consent{grid-column:1/-1;display:grid;gap:8px;padding:12px;background:var(--card);border:1px solid var(--line);font-size:12px;line-height:1.6}
     .m-consent label{display:flex;gap:8px;align-items:flex-start}.m-consent input{margin-top:3px;accent-color:var(--orange)}
     .m-consent details{padding:0;border:0;color:var(--muted);font-size:11px}.m-consent summary{display:list-item;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer}.m-consent summary:after{content:none}
     .m-actions{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .m-actions .btn{flex:1}.m-actions .btn[disabled]{opacity:.6;cursor:wait;transform:none}
+    .m-actions .btn{flex:1}
     .m-status{grid-column:1/-1;margin:0;font-size:12px}.m-status.err{color:#c62f00}
     .m-done{padding:24px}.m-done h3{margin:0 0 8px;font-size:21px}.m-done p{margin:0 0 6px;color:var(--muted);font-size:14px}.m-done b{color:var(--ink)}
     @media(max-width:560px){.m-form{grid-template-columns:1fr}.m-field.full{grid-column:auto}}
@@ -146,38 +126,7 @@
     .clip[hidden]{display:none}
     .clip-more{margin-top:14px;min-height:40px;padding:0 16px;border:1px solid var(--ink);background:transparent;font:800 12px var(--sans);cursor:pointer}.clip-more[hidden]{display:none}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.chip{padding:6px 10px;background:#fbfaf7cc;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700}
-    .shift{background:var(--card);border:1px solid var(--line);padding:clamp(20px,3vw,32px)}
-    .shift small{display:block;color:var(--quiet);font:600 10px var(--mono);letter-spacing:.06em;margin-bottom:14px}
-    .shift-row{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:stretch}
-    .s-box{padding:16px;border:1px solid var(--line);background:var(--paper)}.s-box b{display:block;font-size:15px;margin-bottom:6px}.s-box p{margin:0;font-size:12px;color:var(--muted);line-height:1.6}
-    .s-box.after{background:var(--soft);border-color:#f6b49c}
-    .s-arrow{display:grid;place-items:center;color:var(--orange);font-weight:900;font-size:20px}
-    .verbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.verbs span{padding:9px 6px;text-align:center;background:var(--ink);color:#fff;font-size:12px;font-weight:800}
-
-    /* trend */
-    .trend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:34px}
-    .fact{padding:22px;background:var(--card);border:1px solid var(--line)}.fact small{color:var(--orange);font:600 10px var(--mono);letter-spacing:.06em}.fact h3{margin:10px 0 8px;font-size:17px;line-height:1.45}.fact p{margin:0;font-size:13px;color:var(--muted);line-height:1.7}
     .src{margin-top:16px;color:var(--quiet);font-size:10px;line-height:1.7}.src a{border-bottom:1px solid var(--line)}
-
-    /* dims */
-    .dims{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:36px}
-    .dim{min-height:180px;padding:22px;background:var(--card);border:1px solid var(--line);transition:.25s}.dim:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 13px 28px #17191b12}
-    .dim .n{display:grid;place-items:center;width:28px;height:28px;margin-bottom:22px;background:var(--orange);color:#fff;font:600 11px var(--mono)}
-    .dim.key .n{background:var(--ink)}
-    .dim h3{margin:0 0 8px;font-size:19px;letter-spacing:-.05em}.dim p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
-    .dim .q{display:block;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);color:var(--ink);font-size:12px;font-weight:700}
-
-    /* how */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border:1px solid var(--line);background:var(--card)}
-    .step{padding:26px;border-right:1px solid var(--line)}.step:last-child{border-right:0}
-    .step small{font:600 10px var(--mono);color:var(--quiet);letter-spacing:.06em}.step h3{margin:10px 0 8px;font-size:19px}.step p{margin:0;color:var(--muted);font-size:13px}
-    .tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:14px}
-    .task{padding:20px;background:var(--dark);color:#fff;border:1px solid #2c2f31}
-    .task small{color:#ff8a63;font:600 10px var(--mono);letter-spacing:.06em}.task h4{margin:8px 0 10px;font-size:16px}
-    .task pre{margin:0;padding:12px;background:#242729;border:1px solid #3a3d3f;color:#d6d6d2;font:12px/1.65 var(--sans);white-space:pre-wrap}
-    .task .see{display:block;margin-top:10px;color:#a9aaa7;font-size:11px}
-    .not{display:flex;gap:10px;align-items:center;margin-top:22px;padding:14px 18px;border:1px solid var(--ink);background:var(--card);font-size:14px;font-weight:800}
-    .not s{color:var(--quiet);font-weight:600}
 
     /* result */
     .result{background:var(--deep)}
@@ -213,41 +162,25 @@
     .pdf li{padding:10px 12px;border-left:3px solid var(--orange);background:var(--paper);font-size:13px}.pdf li b{display:block;font-size:11px;color:var(--muted);font-weight:700}
     .pdf li.law{border-left-color:var(--ink)}
 
-    /* path */
-    .path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border:1px solid var(--line)}
-    .p-step{padding:24px;background:var(--card);border-right:1px solid var(--line)}.p-step:last-child{border-right:0}
-    .p-step.now{background:var(--soft)}
-    .p-step small{font:600 10px var(--mono);color:var(--quiet)}.p-step h3{margin:8px 0 6px;font-size:17px}.p-step p{margin:0;color:var(--muted);font-size:12.5px}
-
-    /* trust */
-    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:36px}
-    .t{padding:22px;border:1px solid var(--line);background:var(--card)}.t h3{margin:0 0 8px;font-size:16px}.t p{margin:0;font-size:13px;color:var(--muted)}
-
     /* faq */
     .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px)}
-    details{border-top:1px solid var(--line);padding:18px 0}details:last-child{border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;font-weight:800;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--orange);font-family:var(--mono)}details[open] summary:after{content:"–"}
-    details p{margin:10px 0 0;color:var(--muted);font-size:14px}
+    
 
     /* final */
     .final{background:var(--dark);color:#fff;border:0;text-align:center}
     .final .lead{color:#bcbdbb;margin-left:auto;margin-right:auto}
     .final .hero-actions{justify-content:center}
-    .footer{padding:26px var(--pad);background:#111315;color:#818382;font-size:10px}
-    .footer-inner{width:min(var(--max),100%);margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     @media(max-width:860px){
       .links{display:none}
       .hero-grid,.team-grid,.faq-grid,.res-grid{grid-template-columns:1fr}
-      .dims,.trend-grid,.tasks,.trust{grid-template-columns:1fr}
-      .steps,.path{grid-template-columns:1fr}.step,.p-step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child,.p-step:last-child{border-bottom:0}
       .uses{grid-template-columns:1fr}
       .why-top{grid-template-columns:1fr}.shift-pair{max-width:440px}
       .aud{display:flex;width:100%}.aud button{flex:1;padding:0 8px}
-      .shift-row{grid-template-columns:1fr}.s-arrow{transform:rotate(90deg);height:30px}
       .hero-actions .btn{flex:1 1 100%}
       .crumb{display:none}
     }
+  
   </style>
 </head>
 <body>
@@ -440,17 +373,19 @@
     <section id="faq"><div class="wrap"><div class="faq-grid">
       <div><div class="label">08 · FAQ</div><h2 class="head">자주 묻는 질문</h2></div>
       <div>
-        <details open><summary>AI 활용능력이란 무엇인가요?</summary><p>AI에게 맡길 일을 고르고, 목적과 조건을 담아 지시하고, 돌아온 결과가 맞는지 검증해 책임지고 쓰는 능력입니다. AI를 얼마나 자주 쓰는지가 아니라, AI로 일을 맞게 끝내는지를 봅니다. 자세한 설명은 <a href="/ai-skill/" style="border-bottom:1px solid var(--line)">AI 활용능력이란?</a>에 정리했습니다.</p></details>
-        <details><summary>자격증이나 인증 시험인가요?</summary><p>아닙니다. 교육과 사내 업무 기준을 세우기 위한 진단입니다. 결과는 단계와 설명으로 드리며 합격·불합격이 없습니다.</p></details>
-        <details><summary>인사평가에 써도 되나요?</summary><p>이 진단은 사람을 키우기 위한 것이고, 보상을 정하기 위한 것이 아닙니다. 그래서 인사 시스템과 자동으로 연결하지 않습니다. 결과를 성과급이나 승진에 반영하려면 취업규칙 변경이나 노사협의 절차가 필요할 수 있으니 먼저 확인하시고, 그 경우에도 반드시 사람이 최종 판단해 주세요. (법률 자문이 아닙니다.)</p></details>
-        <details><summary>채용 전형에 써도 되나요?</summary><p>쓸 수 있습니다. 다만 진단은 면접관이 판단할 재료를 드릴 뿐, 합격·불합격을 정하지 않습니다. 지원자에게 AI 활용 과제를 본다는 사실과 결과 활용 범위를 미리 알리고, 사람이 최종 판단하며, 지원자가 요청하면 결과를 설명할 수 있게 운영하시길 권합니다. (법률 자문이 아닙니다.)</p></details>
-        <details><summary>AI 면접이나 AI 역량검사 준비에도 도움이 되나요?</summary><p>AI 면접과 AI 역량검사는 AI가 지원자의 답변과 성향을 분석하는 전형이고, 이 진단은 지원자가 AI를 써서 직무 과제를 끝내는 능력을 봅니다. 최근에는 면접 과제에서 AI를 직접 쓰게 하는 전형이 함께 늘고 있어, 지원 직무 과제를 미리 연습하는 데 쓸 수 있습니다. 차이는 <a href="/ai-skill/#ai-interview" style="border-bottom:1px solid var(--line)">AI 면접·AI 역량검사와 무엇이 다른가요?</a>에 정리했습니다.</p></details>
-        <details><summary>AI 활용점수는 어떻게 나오나요?</summary><p>AI를 몇 번 썼는지로 점수를 매기지 않습니다. 직무 과제를 AI로 처리한 과정과 결과물을 기준표로 보고, L0 직접 하는 단계부터 L4 설계하는 단계까지 다섯 단계와 차원별 결과로 알려 드립니다. 같은 기준으로 다시 진단하면 전후 변화를 비교할 수 있습니다.</p></details>
-        <details><summary>입사 준비용 결과를 이력서에 써도 되나요?</summary><p>자격증이 아니므로 자격란에는 쓰지 않습니다. 대신 개인 결과지의 과제 기록을 바탕으로 "AI에게 어떤 일을 맡기고 어떻게 검증하는지"를 자기소개나 면접에서 설명하는 데 활용하세요.</p></details>
-        <details><summary>어떤 AI 도구로 진단하나요?</summary><p>특정 도구에 묶이지 않습니다. 진단 화면 안에 있는 AI로 과제를 수행합니다. 회사에서 쓰는 도구로 다시 재고 싶다면 상담으로 연결해 드립니다.</p></details>
-        <details><summary>팀 결과지는 몇 명부터 볼 수 있나요?</summary><p>개인을 특정할 수 없도록 다섯 명 이상 응답이 모였을 때 열립니다. 개인 결과는 본인만 볼 수 있습니다.</p></details>
-        <details><summary>회사 자료를 넣어야 하나요?</summary><p>아니요. 과제는 모두 예시 상황으로 준비되어 있습니다. 실제 회사 자료를 넣지 마세요.</p></details>
-        <details><summary>비용이 드나요?</summary><p>개인 진단과 팀 결과지는 무료입니다. 교육과 업무 연결은 도입 상담으로 범위를 함께 정합니다.</p></details>
+        <div class="faq">
+        <details open><summary><span class="faq-no">01</span><span>AI 활용능력이란 무엇인가요?</span><span class="plus">+</span></summary><div class="answer">AI에게 맡길 일을 고르고, 목적과 조건을 담아 지시하고, 돌아온 결과가 맞는지 검증해 책임지고 쓰는 능력입니다. AI를 얼마나 자주 쓰는지가 아니라, AI로 일을 맞게 끝내는지를 봅니다. 자세한 설명은 <a href="/ai-skill/" style="border-bottom:1px solid var(--line)">AI 활용능력이란?</a>에 정리했습니다.</div></details>
+        <details><summary><span class="faq-no">02</span><span>자격증이나 인증 시험인가요?</span><span class="plus">+</span></summary><div class="answer">아닙니다. 교육과 사내 업무 기준을 세우기 위한 진단입니다. 결과는 단계와 설명으로 드리며 합격·불합격이 없습니다.</div></details>
+        <details><summary><span class="faq-no">03</span><span>인사평가에 써도 되나요?</span><span class="plus">+</span></summary><div class="answer">이 진단은 사람을 키우기 위한 것이고, 보상을 정하기 위한 것이 아닙니다. 그래서 인사 시스템과 자동으로 연결하지 않습니다. 결과를 성과급이나 승진에 반영하려면 취업규칙 변경이나 노사협의 절차가 필요할 수 있으니 먼저 확인하시고, 그 경우에도 반드시 사람이 최종 판단해 주세요. (법률 자문이 아닙니다.)</div></details>
+        <details><summary><span class="faq-no">04</span><span>채용 전형에 써도 되나요?</span><span class="plus">+</span></summary><div class="answer">쓸 수 있습니다. 다만 진단은 면접관이 판단할 재료를 드릴 뿐, 합격·불합격을 정하지 않습니다. 지원자에게 AI 활용 과제를 본다는 사실과 결과 활용 범위를 미리 알리고, 사람이 최종 판단하며, 지원자가 요청하면 결과를 설명할 수 있게 운영하시길 권합니다. (법률 자문이 아닙니다.)</div></details>
+        <details><summary><span class="faq-no">05</span><span>AI 면접이나 AI 역량검사 준비에도 도움이 되나요?</span><span class="plus">+</span></summary><div class="answer">AI 면접과 AI 역량검사는 AI가 지원자의 답변과 성향을 분석하는 전형이고, 이 진단은 지원자가 AI를 써서 직무 과제를 끝내는 능력을 봅니다. 최근에는 면접 과제에서 AI를 직접 쓰게 하는 전형이 함께 늘고 있어, 지원 직무 과제를 미리 연습하는 데 쓸 수 있습니다. 차이는 <a href="/ai-skill/#ai-interview" style="border-bottom:1px solid var(--line)">AI 면접·AI 역량검사와 무엇이 다른가요?</a>에 정리했습니다.</div></details>
+        <details><summary><span class="faq-no">06</span><span>AI 활용점수는 어떻게 나오나요?</span><span class="plus">+</span></summary><div class="answer">AI를 몇 번 썼는지로 점수를 매기지 않습니다. 직무 과제를 AI로 처리한 과정과 결과물을 기준표로 보고, L0 직접 하는 단계부터 L4 설계하는 단계까지 다섯 단계와 차원별 결과로 알려 드립니다. 같은 기준으로 다시 진단하면 전후 변화를 비교할 수 있습니다.</div></details>
+        <details><summary><span class="faq-no">07</span><span>입사 준비용 결과를 이력서에 써도 되나요?</span><span class="plus">+</span></summary><div class="answer">자격증이 아니므로 자격란에는 쓰지 않습니다. 대신 개인 결과지의 과제 기록을 바탕으로 "AI에게 어떤 일을 맡기고 어떻게 검증하는지"를 자기소개나 면접에서 설명하는 데 활용하세요.</div></details>
+        <details><summary><span class="faq-no">08</span><span>어떤 AI 도구로 진단하나요?</span><span class="plus">+</span></summary><div class="answer">특정 도구에 묶이지 않습니다. 진단 화면 안에 있는 AI로 과제를 수행합니다. 회사에서 쓰는 도구로 다시 재고 싶다면 상담으로 연결해 드립니다.</div></details>
+        <details><summary><span class="faq-no">09</span><span>팀 결과지는 몇 명부터 볼 수 있나요?</span><span class="plus">+</span></summary><div class="answer">개인을 특정할 수 없도록 다섯 명 이상 응답이 모였을 때 열립니다. 개인 결과는 본인만 볼 수 있습니다.</div></details>
+        <details><summary><span class="faq-no">10</span><span>회사 자료를 넣어야 하나요?</span><span class="plus">+</span></summary><div class="answer">아니요. 과제는 모두 예시 상황으로 준비되어 있습니다. 실제 회사 자료를 넣지 마세요.</div></details>
+        <details><summary><span class="faq-no">11</span><span>비용이 드나요?</span><span class="plus">+</span></summary><div class="answer">개인 진단과 팀 결과지는 무료입니다. 교육과 업무 연결은 도입 상담으로 범위를 함께 정합니다.</div></details>
+        </div>
       </div>
     </div></div></section>
 
@@ -598,5 +533,6 @@
     })();
   </script>
   <footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><span>AI 활용능력 진단은 학습·기준 수립용 진단이며 공식 자격·인증이 아닙니다.</span></div></footer>
+  <script src="/ds/ds.js?v=20261022" defer></script>
 </body>
 </html>
