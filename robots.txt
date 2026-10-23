@@ -50,3 +50,5 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.baryon.ai/sitemap.xml
+Sitemap: https://baryonlabs.github.io/security-sweep/sitemap.xml
+Sitemap: https://baryonlabs.github.io/elixir-security-audit/sitemap.xml

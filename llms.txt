@@ -34,6 +34,10 @@
 - [CLI](https://cli.baryon.ai/)
 - [교육 (개인 캠프·기업교육)](https://www.vibecamp.us/)
 
+## 오픈소스 (MIT)
+- [security-sweep](https://baryonlabs.github.io/security-sweep/): 한 문장 요청으로 여러 프로젝트·서버·컨테이너 이미지의 알려진 취약점을 점검하는 Claude Code 스킬. osv-scanner·trivy로 훑고, 모든 CVE/GHSA ID를 OSV API로 실재 검증하고, CISA KEV·EPSS로 보강하고, 코드에서 실제로 쓰는지(도달성) 판정해 P0~P3 보고서를 만든다. 기본 읽기 전용. 소스: https://github.com/baryonlabs/security-sweep · 상세: https://baryonlabs.github.io/security-sweep/llms.txt
+- [elixir-security-audit](https://baryonlabs.github.io/elixir-security-audit/): Elixir·Phoenix 프로젝트의 보안 취약점을 Sobelow·mix_audit·OSV·Opengrep으로 찾고, 판정하고, 별도 브랜치에서 고치고, 테스트로 검증하는 Claude Code 스킬. 소스: https://github.com/baryonlabs/elixir-security-audit · 상세: https://baryonlabs.github.io/elixir-security-audit/llms.txt
+
 ## 원칙
 - 공개 표면에 검증 전 수치·가격을 표기하지 않습니다. 실측 수치와 견적은 도입 상담에서 안내합니다.
 - 문의: [도입 상담](https://www.baryon.ai/service#inquiry) · hello@baryon.ai
