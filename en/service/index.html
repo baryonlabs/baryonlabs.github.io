@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Getting started with AI adoption — from team training to impact measurement | Baryon Labs</title>
+<meta name="description" content="How to adopt Baryon Work-Agent, our AI work pipeline. Two ways to start (seat onboarding or a build-first sprint), a process that starts with training and moves to always-on API integration once the impact is confirmed, and team-based corporate training. Pricing is set during a consultation based on your organization's size." />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<link rel="canonical" href="https://www.baryon.ai/en/service/">
+<link rel="alternate" hreflang="en" href="https://www.baryon.ai/en/service/">
+<link rel="alternate" hreflang="ko" href="https://www.baryon.ai/service">
+<link rel="alternate" hreflang="x-default" href="https://www.baryon.ai/en/service/">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Baryon Labs" />
+<meta property="og:title" content="Getting started with AI adoption — from team training to impact measurement | Baryon Labs" />
+<meta property="og:description" content="Two ways to start (seat onboarding or a build-first sprint), a start-small-then-integrate process, and team-based corporate training." />
+<meta property="og:url" content="https://www.baryon.ai/en/service/" />
+<meta property="og:image" content="https://www.baryon.ai/assets/og.jpg" />
+<meta property="og:image:alt" content="Cut the AI usage you don't need, and lower your costs — baryon.ai" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Getting started with AI adoption — from team training to impact measurement | Baryon Labs" />
+<meta name="twitter:description" content="Two ways to start (seat onboarding or a build-first sprint), a start-small-then-integrate process, and team-based corporate training." />
+<meta name="twitter:image" content="https://www.baryon.ai/assets/og.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.baryon.ai/en/service/",
+      "url": "https://www.baryon.ai/en/service/",
+      "name": "Baryon Labs — Getting started",
+      "description": "How to adopt Baryon Work-Agent, our AI work pipeline: two ways to start (seat onboarding or a build-first sprint), a start-small-then-integrate process, and team-based corporate training.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://www.baryon.ai/#website" },
+      "publisher": { "@id": "https://www.baryon.ai/#org" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.baryon.ai/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Getting started", "item": "https://www.baryon.ai/en/service/" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="/ds/tokens.css?v=20261103a">
+<link rel="stylesheet" href="/ds/components.css?v=20261103a">
+<link rel="stylesheet" href="/ds/motion.css?v=20261103a">
+<style>
+  .svc-hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
+  .method{margin-top:44px}
+  .method-k{display:flex;align-items:center;gap:8px;margin-bottom:14px;font:600 11px var(--mono);letter-spacing:.08em;color:var(--muted)}
+  .method-k:before{content:"";width:8px;height:8px;background:var(--ink)}
+  .journey{display:grid;grid-template-columns:1fr 56px 1fr;align-items:stretch}
+  .jr-arrow{display:grid;place-items:center;color:var(--quiet);font:20px var(--mono)}
+  .card.journey-card{padding:26px}
+  .k{display:block;margin-bottom:10px;color:var(--quiet);font:600 11px var(--mono);letter-spacing:.06em}
+  .card h3{font-size:clamp(18px,1.8vw,21px)}
+  .checks{list-style:none;margin:14px 0 0;padding:0}
+  .checks li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .checks li:before{content:"✓";position:absolute;left:0;top:9px;color:var(--ink);font-weight:800}
+  .badge{position:absolute;top:-11px;left:22px;padding:2px 8px;background:var(--orange);color:#fff;font:600 10px var(--mono)}
+  .journey-card .btn{margin-top:18px}
+  .sprint{padding:clamp(20px,3vw,32px);background:var(--card);border:1px solid var(--line)}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-2);margin-top:18px}
+  .steps3 .card{min-height:0}
+  .steps3 .card:hover{transform:none;box-shadow:none}
+  .sprint-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-top:22px}
+  .sprint-foot .tags{display:flex;gap:var(--gap-1);flex-wrap:wrap}
+  .cond{max-width:520px;margin-top:22px}
+  .rm{margin-top:32px;padding:clamp(18px,3vw,28px);background:var(--card);border:1px solid var(--line)}
+  .rm-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:var(--gap-2);margin-top:16px}
+  .rm-panel{min-height:110px;padding:14px;border:1px dashed var(--line-strong);background:var(--paper)}
+  .rm-chart{grid-row:span 2;display:flex;flex-direction:column}
+  .rm-bars{flex:1;display:flex;align-items:flex-end;gap:8%;padding:16px 4px 0;min-height:150px}
+  .rm-bars i{flex:1;background:var(--deep);border:1px solid var(--line)}
+  .rm-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-2)}
+  .edu{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
+  .ribbon{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0 0;padding:0;list-style:none;border:1px solid var(--line);background:var(--card)}
+  .ribbon li{padding:14px;text-align:center;border-right:1px solid var(--line)}
+  .ribbon li:last-child{border-right:0}
+  .ribbon small{display:block;color:var(--quiet);font:600 10px var(--mono)}
+  .ribbon b{font-size:15px}
+  .edu-art img{display:block;width:100%;height:auto}
+  .edu-plan{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:22px;font-size:13px;font-weight:800}
+  .inq{display:grid;grid-template-columns:1fr 300px;gap:var(--gap-3);margin-top:32px;align-items:start}
+  .form{padding:clamp(18px,3vw,28px);background:var(--card);border:1px solid var(--line)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .field>span{font-size:13px;font-weight:800}
+  .field>span small{color:var(--quiet);font-weight:600}
+  .field input,.field select,.field textarea{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);background:#fff;color:var(--ink);font:500 15px var(--sans);border-radius:0}
+  .field textarea{min-height:120px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);outline-offset:-1px;border-color:var(--orange)}
+  .field.invalid input,.field.invalid textarea{border-color:#b3260b}
+  .err{color:#b3260b;font-size:12px}
+  .actions-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .actions-row .small{margin:0}
+  .msg{padding:16px;background:var(--paper);border:1px solid var(--line);font-size:14px}
+  .msg.bad{border-color:#b3260b;color:#b3260b}
+  .side{display:grid;gap:var(--gap-2)}
+  .side .card{min-height:0;padding:18px}
+  .side .card:hover{transform:none;box-shadow:none}
+  .side b{display:block;font-size:15px;margin-bottom:4px}
+  .side p{margin:0;color:var(--muted);font-size:13px}
+  @media(max-width:900px){.journey{grid-template-columns:1fr}.jr-arrow{height:44px;transform:rotate(90deg)}.steps3,.edu,.inq,.rm-grid{grid-template-columns:1fr}.rm-chart{grid-row:auto}}
+  @media(max-width:720px){.row2{grid-template-columns:1fr}.field input,.field select,.field textarea{font-size:16px;min-height:48px}.actions-row .btn{width:100%}}
+</style>
+
+<!-- PostHog (reuses chat project key) -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="al ol ll init Il Rl Tl Ml Ol za El Dl Sl capture getExtension Pl nl Hl calculateEventProperties Bl register register_once register_for_session unregister unregister_for_session Vl Cl zl getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Gl identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset Zl shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Ul ql createPersonProfile setInternalOrTestUser Wl ul hl opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $l debug Ua Jn getPageViewId captureTraceFeedback captureTraceMetric bl".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_pN6hid3SodJHxSFNqUURpvKefnsKaBXmUnRG3AI4kR2', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+  </script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9X57DJVD7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V9X57DJVD7');
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+    <a class="brand" href="/en/"><span class="mark" aria-hidden="true"></span><span>BARYON LABS</span></a>
+    <nav class="links" aria-label="Main menu"><a href="/en/solution/?ref=en-service-nav">Services</a><a href="/en/cases/?ref=en-service-nav">Case studies</a><a href="/en/service/" aria-current="page">Get started</a><a href="/en/about/?ref=en-service-nav">About</a></nav>
+    <div class="actions"><a class="lang" href="/service?lang=ko" hreflang="ko" lang="ko">한국어</a><a class="btn dark" href="#inquiry">Talk to us</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu"><i></i></button></div>
+    <nav class="nav-panel" id="nav-panel" aria-label="Mobile menu"><a href="/en/solution/?ref=en-service-nav">Services</a><a href="/en/cases/?ref=en-service-nav">Case studies</a><a href="/en/service/" aria-current="page">Get started</a><a href="/en/about/?ref=en-service-nav">About</a><a href="/service?lang=ko" hreflang="ko" lang="ko">한국어</a><a class="btn dark" href="#inquiry">Talk to us</a></nav>
+  </header>
+
+<main id="main">
+<div class="curtain">
+<div class="svc-hero curtain-hero"><div class="wrap">
+  <div class="label">01 · GETTING STARTED</div>
+  <h1 class="display">There are two ways<br><span class="orange">to get started</span></h1>
+  <p class="lead">Start right away with seat onboarding, or let us build and run something first, then sign once you've seen the results.</p>
+</div></div>
+
+<section class="curtain-card" id="svc"><div class="wrap">
+  <div class="method">
+    <div class="method-k">OPTION 1 · SEAT ONBOARDING</div>
+    <div class="journey">
+      <article class="card journey-card reveal">
+        <span class="k">Step 1 · Short-term onboarding</span>
+        <h3>Per seat, start the same day</h3>
+        <ul class="checks"><li>No installation, servers, or setup</li><li>Start with documents your team already works with</li><li>Records build up from the very first run</li></ul>
+      </article>
+      <div class="jr-arrow" aria-hidden="true">→</div>
+      <article class="card journey-card is-key reveal">
+        <span class="badge">Recommended</span>
+        <span class="k">Step 2 · Annual subscription</span>
+        <h3>Ongoing operation, impact reports included</h3>
+        <ul class="checks"><li>Adoption impact report: the same metrics compared before and after</li><li>Per-project policies, spending caps, and an admin console</li><li>ARA moved from short-term onboarding to ongoing operation with API integration</li></ul>
+        <a class="btn fill" href="#inquiry">Get a quote in a consultation →</a>
+      </article>
+    </div>
+  </div>
+
+  <div class="method">
+    <div class="method-k">OPTION 2 · BUILD-FIRST SPRINT</div>
+    <div class="sprint reveal">
+      <h3 class="sub">We build it and run it first. Sign once you've seen it working</h3>
+      <div class="steps3">
+        <div class="card"><span class="num">1</span><h3>Build-first sprint</h3><p>1–2 weeks. We build something that works on your real data and a real problem.</p></div>
+        <div class="card"><span class="num">2</span><h3>Impact validation</h3><p>Together we measure a pre-adoption baseline and agree on the metrics.</p></div>
+        <div class="card"><span class="num">3</span><h3>Outcome-based billing</h3><p>You pay in line with the results delivered. A monthly minimum and an annual cap protect both sides.</p></div>
+      </div>
+      <div class="cond"><span class="k">We only start when all three are in place</span><ul class="checks"><li>Access to real data</li><li>Work that can be measured in numbers</li><li>A decision-maker involved</li></ul></div>
+      <div class="sprint-foot">
+        <div class="tags"><span class="tag">No results, you pay operating costs only</span><span class="tag">Annual cap</span><span class="tag">Billing dispute process</span></div>
+        <a class="btn" href="#inquiry">Ask about a build-first sprint →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="rm reveal" aria-label="Sample adoption impact report layout">
+    <h3 class="sub">Adoption impact report <span class="small">— from baseline to before-and-after comparison; your own runs fill in the numbers</span></h3>
+    <div class="rm-grid">
+      <div class="rm-panel rm-chart"><span class="k">Before / after adoption</span><div class="rm-bars"><i style="height:38%"></i><i style="height:52%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:56%"></i><i style="height:82%"></i></div><span class="small">Recorded from the first run</span></div>
+      <div class="rm-panel"><span class="k">Verification grade</span></div>
+      <div class="rm-split"><div class="rm-panel"><span class="k">Time saved</span></div><div class="rm-panel"><span class="k">Success rate</span></div></div>
+    </div>
+  </div>
+</div></section>
+</div>
+
+<section id="training"><div class="wrap edu">
+  <div>
+    <div class="label">02 · CORPORATE TRAINING</div>
+    <h2 class="head">From training to measurement,<br><span class="orange">team by team</span></h2>
+    <ol class="ribbon" aria-label="Three steps: training, practice, measurement">
+      <li><small>Step 1</small><b>Training</b></li><li><small>Step 2</small><b>Practice</b></li><li><small>Step 3</small><b>Measurement</b></li>
+    </ol>
+    <p class="lead">Team seats begin with a training course built on your actual work and end with the records and metrics the pipeline leaves behind. You see what the training changed from the records, not from guesswork.</p>
+    <div class="edu-plan"><span>Team subscription plan</span><span class="tag">Korean employment insurance training refunds · details in consultation</span></div>
+    <div style="margin-top:24px"><a class="btn" href="#inquiry">Talk to us about training →</a></div>
+  </div>
+  <figure class="edu-art" style="margin:0"><img src="/assets/service-edu.webp" alt="Training completion certificate and impact metrics report" width="448" height="323" loading="lazy"></figure>
+</div></section>
+
+<section id="inquiry"><div class="wrap">
+  <div class="label">03 · CONTACT</div>
+  <h2 class="head">Tell us which work<br><span class="orange">you'd like to start with</span></h2>
+  <p class="lead">A few lines on your organization's size and the work you want to measure is enough. We reply within one business day, and if you leave a phone number we'll call you.</p>
+  <div class="inq">
+    <form class="form" id="inquiry-form" novalidate>
+      <div class="row2">
+        <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" placeholder="you@company.com" required autocomplete="email"><small class="err iq-err-email" hidden>Please enter a valid email address.</small></label>
+      </div>
+      <div class="row2">
+        <label class="field"><span>Phone <small>— leave it if you'd prefer a call</small></span><input type="tel" name="phone" placeholder="+82 10-0000-0000" autocomplete="tel"><small class="err iq-err-phone" hidden>Please enter a valid phone number.</small></label>
+        <label class="field"><span>Inquiry type</span><select name="topic"><option value="Short-term onboarding">Short-term onboarding</option><option value="Annual subscription" selected>Annual subscription</option><option value="Build-first sprint">Build-first sprint</option><option value="Training">Training</option><option value="Partnership">Partnership</option><option value="Other">Other</option></select></label>
+      </div>
+      <label class="field"><span>Subject</span><input type="text" name="subject" required></label>
+      <label class="field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+      <div class="actions-row"><button class="btn fill big iq-submit" type="submit">Send inquiry →</button><p class="small">Goes straight to the Baryon team. No marketing emails, no sharing with third parties.</p></div>
+      <div class="msg iq-success" hidden><b>Thanks, we've received your inquiry.</b><br>We'll reply within one business day. If you left a phone number, we'll call you.</div>
+      <div class="msg bad iq-error" hidden>Something went wrong. Please email us directly at <a href="mailto:hello@baryon.ai">hello@baryon.ai</a>.</div>
+    </form>
+    <aside class="side">
+      <div class="card"><span class="k">Phone consultation</span><b>Prefer to talk?</b><p>Leave your phone number in the form and choose an inquiry type. We'll call you within one business day.</p></div>
+      <div class="card"><span class="k">Email</span><b><a href="mailto:hello@baryon.ai">hello@baryon.ai</a></b></div>
+      <div class="card"><span class="k">Response time</span><b>Within one business day</b></div>
+    </aside>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="footer-inner"><span>© 2026 Baryon Labs. Seoul, Korea.</span><div class="footer-links"><a href="/en/?ref=en-service-footer">Home</a><a href="/en/about/?ref=en-service-footer">About</a><a href="/service?lang=ko" hreflang="ko" lang="ko">한국어</a><a href="https://luma.com/wv4cpwb6?utm_source=baryon.ai&utm_medium=cta&utm_content=en-service-footer-luma" target="_blank" rel="noopener">Seminar schedule ↗</a><a href="https://github.com/baryonlabs?utm_source=baryon.ai&utm_medium=cta&utm_content=en-service-footer-github" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.vibecamp.us/?utm_source=baryon.ai&utm_medium=cta&utm_content=en-service-footer-vibecamp" target="_blank" rel="noopener">VibeCamp ↗</a><a href="mailto:hello@baryon.ai">Email</a></div></div></footer>
+<script>
+// inquiry form → Form2AI2Email worker
+(() => {
+  const ENDPOINT = 'https://form2ai2email-worker.kilos-network.workers.dev/api/submit';
+  const FORM_ID = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+
+  const form = document.getElementById('inquiry-form');
+  if (!form) return;
+  const successBox = form.querySelector('.iq-success');
+  const errorBox = form.querySelector('.iq-error');
+  const submitBtn = form.querySelector('.iq-submit');
+  const emailIn = form.querySelector('[name=email]');
+  const phoneIn = form.querySelector('[name=phone]');
+  const emailErr = form.querySelector('.iq-err-email');
+  const phoneErr = form.querySelector('.iq-err-phone');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  // digits with optional +, spaces, hyphens, parens; 9–16 significant chars
+  const PHONE_RE = /^\+?[0-9][0-9\-\s()]{7,15}$/;
+
+  function mark(input, errEl, ok) {
+    errEl.hidden = ok;
+    input.closest('.field').classList.toggle('invalid', !ok);
+    return ok;
+  }
+  emailIn.addEventListener('input', () => mark(emailIn, emailErr, emailIn.value.trim() === '' || EMAIL_RE.test(emailIn.value.trim())));
+  phoneIn.addEventListener('input', () => mark(phoneIn, phoneErr, phoneIn.value.trim() === '' || PHONE_RE.test(phoneIn.value.trim())));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const q = new URLSearchParams(location.search);
+    const track = {};
+    if (q.get('ref')) track.ref = q.get('ref');
+    if (q.get('utm_content')) track.utm_content = q.get('utm_content'); if (q.get('track')) track.interest_track = q.get('track'); if (q.get('utm_campaign')) track.utm_campaign = q.get('utm_campaign');
+    if (document.referrer) track.referrer = document.referrer;
+    const email = (fd.get('email') || '').toString().trim();
+    const phone = (fd.get('phone') || '').toString().trim();
+
+    const emailOk = mark(emailIn, emailErr, EMAIL_RE.test(email));
+    const phoneOk = mark(phoneIn, phoneErr, phone === '' || PHONE_RE.test(phone));
+    let requiredOk = true;
+    ['name', 'subject', 'message'].forEach((n) => {
+      const input = form.querySelector('[name=' + n + ']');
+      const ok = input.value.trim() !== '';
+      input.closest('.field').classList.toggle('invalid', !ok);
+      if (!ok) requiredOk = false;
+    });
+    if (!emailOk || !phoneOk || !requiredOk) return;
+
+    const isKo = (document.documentElement.lang || 'en') === 'ko';
+    const origLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.textContent = isKo ? '전송 중…' : 'Sending…';
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form_id: FORM_ID,
+          data: {
+            name: (fd.get('name') || '').toString().trim(),
+            email,
+            phone,
+            topic: (fd.get('topic') || '').toString(),
+            subject: (fd.get('subject') || '').toString().trim(),
+            message: (fd.get('message') || '').toString().trim(),
+            source: 'baryon.ai/service',
+            ...track,
+            lang: isKo ? 'ko' : 'en'
+          }
+        })
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.success === false) throw new Error('http ' + res.status);
+      form.querySelectorAll('.row2, .field, .actions-row').forEach(el => el.hidden = true);
+      successBox.hidden = false;
+      errorBox.hidden = true;
+      window.posthog?.capture('inquiry_submitted', {
+        source: 'baryon.ai/service',
+        type: (fd.get('topic') || '').toString(),
+        ...(track.ref ? { ref: track.ref } : {}),
+        ...(track.utm_content ? { utm_content: track.utm_content } : {})
+      });
+    } catch (err) {
+      console.warn('inquiry submission failed', err);
+      errorBox.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.textContent = origLabel;
+    }
+  });
+})();
+</script>
+<script src="/ds/ds.js?v=20261103a" defer></script>
+</body>
+</html>

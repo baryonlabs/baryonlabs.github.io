@@ -1,6 +1,6 @@
 /* 바리온 디자인 시스템 v1 — 공용 동작: reveal · scrollspy · 모바일 고정 CTA */
 (function(){
-  var d=document,root=d.documentElement;
+  var d=document,root=d.documentElement,EN=/^en/i.test(root.lang||'');
   root.classList.remove('no-js');
   var hasIO='IntersectionObserver' in window;
 
@@ -47,7 +47,7 @@
   // 7) 모바일 메뉴 ☰ — 패널 열기/닫기, Esc·링크 클릭 시 닫힘
   var nav=d.querySelector('.nav'),tg=nav&&nav.querySelector('.nav-toggle'),panel=nav&&nav.querySelector('.nav-panel');
   if(tg&&panel){
-    var setOpen=function(o){if(o)panel.style.setProperty('--panel-top',Math.round(nav.getBoundingClientRect().bottom)+'px');nav.classList.toggle('is-open',o);tg.setAttribute('aria-expanded',o?'true':'false');tg.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');root.classList.toggle('nav-lock',o)};
+    var setOpen=function(o){if(o)panel.style.setProperty('--panel-top',Math.round(nav.getBoundingClientRect().bottom)+'px');nav.classList.toggle('is-open',o);tg.setAttribute('aria-expanded',o?'true':'false');tg.setAttribute('aria-label',o?(EN?'Close menu':'메뉴 닫기'):(EN?'Open menu':'메뉴 열기'));root.classList.toggle('nav-lock',o)};
     tg.addEventListener('click',function(){setOpen(!nav.classList.contains('is-open'))});
     panel.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false)});
     d.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('is-open')){setOpen(false);tg.focus()}});
@@ -77,7 +77,7 @@
       requestAnimationFrame(function(){root.classList.add('is-playing')});
       timer=setTimeout(function(){show(i+1);run()},t+(i===steps.length-1?1200:0));
     }
-    function label(){if(btn){btn.textContent=paused?'▶ 재생':'❚❚ 멈춤';btn.setAttribute('aria-pressed',paused?'true':'false')}}
+    function label(){if(btn){btn.textContent=paused?(EN?'▶ Play':'▶ 재생'):(EN?'❚❚ Pause':'❚❚ 멈춤');btn.setAttribute('aria-pressed',paused?'true':'false')}}
     if(btn)btn.addEventListener('click',function(){paused=!paused;label();run()});
     rail.forEach(function(b,k){b.addEventListener('click',function(){show(k);run()})});
     if(hasIO)new IntersectionObserver(function(es){visible=es[0].isIntersecting;run()},{threshold:.35}).observe(root);
