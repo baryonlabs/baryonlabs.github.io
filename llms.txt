@@ -33,6 +33,7 @@
 - [범용 AX-ERP 데모](https://ax-erp.baryon.ai/): 업종에 맞춰 모듈을 켜고 끄는 구성. 공통 기반(경영 현황·AX 활용도·AI-Bot·데일리 보고서) + 업종 프리셋 5종(회계·세무 / 제조 / 유통·무역 / 건설 / IT·SI). 모든 수치는 가상 데이터
 - [제품 로그인 진입점 (실행 환경)](https://chat.baryon.ai/)
 - [CLI](https://cli.baryon.ai/)
+- [DureClaw](https://dureclaw.baryon.ai/): 여러 대의 컴퓨터(Mac·Windows·Linux·라즈베리파이·GPU 서버)를 하나의 AI 팀으로 묶는 도구. Mac의 Claude Code가 두뇌가 되어 연결된 컴퓨터에 일을 나눠 동시에 처리. 개인판 무료
 - [교육 (개인 캠프·기업교육)](https://www.vibecamp.us/)
 
 ## 오픈소스 (MIT)
