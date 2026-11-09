@@ -132,7 +132,10 @@ body:has(.subnav) .curtain>.curtain-hero{top:calc(var(--nav-h) + var(--subnav-h)
 .curtain>.curtain-card{position:relative;z-index:1;border-top:1px solid var(--line);box-shadow:0 -18px 40px #17191b14}
 :where(.curtain>.curtain-card){background:var(--paper)}
 :where(.curtain>.curtain-card.pad-top){padding-top:clamp(56px,6vw,88px)}
-@media(max-width:720px){.curtain>.curtain-hero,body:has(.subnav) .curtain>.curtain-hero{position:relative;top:auto}.curtain>.curtain-card{box-shadow:none}}
+/* The compact navigation starts at 980px. Keep the hero in normal flow for the
+   same range: otherwise mid-width mobile/tablet viewports retain the desktop
+   sticky curtain and can expose a blank area between the section nav and hero. */
+@media(max-width:980px){.curtain>.curtain-hero,body:has(.subnav) .curtain>.curtain-hero{position:relative;top:auto}.curtain>.curtain-card{box-shadow:none}}
 
 /* 자동 시연 데모 — [data-demo] 안의 단계가 스스로 넘어가고, 멈춤 버튼·단계 클릭 가능.
    단계 패널: [data-demo-step] (data-ms로 머무는 시간), 단계 목록: .demo-rail button */
